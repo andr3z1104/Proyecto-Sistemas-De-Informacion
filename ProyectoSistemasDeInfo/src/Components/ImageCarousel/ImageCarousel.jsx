@@ -9,7 +9,11 @@ import image2 from '../../assets/Bandera.png';
 import image3 from '../../assets/Monumento.png';
 
 
+import { useNavigate } from 'react-router-dom';
+
+
 function ImageCarousel (){
+    const navigate = useNavigate();
     return(
         <div className={styles.carouselContainer}>
         <Carousel className={styles.carouselBackground} controls={false} indicators={false} interval={3000} pause={false}> {/** Componente de la libreria bootstrap. Contenedor principal del carousel*/}
@@ -36,7 +40,7 @@ function ImageCarousel (){
             <h3 className={styles.Text}>Somos más que una tienda.</h3>
             <h3 className={styles.Text}>Buscamos conectar contigo.</h3>
             <h3 className={styles.Text}>Únete al equipo Granier</h3>
-            <button className={styles.navButton}>CONTÁCTANOS</button>
+            <button className={styles.navButton} onClick={() => navigate('/Contacto')}>CONTÁCTANOS</button>
         </div>
         <div className={styles.carouselOverlay}></div>
         </div>
