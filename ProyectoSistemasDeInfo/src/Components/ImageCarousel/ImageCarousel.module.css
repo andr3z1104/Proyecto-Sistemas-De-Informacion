@@ -1,0 +1,66 @@
+.navButton {
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #FB8500;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.navButton:hover{
+    background-color: #fb5800;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+    margin: 0; 
+    padding: 0;
+}
+
+.carouselBackground .carousel-item {
+    height: 100vh;
+}
+
+.carouselBackground .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselCaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    width: 80%;
+}
+
+.carouselOverlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.Text{
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+}

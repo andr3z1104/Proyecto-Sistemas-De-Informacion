@@ -7,13 +7,15 @@ function Landing(){
         <div className='landingPage'>
             <header>
                 <h1>El sabor que te acompaña en cada estudio</h1>
-                <button>CONÓCENOS</button>
             </header>
+
+            <div>
+                Semana 6 blabla
+            </div>
 
             <div>
                 <ImageCarousel/>
             </div>
-
             <div>
                 <ProductCarousel/>
             </div>
