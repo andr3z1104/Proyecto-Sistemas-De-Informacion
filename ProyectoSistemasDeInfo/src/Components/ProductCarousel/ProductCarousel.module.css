@@ -1,0 +1,20 @@
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+.slick-prev {
+    left: 10px;
+  }
+  
+.slick-next {
+    right: 10px;
+  }
+  
