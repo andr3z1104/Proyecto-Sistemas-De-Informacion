@@ -27,22 +27,30 @@ function ProductCarousel(){
         slidesToShow: 3,
         slidesToScroll: 1};
 
+
+    const Prev = (props) => {
+        
+    }
+
     const productosCarousel = [];
     for(let i = 0; i < productos.length; i++){
         const producto = productos[i];
         productosCarousel.push(
-            <div key={producto.id} className="tarjetaProducto">
+            <div key={producto.id} className={styles.tarjetaProductos}>
                 <img src={producto.image} alt={producto.name} />
                 <h3>{producto.name}</h3>
                 <p>{producto.price}</p>
+                <button className={styles.navButton}>Ver Menú</button>
             </div>
         )
     }
 
     return (
-        <Slider{...config}>
+        <div>
+            <Slider{...config}>
             {productosCarousel}
-        </Slider>
+            </Slider>
+        </div>
     )
 
 
