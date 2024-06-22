@@ -4,6 +4,10 @@ import InicioDeSesion from './Pages/InicioDeSesion/InicioDeSesion';
 import Contacto from './Pages/Contacto/Contacto';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import appFirebase from '../src/credenciales';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+const auth = getAuth(appFirebase)
+
 
 function App() {
   return (
