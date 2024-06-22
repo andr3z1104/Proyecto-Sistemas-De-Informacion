@@ -9,10 +9,14 @@ function Header(){
         <img src={logo} alt="Logo" className={styles.logo} />
       </Link>
       <nav className={styles.nav}>
-        <Link to="/Landing" className={styles.navItem}>Inicio</Link>
-        <Link to="/Menu" className={styles.navItem}>Menú</Link>
-        <Link to="/Nosotros" href="#nosotros" className={styles.navItem}>Nosotros</Link>
-        <Link to="/InicioDeSesion" href="#acceder" className={styles.button}>Acceder</Link>
+        <div className={styles.parte1}>
+          <Link to="/Landing" className={styles.navItem}>Inicio</Link>
+          <Link to="/Menu" className={styles.navItem}>Menú</Link>
+          <Link to="/Nosotros" href="#nosotros" className={styles.navItem}>Nosotros</Link>
+        </div>
+        <div className={styles.parte2}>
+          <Link to="/InicioDeSesion" href="#acceder" className={styles.button}>Acceder</Link>
+        </div>
       </nav>
     </header>
   );
