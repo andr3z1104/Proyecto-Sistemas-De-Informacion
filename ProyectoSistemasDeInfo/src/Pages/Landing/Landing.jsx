@@ -4,7 +4,7 @@ import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import image1 from '../../assets/Imagen Principal.png';
 import image2 from '../../assets/panycafe.png';
 import image3 from '../../assets/pan.png';
-//Hola
+
 
 import { useNavigate } from 'react-router-dom';
 
