@@ -42,7 +42,7 @@
     transform: scale(1.1)
 }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1024px) {
     .footer{
         background-position: center;
     }

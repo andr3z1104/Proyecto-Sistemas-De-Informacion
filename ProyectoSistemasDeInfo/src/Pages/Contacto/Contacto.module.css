@@ -123,7 +123,7 @@
 }
 
 .image {
-    max-height: 7rem;
+    max-height: 5rem;
 }
 
 .contactContainer {
@@ -131,7 +131,7 @@
     background-color: #E0E0E0;
     padding: 20px;
     border-radius: 10px;
-    width: 85%;
+    width: 75%;
     text-align: center;
     margin: 2rem auto;
 }
@@ -143,14 +143,13 @@
 h2 {
     color: #000000;
     margin-bottom: 1rem;
-    font-size: 4rem;
     font-weight: bolder;
 }
 
 .unrDesc {
     color: #666;
     margin: 5px 0;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: justify;
 }
 
@@ -160,14 +159,14 @@ h2 {
 
 .group {
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .desc {
     color: #666;
     margin: 5px 0;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -176,7 +175,7 @@ h2 {
 }
 
 /* Additional responsive adjustments for smaller screens */
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
     h2 {
         font-size: 2rem;
     }
@@ -184,10 +183,14 @@ h2 {
         font-size: 1.5rem;
     }
     .group {
-        gap: 1rem;
+        gap: 0rem;
         flex-direction: column;
     }
     .contactContainer {
-        width: 95%;
+        width: 75%;
+    }
+
+    .navButton{
+        transform: scale(1.3);
     }
 }
