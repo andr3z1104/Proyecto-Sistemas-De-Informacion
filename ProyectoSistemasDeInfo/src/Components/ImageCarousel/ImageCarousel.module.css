@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.navButton {
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #FB8500;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.navButton:hover{
+    background-color: #fb5800;
+    transform: scale(1.1)
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+    margin: 0;
+}
+
+.carouselBackground .carousel-item {
+    height: 100vh;
+}
+
+.carouselBackground .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselCaption {
+    position: absolute; /* Hace que tome la posicion del div padre*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra con el position absolute*/
+    color: white;
+    text-align: center;
+    z-index: 2; /*z index: Funciona como capas*/
+    padding: 20px;
+    width: 80%;
+}
+
+.carouselOverlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.Text{
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+    font-family: Montserrat,sans-serif;
+    font-weight: 650;
+    line-height: 50px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) { /* REVISAR!! Tablet */
+    .Text {
+        font-size: 2.5rem;
+        line-height: 40px;
+    }
+    .navButton {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+    .carouselBackground .carousel-item {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .Text {
+        font-size: 1rem;
+        line-height: 10px;
+    }
+    .navButton {
+        font-size: 12px;
+        padding: 6px 18px;
+    }
+    .carouselBackground .carousel-item {
+        height: 60vh;
+    }
+}
