@@ -1,3 +1,196 @@
-.FotoPrincipal{
-    font: 100;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.fotaca {
+    display: block;
+    width: 100%;
+}
+
+.navButton {
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #FB8500;
+    padding: 10px 24px;
+    border-radius: 10px;
+   
+    font-size: 22px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.navButton:hover {
+    background-color: #fb5800;
+    transform: scale(1.1)
+}
+
+.topContainer {
+    position: relative;
+}
+
+.containerOverlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.Text {
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 650;
+    font-style: italic;
+}
+
+.containerCaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    width: 80%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .fotaca {
+        mask-position: center;
+    }
+    .Text {
+        font-size: 2.5rem;
+    }
+    .containerCaption {
+        width: 90%;
+    }
+    .navButton {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Text {
+        font-size: 1.5rem;
+    }
+    .containerCaption {
+        width: 100%;
+        padding: 10px;
+    }
+    .navButton {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Text {
+        font-size: 1.2rem;
+    }
+    .containerCaption {
+        width: 100%;
+        padding: 5px;
+    }
+    .navButton {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+}
+
+
+.spacer {
+    margin: 3rem;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #000;
+    margin: 3rem auto;
+    align-self: center;
+    width: 80%; /* Ensure the divider is responsive */
+}
+
+.image {
+    max-height: 5rem;
+}
+
+.contactContainer {
+    font-family: Montserrat, sans-serif;
+    background-color: #E0E0E0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 75%;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.contact, .visit, .feedback {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+
+.unrDesc {
+    color: #666;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.lGroup1 {
+    margin-bottom: 2rem;
+}
+
+.group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.desc {
+    color: #666;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.sSpace {
+    margin: 3rem;
+}
+
+/* Additional responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .unrDesc, .desc {
+        font-size: 1.5rem;
+    }
+    .group {
+        gap: 0rem;
+        flex-direction: column;
+    }
+    .contactContainer {
+        width: 75%;
+    }
+
+    .navButton{
+        transform: scale(1.3);
+    }
 }
