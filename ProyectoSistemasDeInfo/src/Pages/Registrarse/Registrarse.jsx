@@ -4,6 +4,11 @@ import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
 
 function Registrarse() {
+
+    const handleLoginClick = () => {
+        window.location.href = '/InicioDeSesion'
+    }
+
     return (
         <>
             <div className={styles.body}>
@@ -38,7 +43,7 @@ function Registrarse() {
                             <div className={`${styles['toggle-panel']} ${styles['toggle-right']}`}>
                                 <img src={loggoToggle} alt="Logo Toggle" />
                                 <span> ¿Ya tienes cuenta?</span>
-                                <button>Iniciar Sesion</button>
+                                <button onClick={handleLoginClick}>Iniciar Sesion</button>
                             </div>
                         </div>
                     </div>
