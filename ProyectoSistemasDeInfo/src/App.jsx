@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/Landing' element={<Landing />} />
+          <Route path='/' element={<Landing />} />
           <Route path='/InicioDeSesion' element={<InicioDeSesion/>} /> 
           <Route path='/Registrarse' element={<Registrarse/>} />
           <Route path='/IniciarAdmin' element={<IniciarAdmin/>} />
