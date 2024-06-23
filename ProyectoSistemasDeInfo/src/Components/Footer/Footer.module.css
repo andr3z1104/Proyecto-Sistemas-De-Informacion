@@ -24,7 +24,7 @@
     margin: 15px;
     display: block;
     text-align: center;
-    width: 180px;
+    width: 16rem;
     text-decoration: none;
     color: white;
     background:rgb(255, 255, 255, 0.2);
@@ -33,7 +33,14 @@
     font-size: 22px;
     font-family: sans-serif;
     font-weight: 600;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
   }
+
+.navItem:hover{
+    background:rgb(255, 255, 255, 0);
+    transform: scale(1.1)
+}
 
   @media screen and (max-width: 600px) {
     .footer{
