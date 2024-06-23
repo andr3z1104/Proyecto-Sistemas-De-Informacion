@@ -8,7 +8,7 @@ import Footer from './Components/Footer/Footer';
 import appFirebase from '../src/credenciales';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 const auth = getAuth(appFirebase)
-
+import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path='/Landing' element={<Landing />} />
           <Route path='/InicioDeSesion' element={<InicioDeSesion/>} /> 
           <Route path='/Registrarse' element={<Registrarse/>} />
+          <Route path='/IniciarAdmin' element={<IniciarAdmin/>} />
           <Route path='/Contacto' element={<Contacto />} />
         </Routes>
         <Footer />
