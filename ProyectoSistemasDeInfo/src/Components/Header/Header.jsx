@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 function Header(){
   return (
     <header className={styles.header}>
-      <Link to="/Landing" className={styles.logoContainer}>
+      <Link to="/" className={styles.logoContainer}>
         <img src={logo} alt="Logo" className={styles.logo} />
       </Link>
       <nav className={styles.nav}>
         <div className={styles.parte1}>
-          <Link to="/Landing" className={styles.navItem}>Inicio</Link>
+          <Link to="/" className={styles.navItem}>Inicio</Link>
           <Link to="/Menu" className={styles.navItem}>Menú</Link>
           <Link to="/Nosotros" href="#nosotros" className={styles.navItem}>Nosotros</Link>
         </div>
