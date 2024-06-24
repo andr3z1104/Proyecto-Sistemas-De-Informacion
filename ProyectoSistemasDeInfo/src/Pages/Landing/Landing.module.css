@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-img {
+
+
+.topContainer img {
     height: 200px;
 }
 
 @media (min-width: 768px) {
-    img {
+    .topContainer img {
         height: unset;
     }
 }
@@ -23,7 +25,7 @@ img {
     
     font-size: 20px;
     font-family: Montserrat,sans-serif;
-    font-weight: 600;
+    font-weight: 650;
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s ease;
@@ -34,7 +36,6 @@ img {
     .navButton {
         width: unset;
         padding: 3px 20px;
-        font-weight: 25px;
     }
 }
 
@@ -91,70 +92,86 @@ img {
 }
 
 
-
+/*
 
 .secondContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 10px;
 }
+
+.secondConatiner {
+    object-fit: cover;
+}
+
+
 
 @media (min-width: 768px) {
     .secondContainer {
         flex-direction: row;
-        column-gap: 1rem;
-       
+        column-gap: 0.5rem;
     }
+
+    .rightSide, .leftSide {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    
+
+  
 }
 
-
-
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .leftSide p {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 7px;
 }
-.leftSide img {
-    width: 100%;
-    height: 17rem;
-}
 
-@media (min-width: 768px) {
-    .leftSide img, .rightSide img {
-        width: auto;
-    }
-    
-}
+
 
 .divider {
-    margin: 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 1.2rem auto;
     border: 1.5px solid black;
-    width: 100%;
+    width: 95%;
 }
 
 @media (min-width: 768px) {
     .divider {
-        width: 2px;
-        height: 20rem;
+        width: 1.5px;
+        height: auto
     }
 }
 
 .rightSide .h2Right {
-    font-size: 35px;
-    line-height: 35px;
+    font-size: 30px;
+    line-height: 30px;
     font-weight: bold;
     text-align: center;
+    align-items: center;
     margin: 0 4px 2px 4px;
 }
 
-@media (min-width: 1024px) {
-    .rightSide {
-        margin: 30px 0;
-    }
-    
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
 
 .rightSide .p {
     font-size: 15px;
@@ -163,15 +180,29 @@ img {
 }
 
 .imageContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+.imageContainer img {
     border-radius: 10px;
-    overflow: hidden;
-    display: inline-block;
 }
 
-@media (min-width: 768px) {
+
+
+/* @media (min-width: 1204px) {
     .rightSide img {
-        max-width: 100%;
+       max-width: 100%;
     }
 }
 
+@media (min-width: 1024px) {
+    .rightSide img {
+        max-width: 90%;
+    }
+}
+ */
+ 
 
