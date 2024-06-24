@@ -4,7 +4,7 @@ import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
 
 import appFirebase from '../../credenciales';
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider} from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -22,6 +22,28 @@ function InicioDeSesion() {
     const handleClick = () => {
         window.location.href = '/IniciarAdmin';
     }
+
+    const signInWithGoogle = async (event) => {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+        try {
+            const provider = new GoogleAuthProvider();
+            await signInWithPopup(auth, provider);
+            navigate("/");
+        } catch (error) {
+            alert('Ha ocurrido un error');
+        }
+        };
+    
+        const signInWithFacebook = async (event) => {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+            try {
+                const provider = new FacebookAuthProvider();
+                await signInWithPopup(auth, provider);
+                navigate("/");
+            } catch (error) {
+                alert('Ha ocurrido un error');
+            }
+            };
 
     const handleRegisterClick = () => {
         window.location.href = '/Registrarse'
@@ -60,11 +82,11 @@ function InicioDeSesion() {
                         <h1>Iniciar Sesion</h1>
 
                             <div className={styles.socialMedia}>
-                                <a href='#'> 
-                                <img src={googleLogo}></img>
+                                <a onClick={signInWithGoogle}> 
+                                <img src={googleLogo} ></img>
                             </a>
-                            <a href='#'>
-                                <img src={facebookLogo}></img>
+                            <a onClick={signInWithFacebook}>
+                                <img src={facebookLogo} ></img>
                             </a>
                             </div>
                             <input  type= 'email' placeholder='Correo' name='email' value = {email} onChange={handleInputChange} required></input>
