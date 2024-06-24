@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Cada tarjetita */
-
 .tarjetaProductos {
-    
     border-radius: 35px;
     border-top: none;
     
@@ -19,7 +17,7 @@
     display: flex;
     flex-direction: column;
 
-    box-shadow: 0px 0px 8px rgba(77, 42, 7, 0.531);
+
 }
 
 /* Ver Menu */
@@ -29,13 +27,14 @@
     text-decoration: none;
     color: white;
     background-color: #FB8500;
-    padding: 5px 20px;
-    border-radius: 10px;
+    padding: 5px 35px;
+    border-radius: 15px;
     font-size: 14px;
     font-family: Montserrat,sans-serif;
     font-weight: 600;
     cursor: pointer;
     margin-top: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .navButton:hover {
@@ -50,6 +49,8 @@
     margin-bottom: 4px;
     border-radius: 20px;
     object-fit: cover;
+    border: 1.5px solid black;
+
 }
 
 /* Estilo para el contenedor del slider */
@@ -83,14 +84,15 @@
 
 .Header {
     padding: 10px;
-    letter-spacing: 0.05rem;
-    word-spacing: 0.25;
-    font-size: 3.5rem;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    font-size: 4rem;
     font-weight: 600;
     font-family: Montserrat, sans-serif;
     text-align: center;
     color: black;
     font-style: italic;
+    
 }
 
 /* Estilo para las flechas de navegación */
@@ -99,9 +101,9 @@
     align-items: center;
     justify-content: center;
     background-color: #FB8500;
-    height: 50px;
-    width: 30px;
-    border-radius: 5px;
+    height: 100px;
+    width: 45px;
+    border-radius: 15px;
     z-index: 1;
 }
 .arrow:hover{
@@ -109,6 +111,70 @@
 }
 
 .arrow::before {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
 }
+
+/*
+@media (max-width: 1024px) { 
+    .tarjetaProductos {
+        width: 240px !important;
+    }
+    .img {
+        height: 210px;
+        width: 200px;
+    }
+    .TextName {
+        font-size: 16px;
+    }
+    .TextPrice {
+        font-size: 14px;
+    }
+    .navButton {
+        font-size: 12px;
+        padding: 4px 16px;
+    }
+    .Header {
+        font-size: 2.5rem;
+    }
+    .arrow {
+        height: 40px;
+        width: 25px;
+    }
+    .arrow::before {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .tarjetaProductos {
+        width: 200px !important;
+    }
+    .img {
+        height: 170px;
+        width: 160px;
+    }
+    .TextName {
+        font-size: 14px;
+    }
+    .TextPrice {
+        font-size: 12px;
+    }
+    .navButton {
+        font-size: 12px;
+        padding: 5px 23px;
+    }
+    .Header {
+        padding: 6px;
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        word-spacing: 0;
+    }
+    .arrow {
+        height: 30px;
+        width: 20px;
+    }
+    .arrow::before {
+        font-size: 16px;
+    }
+}*/
