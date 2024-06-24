@@ -3,7 +3,7 @@ import googleLogo from '../../assets/google-svgrepo-com.svg'
 import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
 
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
