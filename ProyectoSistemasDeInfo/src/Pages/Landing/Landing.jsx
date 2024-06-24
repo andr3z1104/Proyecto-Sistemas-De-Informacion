@@ -1,7 +1,7 @@
 import styles from './Landing.module.css'
 import ImageCarousel from '../../Components/ImageCarousel/ImageCarousel';
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
-import image1 from '../../assets/Imagen Principal.png';
+import image1 from '../../assets/ImagenPrincipal.png';
 import image2 from '../../assets/panycafe.png';
 import image3 from '../../assets/pan.png';
 

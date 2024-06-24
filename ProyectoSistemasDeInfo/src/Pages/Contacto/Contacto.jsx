@@ -1,5 +1,5 @@
 import styles from './Contacto.module.css';
-import image1 from '../../assets/Imagen Principal.png';
+import image1 from '../../assets/ImagenPrincipal.png';
 import { useNavigate } from 'react-router-dom';
 import whatsapp from '../../assets/WhatsappLogo.png'
 import instagram from '../../assets/InstagramLogo.png'
@@ -18,8 +18,7 @@ function Contacto() {
                 <div><img className={styles.fotaca} src={image1} alt="imagen1" /></div>
                 <div className={styles.containerOverlay}></div>
                 <div className={styles.containerCaption}>
-                    <h3 className={styles.Text}>Estamos a tu alcance, no te quedes</h3>
-                    <h3 className={styles.Text}>sin probar un pedacito de Granier</h3>
+                    <h3 className={styles.Text}>No te quedes sin probar un pedacito de Granier</h3>
                 </div>
             </div>
 
