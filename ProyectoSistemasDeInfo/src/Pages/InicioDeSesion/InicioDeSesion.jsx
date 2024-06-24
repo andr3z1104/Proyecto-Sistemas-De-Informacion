@@ -15,6 +15,11 @@ function InicioDeSesion() {
         window.location.href = '/Registrarse'
     }
 
+    const onClick = (e) => {
+        e.preventDefault();
+        alert("PÁGINA EN CONSTRUCCIÓN...");
+      };
+
 
     return (
                   <>
@@ -35,7 +40,7 @@ function InicioDeSesion() {
                             </div>
                             <input placeholder='Correo'></input>
                             <input placeholder='Contraseña'></input>
-                            <span>Al iniciar sesion, aceptas las Condiciones de uso de Granier</span>
+                            <span>Al iniciar sesion, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
                             <button>Iniciar Sesion</button>
                             <a onClick={handleClick}>¿Eres administrador? Click aquí</a>
                            

@@ -9,6 +9,11 @@ function Registrarse() {
         window.location.href = '/InicioDeSesion'
     }
 
+    const onClick = (e) => {
+        e.preventDefault();
+        alert("PÁGINA EN CONSTRUCCIÓN...");
+      };
+
     return (
         <>
             <div className={styles.body}>
@@ -33,7 +38,7 @@ function Registrarse() {
                             <input placeholder='Telefono'></input>
                             <input placeholder='Contraseña'></input>
                             <input placeholder='Verificar Contraseña'></input>
-                            <span>Al Registrarse, aceptas las Condiciones de uso de Granier</span>
+                            <span>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
                             <button>Registrarse</button>
                            
                         </form>
