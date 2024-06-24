@@ -41,6 +41,13 @@ function Registrarse() {
 
         e.preventDefault();
         
+        const emailParts = email.split('@');
+            const domain = emailParts[1];
+            if (domain !== 'correo.unimet.edu.ve' || domain !== 'unimet.edu.ve') {
+                alert('Correo inválido. Dominio incorrecto.')
+        }
+        else{
+            
         const usersRef = collection(db, 'users');
         const Email = query(usersRef, where('email', '==', email));
         const Phone = query(usersRef, where('phone', '==', phone));
@@ -69,7 +76,7 @@ function Registrarse() {
             } catch (error) {
                 alert('ERROR. Asegúrese de que ingresó los datos correctamente');
             }
-        }};
+        }}};
 
     const handleLoginClick = () => {
         window.location.href = '/InicioDeSesion'
