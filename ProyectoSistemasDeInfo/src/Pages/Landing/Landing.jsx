@@ -17,7 +17,6 @@ function Landing(){
       };
     return(
         <div className='landingPage'>
-
             <div className={styles.topContainer}>
                 <div><img className="d-block w-100" src={image1} alt="imagen1" /> </div>
                 <div className={styles.containerOverlay}></div>
@@ -38,8 +37,10 @@ function Landing(){
                 </div>
                 <div className={styles.divider}></div>
                 <div className={styles.rightSide}>
-                    <p className={styles.h2Right}>Maneras de sobrevivir <i>Semana 6</i></p>
-                    <p className={styles.p}>*Aplica para semana de parciales*</p>
+                    <div className={styles.rightSide_UpperText}>
+                        <p className={styles.h2Right}>Maneras de sobrevivir <i>Semana 6</i></p>
+                        <p className={styles.p}>*Aplica para semana de parciales*</p>
+                    </div>
                     <div className = {styles.imageContainer}>
                         <img src={image3} alt="" className={styles.imageRight}/>
                     </div>
@@ -54,7 +55,6 @@ function Landing(){
             <div>
                 <ProductCarousel/>
             </div>
-            
         </div>
         
     );

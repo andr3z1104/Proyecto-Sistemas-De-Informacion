@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Cada tarjetita */
+/*
 .tarjetaProductos {
     border-radius: 35px;
     border-top: none;
@@ -11,11 +12,10 @@
     margin-right: 0px;
     padding: 16px 30px 16px;
 
-    width: 230px !important;
+    width: 300px!important;
     text-align: center;
     background-color: #FFCA99;
-    display: flex;
-    flex-direction: column;
+    
 
 
 }
@@ -27,11 +27,11 @@
     text-decoration: none;
     color: white;
     background-color: #FB8500;
-    padding: 5px 35px;
+    padding: 5px 70px;
     border-radius: 15px;
-    font-size: 14px;
+    font-size: 18px;
     font-family: Montserrat,sans-serif;
-    font-weight: 600;
+    font-weight: 650;
     cursor: pointer;
     margin-top: 5px;
     transition: background-color 0.3s ease;
@@ -41,7 +41,14 @@
     background-color: #fb5800;
 }
 
+@media (min-width: 768px) {
+    .navButton {
+        padding: 3.5px 35px;
+    }
+}
+
 /* Imagen del producto */
+
 .img {
     height: 180px;
     width: 170px;
@@ -52,20 +59,14 @@
     border: 1.5px solid black;
 
 }
-
-/* Estilo para el contenedor del slider */
-.Slider {
-    width: 100%;
-    box-shadow: inset 2px 2px 4px rgba(77, 42, 7, 0.531);
-}
-
+/*
 .centerContent {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
-/* Estilo para el texto */
+/* Estilo para el texto *//*
 .TextName {
     font-size: 18px;
     font-weight: 600;
@@ -77,25 +78,36 @@
 
 .TextPrice {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 650;
     margin: 0;
     font-family: Montserrat, sans-serif;
-}
+}*/
 
 .Header {
     padding: 10px;
     letter-spacing: 0.5px;
     word-spacing: 1px;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 600;
     font-family: Montserrat, sans-serif;
     text-align: center;
     color: black;
     font-style: italic;
-    
 }
 
-/* Estilo para las flechas de navegación */
+@media (min-width: 768px) {
+    .Header {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .Header {
+        font-size: 4.2rem;
+    }
+}
+
+/* Estilo para las flechas de navegación *//*
 .arrow {
     display: flex !important;
     align-items: center;
@@ -114,6 +126,8 @@
     font-size: 25px;
     color: white;
 }
+
+
 
 /*
 @media (max-width: 1024px) { 
