@@ -7,7 +7,13 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
 
+
+
+
+
 function App() {
+
+
   return (
     <Router>
       <AppRoutes />
