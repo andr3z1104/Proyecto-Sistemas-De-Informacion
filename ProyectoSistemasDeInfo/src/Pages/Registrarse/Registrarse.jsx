@@ -3,15 +3,14 @@ import googleLogo from '../../assets/google-svgrepo-com.svg'
 import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
 
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import appFirebase from '../../credenciales';
 
 import { collection, addDoc, getFirestore } from "firebase/firestore";
-import { useEffect } from "react";
-import { getDocs } from "firebase/firestore";
+import { getDocs, query, where} from "firebase/firestore";
 
 const db = getFirestore(appFirebase);
 const auth = getAuth(appFirebase); // Autenticación de la app
@@ -42,22 +41,35 @@ function Registrarse() {
 
         e.preventDefault();
         
-        try {
-            const newUser = await createUserWithEmailAndPassword(auth,email,password);
-            await addDoc(collection(db, "users"), {
-            uid: newUser.user.uid,
-            name: name,
-            lastName: lastName,
-            phone: phone,
-            email: email,
-            });
-            navigate("/");
-            alert('¡Registro exitoso! Bienvenido/a')
+        const usersRef = collection(db, 'users');
+        const Email = query(usersRef, where('email', '==', email));
+        const Phone = query(usersRef, where('phone', '==', phone));
 
-        } catch (error) {
-            alert('ERROR. Asegúrese de que ingresó los datos correctamente');
-        }
-        };
+        const emailExist = await getDocs(Email);
+        const phoneExist = await getDocs(Phone);
+
+        // Verificar si el usuario ya existe o no
+        if (!emailExist.empty || !phoneExist.empty) {
+            alert('El usuario ya está registrado. Verifique sus datos o inicie sesión');
+
+        } else {
+            try {
+                const newUser = await createUserWithEmailAndPassword(auth,email,password);
+                await addDoc(collection(db, "users"), {
+                uid: newUser.user.uid,
+                name: name,
+                lastName: lastName,
+                phone: phone,
+                email: email,
+                password: password,
+                });
+                navigate("/");
+                alert('¡Registro exitoso! Bienvenido/a')
+
+            } catch (error) {
+                alert('ERROR. Asegúrese de que ingresó los datos correctamente');
+            }
+        }};
 
     const handleLoginClick = () => {
         window.location.href = '/InicioDeSesion'
