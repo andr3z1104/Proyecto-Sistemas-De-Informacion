@@ -109,7 +109,7 @@ function Registrarse() {
                             <input name = 'phone' value={phone} placeholder='Telefono' onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Verificar Contraseña' name= 'vcontraseña' value = {verifypassword} onChange={handleInputChange} required></input>
-                            <span>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+                            <span className={styles.condiciones}>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
                             
                             <button onClick={handleRegisterButton}>Registrarse</button>
                         
