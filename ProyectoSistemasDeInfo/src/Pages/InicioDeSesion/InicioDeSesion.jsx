@@ -57,7 +57,7 @@ function InicioDeSesion() {
                     <div className={`${styles['form-container']} ${styles['sign-in']}`}>
 
                         <form>
-                            <h1>Iniciar Sesion</h1>
+                        <h1>Iniciar Sesion</h1>
 
                             <div className={styles.socialMedia}>
                                 <a href='#'> 
