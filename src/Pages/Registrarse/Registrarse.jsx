@@ -97,12 +97,10 @@ function Registrarse() {
                             <h1>Crear Cuenta</h1>
 
                             <div className={styles.socialMedia}>
-                                <a href='#'> 
+                                
                                 <img src={googleLogo}></img>
-                                </a>
-                                <a href='#'>
                                 <img src={facebookLogo}></img>
-                                </a>
+                                
                             </div>
 
                             <input type="text" name = 'name' value= {name} placeholder='Nombre' onChange={handleInputChange} required></input>
