@@ -79,20 +79,22 @@ function ProductCarousel() {
     return (
         <div className={styles.Slider}>
             <p className={styles.Header}>Calidad a tu alcance</p>
-            <Slider {...config}>
-                {productos.map((producto) => (
-                    <div key={producto.id} className={styles.tarjetaProductos}>
-                        <div className={styles.centerContent}>
-                            <img src={producto.image} alt={producto.name} className={styles.img} />
+            <div className={styles.contenedorTarjeta}>
+                <Slider {...config}>
+                    {productos.map((producto) => (
+                        <div key={producto.id} className={styles.tarjetaProductos}>
+                            <div className={styles.centerContent}>
+                                <img src={producto.image} alt={producto.name} className={styles.img} />
+                            </div>
+                            <div className={styles.textContainer}>
+                                <p className={styles.TextName}>{producto.name}</p>
+                                <p className={styles.TextPrice}>{producto.price}</p>
+                            </div>
+                            <button className={styles.navButton}>Menú</button>
                         </div>
-                        <div className={styles.textContainer}>
-                            <p className={styles.TextName}>{producto.name}</p>
-                            <p className={styles.TextPrice}>{producto.price}</p>
-                        </div>
-                        <button className={styles.navButton}>Menú</button>
-                    </div>
-                ))}
-            </Slider>
+                    ))}
+                </Slider>
+            </div>
         </div>
     );
 }
