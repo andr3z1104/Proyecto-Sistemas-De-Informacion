@@ -3,6 +3,12 @@ import logo from '../../assets/LogoHeader.png';
 import { Link } from 'react-router-dom';
 
 function Header(){
+
+  const onClick = (e) => {
+    e.preventDefault();
+    alert("PÁGINA EN CONSTRUCCIÓN...");
+  };
+
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logoContainer}>
@@ -11,8 +17,8 @@ function Header(){
       <nav className={styles.nav}>
         <div className={styles.parte1}>
           <Link to="/" className={styles.navItem}>Inicio</Link>
-          <Link to="/Menu" className={styles.navItem}>Menú</Link>
-          <Link to="/Nosotros" href="#nosotros" className={styles.navItem}>Nosotros</Link>
+          <a href="/Menu" className={styles.navItem} onClick={onClick}>Menú</a>
+          <a href="/Nosotros" className={styles.navItem} onClick={onClick}>Nosotros</a>
         </div>
         <div className={styles.parte2}>
           <Link to="/InicioDeSesion" href="#acceder" className={styles.button}>Acceder</Link>

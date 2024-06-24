@@ -8,6 +8,9 @@ import image2 from '../../assets/Capuccino.png';
 import image3 from '../../assets/CaramelLatte.png';
 import image4 from '../../assets/Mocca.png';
 import image5 from '../../assets/Macchiato.png';
+import image6 from '../../assets/FrappeChocolate.png';
+import image7 from '../../assets/DesayunoAmericano.png';
+import image8 from '../../assets/OmeleteDeVegetales.png';
 
 
 
@@ -36,11 +39,14 @@ function SamplePrevArrow(props) {
 
 function ProductCarousel() {
     const productos = [
-        { id: 1, name: 'AMERICANO', price: '$3.5', image: image1 },
-        { id: 2, name: 'CAPUCCINO', price: '$3.5', image: image2 },
-        { id: 3, name: 'CARAMEL LATTE', price: '$5.99', image: image3 },
-        { id: 4, name: 'MOCCA', price: '$3.5', image: image4 },
-        { id: 5, name: 'EXPRESSO', price: '$4.99', image: image5 },
+        { id: 1, name: 'CAFE AMERICANO', price: '$3.5', image: image1 },
+        { id: 2, name: 'CAFE CAPUCCINO', price: '$3.5', image: image2 },
+        { id: 3, name: 'CAFE CARAMEL LATTE', price: '$5.99', image: image3 },
+        { id: 4, name: 'CAFE MOCCA', price: '$3.5', image: image4 },
+        { id: 5, name: 'CAFE EXPRESSO', price: '$4.99', image: image5 },
+        { id: 6, name: 'FRAPPE CHOCOLATE', price: '$4.00', image: image6 },
+        { id: 7, name: 'DESAYUNO AMERICANO', price: '$8.00', image: image7 },
+        { id: 8, name: 'OMELET DE VEGETALES', price: '$7.00', image: image8 },
     ];
 
     const config = {

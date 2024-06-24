@@ -6,6 +6,12 @@ import instagram from '../../assets/InstagramLogo.png'
 
 function Contacto() {
     const navigate = useNavigate();
+
+    const onClick = (e) => {
+        e.preventDefault();
+        alert("PÁGINA EN CONSTRUCCIÓN...");
+    };
+
     return (
         <div className='Contacto'>
             <div className={styles.topContainer}>
@@ -14,7 +20,6 @@ function Contacto() {
                 <div className={styles.containerCaption}>
                     <h3 className={styles.Text}>Estamos a tu alcance, no te quedes</h3>
                     <h3 className={styles.Text}>sin probar un pedacito de Granier</h3>
-                    <button className={styles.navButton} onClick={() => navigate('/Nosotros')}>CONÓCENOS</button>
                 </div>
             </div>
 
@@ -42,7 +47,7 @@ function Contacto() {
                         <h2>DUDAS U OPINIONES</h2>
                         <p className={styles.unrDesc}>Nos importa saber cómo podemos mejorar tu experiencia Granier. Recuerda que somos el sabor que te acompaña en cada estudio.</p>
                         <div className={styles.sSpace}>
-                            <button className={styles.navButton} onClick={() => navigate('/Comentarios')}>COMENTARIOS</button>
+                            <button className={styles.navButton} onClick={onClick}>COMENTARIOS</button>
                         </div>
                     </div>
                 </div>
