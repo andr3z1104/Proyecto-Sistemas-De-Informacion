@@ -3,98 +3,42 @@ import googleLogo from '../../assets/google-svgrepo-com.svg'
 import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
 
-import appFirebase from '../../credenciales';
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider} from 'firebase/auth';
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-
-const auth = getAuth(appFirebase) // Autenticación de la app
-
 
 function InicioDeSesion() {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const navigate = useNavigate();
-
-
     const handleClick = () => {
+        // Redirect to IniciodeSesion page
         window.location.href = '/IniciarAdmin';
     }
-
-    const signInWithGoogle = async (event) => {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-        try {
-            const provider = new GoogleAuthProvider();
-            await signInWithPopup(auth, provider);
-            navigate("/");
-        } catch (error) {
-            alert('Ha ocurrido un error');
-        }
-        };
-    
-        const signInWithFacebook = async (event) => {
-            event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-            try {
-                const provider = new FacebookAuthProvider();
-                await signInWithPopup(auth, provider);
-                navigate("/");
-            } catch (error) {
-                alert('Ha ocurrido un error');
-            }
-            };
 
     const handleRegisterClick = () => {
         window.location.href = '/Registrarse'
     }
 
-    const onClick = (e) => {
-        e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        if (name === "email") setEmail(value);
-        if (name === "contraseña") setPassword(value);
-    };
-
-    const handleLoginButton = async (e) => {
-        e.preventDefault();
-        try{
-            await signInWithEmailAndPassword(auth,email,password);
-            navigate('/');
-            alert("Inicio de sesión exitoso");
-        } catch(error){
-            alert(error.message);
-
-        }
-    }
 
     return (
-                <>
+                  <>
             <div className={styles.body}>
                 <div className={styles.container}>
                     <div className={`${styles['form-container']} ${styles['sign-in']}`}>
 
                         <form>
-                        <h1>Iniciar Sesion</h1>
+                            <h1>Iniciar Sesion</h1>
 
                             <div className={styles.socialMedia}>
-                                <a onClick={signInWithGoogle}> 
-                                <img src={googleLogo} ></img>
+                             <a href='#'> 
+                                <img src={googleLogo}></img>
                             </a>
-                            <a onClick={signInWithFacebook}>
-                                <img src={facebookLogo} ></img>
+                            <a href='#'>
+                                <img src={facebookLogo}></img>
                             </a>
                             </div>
-                            <input  type= 'email' placeholder='Correo' name='email' value = {email} onChange={handleInputChange} required></input>
-                            <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
-                            <span>Al iniciar sesion, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
-                            <button onClick={handleLoginButton}>Iniciar Sesion</button>
+                            <input placeholder='Correo'></input>
+                            <input placeholder='Contraseña'></input>
+                            <span>Al iniciar sesion, aceptas las Condiciones de uso de Granier</span>
+                            <button>Iniciar Sesion</button>
                             <a onClick={handleClick}>¿Eres administrador? Click aquí</a>
-                        
+                           
                         </form>
                     </div>
                     <div className={styles['toggle-container']}>
@@ -109,6 +53,7 @@ function InicioDeSesion() {
                 </div>
             </div>
 
+       
 
         </>
     );
