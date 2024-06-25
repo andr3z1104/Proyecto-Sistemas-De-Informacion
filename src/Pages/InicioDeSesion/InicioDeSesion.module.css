@@ -147,7 +147,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 30px;
+    padding: 0 40px;
     text-align: center;
     top: 0;
     transform: translateX(0);
@@ -164,8 +164,31 @@
     right: 0;
 }
 
- /*  Vista de Telefono */
+.underline {
+    text-decoration: underline;
+}
+
+
+/* Iniciar Sesión */
+form h1 {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.9rem;
+}
+
+
+.input input:last-of-type {
+    margin-bottom: 15px;
+}
+
+
 @media (max-width: 1024px){
+    .input {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    
     .body {
         margin: 0;
         padding: 0;
@@ -187,23 +210,26 @@
         max-height: auto;
     }
     .container p {
-        font-size: smaller;
         letter-spacing: 0.3px;
         margin: 20px 0;
+        font-size: 1rem;
     }
     
     .container span {
         position: relative;
-        font-size: 1.3vh;
+        font-size: 1rem;
     }
     
+  
+
     .container a {
         color: #333;
-        font-size: 1.3vh;
         text-decoration: none;
         margin: 15px 0 10px;
         cursor: pointer;
         text-decoration: underline;
+        text-align: center;
+        font-size: 1rem;
     }
     
     .container button {
@@ -214,13 +240,11 @@
         padding: 1px 4px;
         border: 1px solid transparent;
         border-radius: 8px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        font-weight: 650;
         text-transform: uppercase;
         margin-top: 10px;
-        width: fit-content;
         cursor: pointer;
-        padding: auto;
+        padding: 2px 10px;
     }
 
     
@@ -231,7 +255,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 0 40px;
+        padding: 0 15px;
         height: 100%;
     }
     
@@ -246,6 +270,7 @@
         outline: none;
     }
     
+
     .form-container {
         position: absolute;
         top: 0;
@@ -257,7 +282,6 @@
         width: auto;
         border-radius: 0.5vh;
         height: 5vh;
-        margin: 0 2vh;
         background-color: #F27507;
     }
     
@@ -308,17 +332,7 @@
         height: 20vh;
     }
     
-    .toggle-panel span{
-        font-size: small;
-        font-weight: bold;
-    }
 
-    .toggle-panel button{
-        font-size: smaller;
-        padding: auto;
-        width: fit-content;
-    }
- 
     .toggle-right{
         right: 0;
     }

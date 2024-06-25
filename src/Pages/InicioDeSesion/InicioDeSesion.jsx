@@ -89,11 +89,15 @@ function InicioDeSesion() {
                                 <img src={facebookLogo} ></img>
                             </a>
                             </div>
-                            <input  type= 'email' placeholder='Correo' name='email' value = {email} onChange={handleInputChange} required></input>
-                            <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
-                            <span>Al iniciar sesion, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+                            <div className={styles.input}>
+                                <input  type= 'email' placeholder='Correo' name='email' value = {email} onChange={handleInputChange} required></input>
+                                <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
+       
+                                <span>Al iniciar sesion, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+
+                            </div>
                             <button onClick={handleLoginButton}>Iniciar Sesion</button>
-                            <a onClick={handleClick}>¿Eres administrador? Click aquí</a>
+                            <a onClick={handleClick}>¿Eres administrador? <span className={styles.underline}>Click aquí</span></a>
                         
                         </form>
                     </div>
