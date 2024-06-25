@@ -2,14 +2,23 @@
 
 /* Cada tarjetita */
 .tarjetaProductos {
-    border-radius: 35px;
-
-    margin: 0 20px 30px 0;
-    padding: 10px 12px;
     
+    border-radius: 35px;
+    border-top: none;
+    
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding: 16px 30px 16px;
+
+    width: 230px !important;
     text-align: center;
     background-color: #FFCA99;
-    
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0px 0px 8px rgba(77, 42, 7, 0.531);
 }
 
 @media (min-width: 768px) {
@@ -68,7 +77,7 @@
 
 /* Estilo para el texto */
 .TextName {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     margin: 0;
     padding: 5px;
