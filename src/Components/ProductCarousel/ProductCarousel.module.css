@@ -1,21 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Cada tarjetita */
-
-
-
 .tarjetaProductos {
     border-radius: 35px;
 
     margin: 0 20px 30px 0;
-    
-    
-    margin-top: 0;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    margin-right: 0px;
     padding: 10px 12px;
-
     
     text-align: center;
     background-color: #FFCA99;
@@ -73,7 +63,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     margin: 0 30px;
 }
 
@@ -139,8 +128,6 @@
 }
 
 
-
-/* 
 @media (max-width: 1024px) { 
     .tarjetaProductos {
         width: 240px !important;
@@ -202,4 +189,4 @@
     .arrow::before {
         font-size: 16px;
     }
-} */
+} 
