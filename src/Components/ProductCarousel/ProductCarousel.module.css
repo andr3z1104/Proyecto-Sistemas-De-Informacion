@@ -1,23 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Cada tarjetita */
-/*
+
+
+
 .tarjetaProductos {
     border-radius: 35px;
-    border-top: none;
+
+    margin: 0 20px 30px 0;
+    
     
     margin-top: 0;
     margin-bottom: 30px;
     margin-left: 20px;
     margin-right: 0px;
-    padding: 16px 30px 16px;
+    padding: 10px 12px;
 
-    width: 300px!important;
+    
     text-align: center;
     background-color: #FFCA99;
     
+}
 
-
+@media (min-width: 768px) {
+    .tarjetaProductos {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* Ver Menu */
@@ -59,14 +68,16 @@
     border: 1.5px solid black;
 
 }
-/*
+
 .centerContent {
     display: flex;
     justify-content: center;
     align-items: center;
-}*/
+    background-color: red;
+    margin: 0 30px;
+}
 
-/* Estilo para el texto *//*
+/* Estilo para el texto */
 .TextName {
     font-size: 18px;
     font-weight: 600;
@@ -81,7 +92,7 @@
     font-weight: 650;
     margin: 0;
     font-family: Montserrat, sans-serif;
-}*/
+}
 
 .Header {
     padding: 10px;
@@ -107,7 +118,7 @@
     }
 }
 
-/* Estilo para las flechas de navegación *//*
+/* Estilo para las flechas de navegación */
 .arrow {
     display: flex !important;
     align-items: center;
@@ -129,7 +140,7 @@
 
 
 
-/*
+/* 
 @media (max-width: 1024px) { 
     .tarjetaProductos {
         width: 240px !important;
@@ -191,4 +202,4 @@
     .arrow::before {
         font-size: 16px;
     }
-}*/
+} */
