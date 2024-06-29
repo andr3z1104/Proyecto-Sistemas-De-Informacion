@@ -1,4 +1,5 @@
-import styles from './Landing.module.css'
+import styles from "./Landing.module.css";
+
 import ImageCarousel from '../../Components/ImageCarousel/ImageCarousel';
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import image1 from '../../assets/ImagenPrincipal.png';

@@ -1,5 +1,7 @@
 
 import Carousel from 'react-bootstrap/Carousel';
+import global from "../../Global.module.css";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import styles from './ImageCarousel.module.css'
@@ -40,7 +42,7 @@ function ImageCarousel (){
             <h3 className={styles.Text}>Somos más que una tienda</h3>
             <h3 className={styles.Text}>Buscamos conectar contigo</h3>
             <h3 className={styles.Text}>Únete al equipo Granier</h3>
-            <button className={styles.navButton} onClick={() => navigate('/Contacto')}>CONTÁCTANOS</button>
+            <button className={`${global.boton} ${styles.navButton}`} onClick={() => navigate('/Contacto')}>CONTÁCTANOS</button>
         </div>
         <div className={styles.carouselOverlay}>
             
