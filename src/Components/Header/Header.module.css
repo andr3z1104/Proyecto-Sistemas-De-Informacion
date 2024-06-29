@@ -1,33 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); 
-
-/* Colores a Utilizar */
-/*
-Principal: FB8500
-Principal+Hover: d27000
-*/
-
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
+/* Por ahora no funciona
 .profilePic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-}
-
+} */
 
 .logo, .logoContainer {
   height: 5.5rem;
 }
 
 .nav {
-  background-color: #FB8500;
+  background-color: var(--colorPrincipal);
   width: 100%;
 }
 
@@ -42,22 +33,19 @@ Principal+Hover: d27000
 .nav a {
   text-decoration: none;
   padding: 5px;
-  color: white;
+  color: var(--blanco);
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--fuentePrincipal);
   width: 100%;
   padding: 0.5rem;
   transition: background-color 0.3s ease;
 }
 
-.parte2 {
-  background-color: #fa9b2f;
-}
 
 nav a:hover{
-  background-color: #d27000;
+  background-color: var(--colorPrincipal__hover);
 }
 
 
@@ -73,7 +61,6 @@ nav a:hover{
     display: flex;
     flex-direction: row;
   }
-
  
   .nav {
     background-color: unset;
@@ -85,31 +72,27 @@ nav a:hover{
     column-gap: 0.5rem;
   }
   .parte1 a {
-    color: black;
-    border-radius: 11px;
+    color: var(--negro);
+    border-radius: 7px;
+
   }
   .parte1 a:hover{
-    background-color: rgb(235, 232, 232);
-    
+    background-color: var(--gris);    
   }    
 
- 
-  .parte2 {
-    background-color: unset;
-  }
-
   .parte2 .button   {
-    text-decoration: none;
-    background-color: #FB8500 ;
-    color: white;
+    width: 100%;
+    padding: 3px 15px;
     font-size: 20px;
-    padding: 2px 15px;
-    border-radius: 10px;
-    font-family: Montserrat, sans-serif;
-    font-weight: 700;
     transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+    background-color: #FB8500;
   }
 
+  .parte2 .button:hover{
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1)
+}
 }
 
 @media (min-width: 1140px) {
