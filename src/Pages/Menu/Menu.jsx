@@ -2,6 +2,8 @@ import styles from './Menu.module.css'
 import image1 from '../../assets/Fondo-Menu.png';
 import global from '../../Global.module.css'
 
+import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
+
 import { useState } from 'react';
 import { goOffline } from 'firebase/database';
 
@@ -37,6 +39,8 @@ function Menu(){
         <div className={styles.titleContainer}>
             <h2> PANES </h2>
         </div>
+
+        <CaruselMenu />
 
 
     </>
