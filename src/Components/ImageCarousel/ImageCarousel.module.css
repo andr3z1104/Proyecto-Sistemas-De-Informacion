@@ -1,39 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-
 .navButton {
-    border: none;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: #FB8500;
-    border-radius: 10px;
-    width: 100%;
-    padding: 3px 0;
-    
-    font-size: 20px;
-    font-family: Montserrat,sans-serif;
-    font-weight: 650;
-    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 16px;
     margin-top: 20px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
+    width: 100%;
+    background-color: #FB8500;
+
 }
 
 @media (min-width: 768px) {
     .navButton {
         width: unset;
-        padding: 3px 20px;
+        font-size: 21px;
     }
     
 }
 
 .navButton:hover{
-    background-color: #fb5800;
+    background-color: var(--colorPrincipal__hover);
     transform: scale(1.1)
-}
+ }
 
 .carouselContainer {
     position: relative;
@@ -94,7 +81,7 @@
     text-align: center;
     font-size: 1.3rem;
     margin: 0.5rem 0;
-    font-family: Montserrat,sans-serif;
+    font-family: var(--fuentePrincipal);
     font-weight: bold;
     line-height: 10px;
 }
@@ -118,32 +105,4 @@
     }
 }
 
-@media (max-width: 1024px) { /* REVISAR!!! Tablet */
-    .tarjetaProductos {
-        width: 240px !important;
-    }
-    .img {
-        height: 210px;
-        width: 200px;
-    }
-    .TextName {
-        font-size: 16px;
-    }
-    .TextPrice {
-        font-size: 14px;
-    }
-    .navButton {
-        font-size: 12px;
-        padding: 4px 16px;
-    }
-    .Header {
-        font-size: 2.5rem;
-    }
-    .arrow {
-        height: 40px;
-        width: 25px;
-    }
-    .arrow::before {
-        font-size: 18px;
-    }
-}
+   

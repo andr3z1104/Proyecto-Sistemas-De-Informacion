@@ -20,7 +20,7 @@
     color: white;
     background-color: #FB8500;
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     padding: 3px 0;
 
     font-size: 20px;
@@ -40,7 +40,7 @@
 }
 
 .navButton:hover{
-    background-color: #fb5800;
+    background-color: #f76e24;
     transform: scale(1.1)
 }
 

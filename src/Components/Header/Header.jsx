@@ -1,6 +1,9 @@
 import styles from './Header.module.css';
 import logo from '../../assets/LogoHeader.png';
 import { Link } from 'react-router-dom';
+import global from "../../Global.module.css";
+
+
 
 function Header({ showLoginButton }) {
   const onClick = (e) => {
@@ -10,7 +13,7 @@ function Header({ showLoginButton }) {
 
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.logoContainer}>
+      <Link to="/" className={styles.logoContainer }>
         <img src={logo} alt="Logo" className={styles.logo} />
       </Link>
       <nav className={styles.nav}>
@@ -21,7 +24,7 @@ function Header({ showLoginButton }) {
         </div>
         <div className={styles.parte2}>
           {showLoginButton && (
-            <Link to="/InicioDeSesion" href="#acceder" className={styles.button}>Acceder</Link>
+            <Link to="/InicioDeSesion" href="#acceder" className= {`${styles.button} ${global.boton}`}>Acceder</Link>
           )}
         </div>
       </nav>
