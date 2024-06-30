@@ -1,7 +1,9 @@
 import styles from './Menu.module.css'
 import image1 from '../../assets/Fondo-Menu.png';
+import global from '../../Global.module.css'
 
 import { useState } from 'react';
+import { goOffline } from 'firebase/database';
 
 
 function Menu(){
@@ -30,6 +32,10 @@ function Menu(){
                 <option value="Option 2">Option 2</option>
                 <option value="Option 3">Option 3</option>
             </select>
+        </div>
+
+        <div className={styles.titleContainer}>
+            <h2> PANES </h2>
         </div>
 
 
