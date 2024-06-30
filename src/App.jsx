@@ -7,6 +7,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
 import Menu from './Pages/Menu/Menu'
+import Carrito from './Pages/Carrito/Carrito';
 
 
 
@@ -36,6 +37,7 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
+        <Route path='/Carrito' element={<Carrito />} />
       </Routes>
       <Footer />
     </>
