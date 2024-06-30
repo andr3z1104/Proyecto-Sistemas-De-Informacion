@@ -3,13 +3,12 @@ import Landing from './Pages/Landing/Landing';
 import InicioDeSesion from './Pages/InicioDeSesion/InicioDeSesion';
 import Registrarse from './Pages/Registrarse/Registrarse';
 import Contacto from './Pages/Contacto/Contacto';
+import Nosotros from './Pages/Nosotros/Nosotros';
+import MiPerfil from './Pages/MiPerfil/MiPerfil';
+
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
-
-
-
-
 
 function App() {
 
@@ -35,6 +34,9 @@ function AppRoutes() {
         <Route path='/Registrarse' element={<Registrarse />} />
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Contacto' element={<Contacto />} />
+        <Route path='/Nosotros' element={<Nosotros />} />
+        <Route path='/MiPerfil' element={<MiPerfil />} />
+        
       </Routes>
       <Footer />
     </>

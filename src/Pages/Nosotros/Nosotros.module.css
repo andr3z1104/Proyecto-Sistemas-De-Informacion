@@ -1,0 +1,139 @@
+.Nosotros {
+    display: flex;
+    flex-direction: column;
+}
+
+.fbackground {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.textOn {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 25%;
+}
+
+.bakeryphoto {
+    width: 120rem;
+    height: 74rem;
+}
+
+.sbackground {
+    display: flex;
+    flex-direction: row;
+    background: #1C1E1F;
+    height: 710px;
+}
+
+.handsphoto {
+    width: 40.4375rem;
+    height: 38.125rem;
+    align-self: center;
+    border-radius: 1.25rem;
+    border: 1px solid #FFF;
+    margin-right: 5%;
+}
+
+.littlebox {
+    display: flex;
+    flex-direction: column;
+}
+
+.title2 {
+    color: #A38F6C;
+    margin-top: 5%;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 5.3125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+}
+
+.title2 .sp {
+    color: #FFF;
+
+}
+
+.textbox {
+
+    display: flex;
+    width: 74.1875rem;
+    padding: 3%;
+    justify-content: center;
+
+    color: #FFF;
+    text-align: justify;
+    font-family: Montserrat;
+    font-size: 2.575rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.125rem;
+}
+
+.tbackground {
+    display: flex;
+    flex-direction: row;
+    background-color: #AD986E;
+    height: 500px;
+}
+
+.misionC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.visionC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.headerstyle {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+    margin-bottom: 5%;
+}
+
+.textfield {
+    color: #FFF;
+    text-align: justify;
+    font-family: Montserrat;
+    font-size: 2.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem;
+}
+
+hr {
+    position: absolute;
+    left: 5%;
+    right: 1%;
+    width: 5px;
+    height: 38%;
+    margin: 10px auto;
+    border: 3px solid white;
+}
