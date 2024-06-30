@@ -23,20 +23,37 @@
 }
 
 .imagen {
-    max-width: 11.5rem;
+    max-width: 30vh;
+    height: auto;
     border-radius: 20px;
     object-position: center;
     object-fit:cover;
 }
 
+
+@media (max-width: 800px){
+    .contenedor{
+        height: 55vh;
+        overflow: scroll;
+    }
+
+    .imagen{
+        max-width: 18vh;
+        height: auto;
+    }
+
+}
+
+
 /* Contenido del producto */
 .descripcion {
-    margin-top: 6px;
-    padding-bottom: 1rem;
+    margin: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .descripcionNombre,
@@ -115,13 +132,3 @@
         font-size: 16px;
     }
 } 
-
-.slick-slide {
-    height: auto; 
-  }
-  .slick-track {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-  }

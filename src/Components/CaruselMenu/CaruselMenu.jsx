@@ -33,12 +33,13 @@ function SamplePrevArrow(props) {
     );
 }
 
-function caruselMenu({titulo}) {
+function caruselMenu(props) {
+
+    const { titulo, onAdd} = props;
+
 
     var settings = {
-        adaptiveHeight: false,
-        variableWidth: false,
-        centerPadding: 0,
+        adaptiveHeight: true,
         dots: false,
         infinite: true,
         speed: 500,
@@ -46,7 +47,6 @@ function caruselMenu({titulo}) {
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
-        slidesMargin: 10,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
         responsive: [
@@ -80,19 +80,19 @@ function caruselMenu({titulo}) {
     return (
         
         <div className={styles.contenedorCarrusel}>
-            <p className={styles.tituloCarrusel}>{titulo}</p>
+            <p className={styles.tituloCarrusel}>{props.titulo}</p>
             <div className={styles.tarjetaCarrusel}>
                 <Slider {...settings}>
-                    {dataProducts.map( (d) => (
+                {dataProducts.filter((d) => d.categoría === titulo).map((d) => (
                         <div className={styles.contenedor}>
-                            
+
                             <div className={styles.contenedorImagen}>
                                 <img className={styles.imagen} src={d.img} alt={d.nombre} />
                             </div>
                             <div className={styles.descripcion}>
                                 <p className={styles.descripcionNombre}>{d.nombre} </p>
-                                <p className={styles.descripcionPrecio}>{d.precio} </p>
-                                <button className={`${styles.descripcionBoton} ${global.boton}`}>Añadir Carrito</button>
+                                <p className={styles.descripcionPrecio}>{d.precio} $</p>
+                                <button className={`${styles.descripcionBoton} ${global.boton}`} onClick={onAdd} >Añadir Carrito</button>
                                 
                             </div>
                             
@@ -103,5 +103,6 @@ function caruselMenu({titulo}) {
         </div>
     );
 }
+
 
 export default caruselMenu;

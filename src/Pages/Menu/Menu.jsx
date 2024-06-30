@@ -3,6 +3,7 @@ import image1 from '../../assets/fondoMenu.jpg';
 import global from '../../Global.module.css'
 
 import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
+import Carrito from '../../Components/CarritoMenu/Carrito'
 
 import { useState } from 'react';
 import { goOffline } from 'firebase/database';
@@ -30,16 +31,13 @@ function Menu(){
                 <input placeholder='Buscar...'></input>
             </div>
             <select className={styles.optionBar} value={selectedValue} onChange={handleChange}>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
+                <option value="Option 1">Panes</option>
+                <option value="Option 2">Frappe</option>
+                <option value="Option 3">Cafe</option>
             </select>
         </div>
 
-        <div className={styles.titleContainer}>
-            <h2> PANES </h2>
-        </div>
-
+        <Carrito />
         <CaruselMenu titulo = "Panes"/>
         <CaruselMenu titulo = "Frappe"/>
         <CaruselMenu titulo = "Cafe"/>
