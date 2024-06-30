@@ -25,11 +25,15 @@
     margin-top: 30px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.navButton:hover {
+.navButton:hover { 
     background-color: #fb5800;
     transform: scale(1.1)
+
 }
 
 .topContainer {
@@ -72,9 +76,11 @@
     z-index: 2;
     padding: 20px;
     width: 80%;
-    margin: auto;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-
+    
 }
 
 
@@ -88,7 +94,7 @@
     border-top: 2px solid #000;
     margin: 3rem auto;
     align-self: center;
-    width: 80%; /* Ensure the divider is responsive*/ 
+    width: 80%; 
 }
 
 .image {
@@ -183,3 +189,16 @@ div .group {
         justify-content: flex-end;
     }
 }
+/* Contenedor SwitchSelector */
+.contenedorSwitchSelector {
+    width: 100%;
+    height: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .contenedorSwitchSelector {
+        width: 70% ;
+    }
+}
+
+

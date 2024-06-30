@@ -6,6 +6,10 @@ import instagram from '../../assets/InstagramLogo.png'
 import SwitchSelector from "react-switch-selector";
 
 function Carrito() {
+    const onClick = (e) => {
+        e.preventDefault();
+        alert("PÁGINA EN CONSTRUCCIÓN...");
+    };
     const options = [
         {
             label: <span>Foo</span>,
@@ -39,15 +43,15 @@ function Carrito() {
                     <h3 className={styles.Text}>Tu pedido</h3>
                     <div
   style={{
-    height: 50,
-    width: 500
+    height: 70,
+    width: 700
   }}
 >
   <SwitchSelector
     backgroundColor="#a6a6a6"
     border={{}}
     initialSelectedIndex={1}
-    fontSize={15}
+    fontSize={17}
     name="botonseleccion"
     onChange={function noRefCheck(){}}
     optionBorderRadius={{}}
@@ -65,6 +69,14 @@ function Carrito() {
     wrapperBorderRadius={{}}
   />
 </div>
+
+
+
+
+
+
+
+
 
                 </div>
             </div>
@@ -95,9 +107,40 @@ function Carrito() {
                         <div>
                             
                         </div>
+                        
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+            <div className={styles.contactContainer}>
+                <div className={styles.spacer}>
+                    
+            
+                    <div className={styles.feedback}>
+                        <h2>Resumen de tu pedido</h2>
+                        <p className={styles.unrDesc}>Precio Productos -------- </p>
+                        <p className={styles.unrDesc}>Precio Envío -------------- </p>
+                        <div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+            <div className={styles.sSpace}>
+               <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
+            </div>
+            
             
         </div>
         
