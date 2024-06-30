@@ -1,119 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Cada tarjetita */
-.tarjetaProductos {
+.contenedorCarrusel {
     
-    border-radius: 35px;
-    border-top: none;
-    
-    margin-top: 0;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    margin-right: 0px;
-    padding: 16px 30px 16px;
-
-    width: 230px !important;
-    text-align: center;
-    background-color: #FFCA99;
-    display: flex;
-    flex-direction: column;
-
-    box-shadow: 0px 0px 8px rgba(77, 42, 7, 0.531);
 }
 
-@media (min-width: 768px) {
-    .tarjetaProductos {
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-/* Ver Menu */
-.navButton {
-    border: none;
+.tituloCarrusel {
     text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: #FB8500;
-    padding: 5px 70px;
-    border-radius: 15px;
-    font-size: 18px;
-    font-family: Montserrat,sans-serif;
+    font-size: 2rem;
     font-weight: 650;
-    cursor: pointer;
-    margin-top: 5px;
-    transition: background-color 0.3s ease;
+    font-style: italic;
+    margin: 10px;
+}
+.tarjetaCarrusel {
+    
 }
 
-.navButton:hover {
-    background-color: #fb5800;
-}
 
-@media (min-width: 768px) {
-    .navButton {
-        padding: 3.5px 35px;
-    }
-}
-
-/* Imagen del producto */
-
-.img {
-    height: 180px;
-    width: 170px;
-    margin: 0;
-    margin-bottom: 4px;
+.contenedor {
+    background-color: #FFCA99;
     border-radius: 20px;
-    object-fit: cover;
-    border: 1.5px solid black;
-
+    
 }
-
-.centerContent {
+.contenedorImagen {
     display: flex;
     justify-content: center;
+    padding: 1rem 2rem 0;
+}
+
+.imagen {
+    max-width: 11.5rem;
+    border-radius: 20px;
+    object-position: center;
+    object-fit: scale-down;
+}
+
+/* Contenido del producto */
+.descripcion {
+    margin-top: 6px;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 0 30px;
 }
 
-/* Estilo para el texto */
-.TextName {
-    font-size: 19px;
-    font-weight: 600;
-    margin: 0;
-    padding: 5px;
-    padding-bottom: 0px;
-    font-family: Montserrat, sans-serif;
-}
-
-.TextPrice {
-    font-size: 16px;
-    font-weight: 650;
-    margin: 0;
-    font-family: Montserrat, sans-serif;
-}
-
-.Header {
-    padding: 10px;
-    letter-spacing: 0.5px;
-    word-spacing: 1px;
-    font-size: 2rem;
-    font-weight: 600;
-    font-family: Montserrat, sans-serif;
+.descripcionNombre,
+.descripcionPrecio {
     text-align: center;
-    color: black;
-    font-style: italic;
+    color: var(--negro);    
+    margin: 0;
+    font-weight: 650;
+    line-height: 30px;
 }
 
-@media (min-width: 768px) {
-    .Header {
-        font-size: 3.5rem;
-    }
+.descripcionNombre {
+    font-size: 25px;
 }
 
-@media (min-width: 1140px) {
-    .Header {
-        font-size: 4.2rem;
-    }
+.descripcionPrecio {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+/* Boton */
+.descripcionBoton {
+    background-color: var(--colorPrincipal);
+    font-size: 15px;
+    width: 80%;
+    padding: 3px 0;
+
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.descripcionBoton:hover {
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1)
 }
 
 /* Estilo para las flechas de navegación */
@@ -121,14 +81,14 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
-    background-color: #FB8500;
+    background-color: var(--colorPrincipal);
     height: 100px;
     width: 45px;
     border-radius: 15px;
     z-index: 1;
-}
+} 
 .arrow:hover{
-    background-color: #FB8500;
+    background-color: var(--colorPrincipal__hover);
 }
 
 .arrow::before {
@@ -138,26 +98,6 @@
 
 
 @media (max-width: 1024px) { 
-    .tarjetaProductos {
-        width: 240px !important;
-    }
-    .img {
-        height: 210px;
-        width: 200px;
-    }
-    .TextName {
-        font-size: 16px;
-    }
-    .TextPrice {
-        font-size: 14px;
-    }
-    .navButton {
-        font-size: 12px;
-        padding: 4px 16px;
-    }
-    .Header {
-        font-size: 2.5rem;
-    }
     .arrow {
         height: 40px;
         width: 25px;
@@ -168,29 +108,8 @@
 }
 
 @media (max-width: 768px) { 
-    .tarjetaProductos {
-        width: 200px !important;
-    }
-    .img {
-        height: 170px;
-        width: 160px;
-    }
-    .TextName {
-        font-size: 14px;
-    }
-    .TextPrice {
-        font-size: 12px;
-    }
-    .navButton {
-        font-size: 12px;
-        padding: 5px 23px;
-    }
-    .Header {
-        padding: 6px;
-        font-size: 1.5rem;
-        letter-spacing: 0;
-        word-spacing: 0;
-    }
+
+    
     .arrow {
         height: 30px;
         width: 20px;
