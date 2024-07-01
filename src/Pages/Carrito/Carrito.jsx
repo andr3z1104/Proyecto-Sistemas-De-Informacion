@@ -4,8 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import whatsapp from '../../assets/WhatsappLogo.png'
 import instagram from '../../assets/InstagramLogo.png'
 import SwitchSelector from "react-switch-selector";
+import Productosdata from '../../Components/ProductCarousel/ProductCarousel';
 
 function Carrito() {
+
+    const {Productos} = Productosdata
+
+
+    
     const onClick = (e) => {
         e.preventDefault();
         alert("PÁGINA EN CONSTRUCCIÓN...");
@@ -125,6 +131,9 @@ function Carrito() {
             
                     <div className={styles.feedback}>
                         <h2>Resumen de tu pedido</h2>
+                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <h2 >Subtotal</h2>
+                        </div>
                         <p className={styles.unrDesc}>Precio Productos -------- </p>
                         <p className={styles.unrDesc}>Precio Envío -------------- </p>
                         <div>
