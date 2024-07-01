@@ -134,7 +134,7 @@ function Carrito() {
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <h2 >Subtotal</h2>
                         </div>
-                        <p className={styles.unrDesc}>Precio Productos -------- </p>
+                        <p className={styles.unrDesc}>Precio Productos --------- </p>
                         <p className={styles.unrDesc}>Precio Envío -------------- </p>
                         <div>
                             
