@@ -1,0 +1,21 @@
+
+/* Estilos para los slides */
+
+.slick-list {
+    margin: 0 10%;
+}
+
+.slide-current {
+    padding: 0;
+}
+
+
+@media (min-width: 768px) {
+    .slick-slide {
+        margin: 0 2rem;
+    }
+}
+
+
+
+

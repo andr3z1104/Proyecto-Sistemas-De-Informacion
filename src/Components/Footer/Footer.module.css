@@ -19,20 +19,12 @@
 
 .navItem {
     text-shadow: 0px 3px 0px #8E8D86;
-    border: solid;
-    border-color: white;
-    border-width: 1.5px;
+    border: solid var(--blanco) 1.5px;
     margin: 8px;
-    text-align: center;
-    width: 22rem;
-    text-decoration: none;
-    color: white; 
+    width: 19rem;
     background:rgb(255, 255, 255, 0.2);
-    padding: 10px 24px;
-    border-radius: 10px;
+    padding: 10px 20px;
     font-size: 22px;
-    font-family: sans-serif;
-    font-weight: 600;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
   }
@@ -43,11 +35,13 @@
 }
 
 @media (min-width: 768px) {
+  
+  
   .nav{
     align-items: flex-start;
   }
 
   .navItem {
-    width: 16rem;
+    font-size: 30px;
   }
 }

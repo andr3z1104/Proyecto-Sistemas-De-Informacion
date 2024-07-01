@@ -1,7 +1,12 @@
 import styles from './Menu.module.css'
-import image1 from '../../assets/Fondo-Menu.png';
+import image1 from '../../assets/fondoMenu.jpg';
+import global from '../../Global.module.css'
+
+import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
+import Carrito from '../../Components/CarritoMenu/Carrito'
 
 import { useState } from 'react';
+import { goOffline } from 'firebase/database';
 
 
 function Menu(){
@@ -21,16 +26,21 @@ function Menu(){
                 </div>
         </div>
 
-        <div className={styles.topsearchBar}>
-            <div className={styles.searchBar}></div>
+        <div className={styles.topSearchBar}>
+            <div className={styles.searchBar}>
+                <input placeholder='Buscar...'></input>
+            </div>
             <select className={styles.optionBar} value={selectedValue} onChange={handleChange}>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
+                <option value="Option 1">Panes</option>
+                <option value="Option 2">Frappe</option>
+                <option value="Option 3">Cafe</option>
             </select>
         </div>
 
-
+        <Carrito />
+        <CaruselMenu titulo = "Panes"/>
+        <CaruselMenu titulo = "Frappe"/>
+        <CaruselMenu titulo = "Cafe"/>
     </>
     );
 }

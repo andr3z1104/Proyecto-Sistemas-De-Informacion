@@ -76,18 +76,29 @@
 
 .topSearchBar{
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    margin: auto;
+    margin-top: 5vh;
+    width: 100%;
+    gap: 5vh;
 }
 
 
 .searchBar{
-    margin: auto;
     width: 668px;
     height: 60px;
     flex-shrink: 0;
     border-radius: 10px;
     background: #D9D9D9;
+}
+
+.searchBar input{
+    width: 668px;
+    height: 60px;
+    border-radius: 10px;
+    background: #D9D9D9;
+    border: none;
+    text-align: left;
 }
 
 .optionBar{
@@ -97,4 +108,11 @@
     border-radius: 8px;
     background: #D9D9D9;
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.10);
+}
+
+.titleContainer{
+    display: flex;
+    margin: auto;
+    margin-left: 5vh;
+    padding: 2vh;
 }

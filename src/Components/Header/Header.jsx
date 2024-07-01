@@ -3,14 +3,13 @@ import logo from '../../assets/LogoHeader.png';
 import { Link } from 'react-router-dom';
 import global from "../../Global.module.css";
 
-
-
 function Header({ showLoginButton }) {
   const onClick = (e) => {
     e.preventDefault();
     alert("PÁGINA EN CONSTRUCCIÓN...");
   };
 
+  
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logoContainer }>
