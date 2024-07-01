@@ -10,6 +10,9 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
 
+import Menu from './Pages/Menu/Menu'
+import Carrito from './Pages/Carrito/Carrito';
+
 function App() {
 
 
@@ -33,10 +36,14 @@ function AppRoutes() {
         <Route path='/InicioDeSesion' element={<InicioDeSesion />} />
         <Route path='/Registrarse' element={<Registrarse />} />
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
+        <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         
+
+        <Route path='/Carrito' element={<Carrito />} />
+
       </Routes>
       <Footer />
     </>

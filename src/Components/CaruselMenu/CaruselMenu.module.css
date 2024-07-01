@@ -1,45 +1,59 @@
-.contenedorCarrusel {
-    
-}
+
 
 .tituloCarrusel {
-    text-align: center;
-    font-size: 2rem;
+    text-align: left;
+    font-size: 4em;
     font-weight: 650;
-    font-style: italic;
     margin: 10px;
-}
-.tarjetaCarrusel {
-    
 }
 
 
 .contenedor {
+    display: flex;
+    align-items: center;
     background-color: #FFCA99;
     border-radius: 20px;
-    
+    height: 50vh;
 }
 .contenedorImagen {
     display: flex;
+    height: 30vh;
     justify-content: center;
     padding: 1rem 2rem 0;
 }
 
 .imagen {
-    max-width: 11.5rem;
+    max-width: 30vh;
+    height: auto;
     border-radius: 20px;
     object-position: center;
-    object-fit: scale-down;
+    object-fit:cover;
 }
+
+
+@media (max-width: 800px){
+    .contenedor{
+        height: 55vh;
+        overflow: scroll;
+    }
+
+    .imagen{
+        max-width: 18vh;
+        height: auto;
+    }
+
+}
+
 
 /* Contenido del producto */
 .descripcion {
-    margin-top: 6px;
-    padding-bottom: 1rem;
+    margin: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .descripcionNombre,
