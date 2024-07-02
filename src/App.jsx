@@ -39,7 +39,7 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
-        <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
+        <Route path='/ProductoDetalles/:ID' element={<ProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
