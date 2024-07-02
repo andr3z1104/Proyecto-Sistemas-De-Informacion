@@ -1,6 +1,7 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom'; 
 
 
 import styles from './CaruselMenu.module.css';
@@ -85,15 +86,14 @@ function caruselMenu(props) {
                 <Slider {...settings}>
                 {dataProducts.filter((d) => d.categoría === titulo).map((d) => (
                         <div className={styles.contenedor}>
-
-                            <div className={styles.contenedorImagen}>
+                            <Link to={`/ProductoDetalles/${d.ID}`} className={styles.contenedorImagen}>
                                 <img className={styles.imagen} src={d.img} alt={d.nombre} />
-                            </div>
+                            </Link>
                             <div className={styles.descripcion}>
                                 <p className={styles.descripcionNombre}>{d.nombre} </p>
                                 <p className={styles.descripcionPrecio}>{d.precio} $</p>
+                                <Link to={`/ProductoDetalles/${d.ID}`} className={`${styles.descripcionBoton} ${global.boton}`}>Ver Detalles </Link>
                                 <button className={`${styles.descripcionBoton} ${global.boton}`} onClick={onAdd} >Añadir Carrito</button>
-                                
                             </div>
                             
                         </div>
