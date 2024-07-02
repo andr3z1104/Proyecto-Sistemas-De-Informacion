@@ -84,7 +84,7 @@ function caruselMenu(props) {
             <p className={styles.tituloCarrusel}>{props.titulo}</p>
             <div className={styles.tarjetaCarrusel}>
                 <Slider {...settings}>
-                {dataProducts.filter((d) => d.categoría === titulo).map((d) => (
+                {dataProducts.filter((d) => d.categoria === titulo).map((d) => (
                         <div className={styles.contenedor}>
                             <Link to={`/ProductoDetalles/${d.ID}`} className={styles.contenedorImagen}>
                                 <img className={styles.imagen} src={d.img} alt={d.nombre} />

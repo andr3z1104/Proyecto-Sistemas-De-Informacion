@@ -9,11 +9,6 @@ import dataProducts from '../../appData';
 
 function Carrito() {
 
-
-    
-
-
-
     
     const onClick = (e) => {
         e.preventDefault();
@@ -23,7 +18,7 @@ function Carrito() {
         {
             label: <span>Foo</span>,
             value: {
-                 foo: true
+            foo: true
             },
             selectedBackgroundColor: "#ff8a00",
         },
