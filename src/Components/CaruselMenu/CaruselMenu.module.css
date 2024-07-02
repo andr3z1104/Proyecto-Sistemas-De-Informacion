@@ -1,0 +1,134 @@
+
+
+.tituloCarrusel {
+    text-align: left;
+    font-size: 4em;
+    font-weight: 650;
+    margin: 10px;
+}
+
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    background-color: #FFCA99;
+    border-radius: 20px;
+    height: 50vh;
+}
+.contenedorImagen {
+    display: flex;
+    height: 30vh;
+    justify-content: center;
+    padding: 1rem 2rem 0;
+}
+
+.imagen {
+    max-width: 30vh;
+    height: auto;
+    border-radius: 20px;
+    object-position: center;
+    object-fit:cover;
+}
+
+
+@media (max-width: 800px){
+    .contenedor{
+        height: 55vh;
+        overflow: scroll;
+    }
+
+    .imagen{
+        max-width: 18vh;
+        height: auto;
+    }
+
+}
+
+
+/* Contenido del producto */
+.descripcion {
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.descripcionNombre,
+.descripcionPrecio {
+    text-align: center;
+    color: var(--negro);    
+    margin: 0;
+    font-weight: 650;
+    line-height: 30px;
+}
+
+.descripcionNombre {
+    font-size: 25px;
+}
+
+.descripcionPrecio {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+/* Boton */
+.descripcionBoton {
+    background-color: var(--colorPrincipal);
+    font-size: 15px;
+    width: 80%;
+    padding: 3px 0;
+
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.descripcionBoton:hover {
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1)
+}
+
+/* Estilo para las flechas de navegación */
+.arrow {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorPrincipal);
+    height: 100px;
+    width: 45px;
+    border-radius: 15px;
+    z-index: 1;
+} 
+.arrow:hover{
+    background-color: var(--colorPrincipal__hover);
+}
+
+.arrow::before {
+    font-size: 25px;
+    color: white;
+}
+
+
+@media (max-width: 1024px) { 
+    .arrow {
+        height: 40px;
+        width: 25px;
+    }
+    .arrow::before {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) { 
+
+    
+    .arrow {
+        height: 30px;
+        width: 20px;
+    }
+    .arrow::before {
+        font-size: 16px;
+    }
+} 

@@ -1,0 +1,301 @@
+.Nosotros {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstBackground {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.bakeryphoto {
+    width: auto;
+    height: 54rem;
+}
+
+.textOn {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+
+    color: #FFF;
+    padding-right: 10px;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 25%;
+}
+
+
+.secondBackground {
+    display: flex;
+    flex-direction: row;
+    background: #1C1E1F;
+    width: 100%;
+}
+
+.minibox {
+    display: flex;
+    flex-direction: column;
+}
+
+.minititle {
+    padding-top: 10%;
+    color: #A38F6C;
+    margin-top: 5%;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 5.3125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+}
+
+.minititle .sp {
+    color: #FFF;
+}
+
+.textBox {
+    display: flex;
+    width: 55.1875rem;
+    padding: 3%;
+    justify-content: center;
+
+    color: #FFF;
+    text-align: justify;
+    font-family: Montserrat;
+    font-size: 2.375rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3.125rem;
+    padding-bottom: 10%;
+}
+
+.handsphoto {
+    width: 35.4375rem;
+    height: 35.125rem;
+    align-self: center;
+    border-radius: 1.25rem;
+    border: 1px solid #FFF;
+    margin-right: 5%;
+    margin-left: 1%;
+
+}
+
+.thirdBackground {
+    display: flex;
+    flex-direction: row;
+    background-color: #AD986E;
+    height: 500px;
+}
+
+.misionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.visionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.headerStyle {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+    margin-bottom: 5%;
+}
+
+.textfield {
+    color: #FFF;
+    text-align: justify;
+    font-family: Montserrat;
+    font-size: 2.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem;
+}
+
+hr {
+    position: absolute;
+    left: 5%;
+    right: 1%;
+    width: 5px;
+    height: 38%;
+    margin: 10px auto;
+    border: 3px solid white;
+}
+
+/* Small screens */
+@media only screen and (max-width: 376px) {
+    .Nosotros {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .firstBackground {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .bakeryphoto {
+        width: auto;
+        height: auto;
+    }
+
+    .textOn {
+        position: absolute;
+        top: 52%;
+        left: 0%;
+        width: 100%;
+
+        color: #FFF;
+        padding-right: 10px;
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Montserrat;
+        font-size: 1.15rem;
+        font-style: normal;
+        font-weight: 650;
+        line-height: normal;
+    }
+
+    .secondBackground {
+        display: flex;
+        flex-direction: column;
+        background: #1C1E1F;
+        width: 100%;
+    }
+
+    .minibox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .minititle {
+        padding-top: 2%;
+        color: #A38F6C;
+        margin-top: 5%;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 1.825rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.85rem;
+    }
+
+    .minititle .sp {
+        color: #FFF;
+    }
+
+    .textBox {
+        display: flex;
+        width: auto;
+        padding: 1.5%;
+        justify-content: center;
+
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: .90rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 2.0rem;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: .5%;
+    }
+
+    .handsphoto {
+        width: auto;
+        height: 12rem;
+        align-self: center;
+        border-radius: 0.25rem;
+        border: 1px solid #FFF;
+        justify-self: center;
+        margin: 1% 5% 5% 5%;
+
+    }
+
+    .thirdBackground {
+        display: flex;
+        flex-direction: column;
+        background-color: #AD986E;
+        width: 100%;
+        height: auto;
+    }
+
+    .misionContainer {
+        justify-content: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .visionContainer {
+        justify-content: center;
+        justify-items: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .headerStyle {
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.75rem;
+        margin-bottom: .5%;
+        padding-top: 0.5%;
+    }
+
+    .textfield {
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: .90rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 2.0rem;
+
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: .55%;
+    }
+
+    hr {
+        position: absolute;
+        left: 0%;
+        top: 85%;
+        width: 38%;
+        height: 100px;
+        margin: 10px auto;
+        border: 10px solid rgb(31, 28, 28);
+    }
+
+}
