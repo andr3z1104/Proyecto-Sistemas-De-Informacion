@@ -9,7 +9,9 @@ import { useState } from 'react';
 import { goOffline } from 'firebase/database';
 
 
-function Menu(){
+function Menu(props){
+
+    const {products, onAdd} = props;
     const [selectedValue, setSelectedValue] = useState('Option 1');
 
     const handleChange = (event) => {
@@ -38,9 +40,9 @@ function Menu(){
         </div>
 
         <Carrito />
-        <CaruselMenu titulo = "Panes"/>
-        <CaruselMenu titulo = "Frappe"/>
-        <CaruselMenu titulo = "Cafe"/>
+        <CaruselMenu titulo = "Panes" onAdd={onAdd}/>
+        <CaruselMenu titulo = "Frappe" onAdd={onAdd}/>
+        <CaruselMenu titulo = "Cafe" onAdd={onAdd}/>
     </>
     );
 }
