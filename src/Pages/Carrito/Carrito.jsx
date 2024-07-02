@@ -4,11 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import whatsapp from '../../assets/WhatsappLogo.png'
 import instagram from '../../assets/InstagramLogo.png'
 import SwitchSelector from "react-switch-selector";
-import Productosdata from '../../Components/ProductCarousel/ProductCarousel';
+import { useState } from 'react';
+import dataProducts from '../../appData';
 
 function Carrito() {
 
-    const {Productos} = Productosdata
+
+    
+
 
 
     
