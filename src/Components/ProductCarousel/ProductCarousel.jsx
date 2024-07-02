@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './custom-slick.css'; // Importar el archivo CSS personalizado
-
+import { useNavigate } from 'react-router-dom';
 
 import styles from './ProductCarousel.module.css';
 import global from "../../Global.module.css"
@@ -44,6 +44,8 @@ function SamplePrevArrow(props) {
 }
 
 function ProductCarousel() {
+
+    const navigate = useNavigate();
     const productos = [
         { id: 1, name: 'CAFE AMERICANO', price: '$3.5', image: image1},
         { id: 2, name: 'CAFE CAPUCCINO', price: '$3.5', image: image2 },
@@ -111,7 +113,7 @@ function ProductCarousel() {
                             <div className={styles.descripcion}>
                                 <p className={styles.descripcionNombre}>{d.name} </p>
                                 <p className={styles.descripcionPrecio}>{d.price} </p>
-                                <button className={`${styles.descripcionBoton} ${global.boton}`}>Menú</button>
+                                <button onClick={() => navigate('/Menu')} className={`${styles.descripcionBoton} ${global.boton}`}>Menú</button>
                                 
                             </div>
                             
