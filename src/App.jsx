@@ -5,6 +5,7 @@ import Registrarse from './Pages/Registrarse/Registrarse';
 import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
+import Feedback from './Pages/Feedback/Feedback';
 
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -43,7 +44,7 @@ function AppRoutes() {
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
-          
+        <Route path='/Feedback' element={<Feedback />} />
       </Routes>
       <Footer />
     </>
