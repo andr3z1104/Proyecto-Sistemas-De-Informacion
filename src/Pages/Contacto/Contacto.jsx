@@ -35,13 +35,14 @@ function Contacto() {
                             <a href='https://www.instagram.com/graniervzla?igsh=MXZ3Nm04N2VoZ3Z3Ng==' className={styles.desc}> @granier_unimet</a>
                         </div>
                     </div>
-                    <hr className={styles.divider} />
+                    <div className={styles.divider}></div>
                     <div className={styles.visit}>
                         <h2>VISÍTANOS</h2>
                         <p className={styles.unrDesc}>Sede Unimet. Encuéntranos en la Universidad Metropolitana de Caracas. Justo al lado del Edificio Corimon.</p>
                         <p className={styles.unrDesc}>De Lunes a Viernes. Desde las 7:00am hasta las 7:00pm</p>
                     </div>
-                    <hr className={styles.divider} />
+                    <div className={styles.divider}></div>
+
                     <div className={styles.feedback}>
                         <h2>DUDAS U OPINIONES</h2>
                         <p className={styles.unrDesc}>Nos importa saber cómo podemos mejorar tu experiencia Granier. Recuerda que somos el sabor que te acompaña en cada estudio.</p>
