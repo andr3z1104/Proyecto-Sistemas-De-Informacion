@@ -27,7 +27,7 @@ function Header({ showLoginButton }) {
               code to acceder Gestionar perfil: <a href="/MiPerfil" className={styles.navItem}>Menú</a>
             */
           }
-          <a href="/Menu" className={styles.navItem} onClick={onClick}>Menú</a>
+          <a href="/MiPerfil" className={styles.navItem}>Menú</a>
           <a href="/Nosotros" className={styles.navItem}>Nosotros</a>
         </div>
         <div className={styles.parte2}>

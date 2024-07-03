@@ -37,8 +37,9 @@ function Nosotros() {
                 <div className={styles.visionContainer}>
                     <h2 className={styles.headerStyle}>Vision</h2>
                     <p className={styles.textfield}>Queremos ser parte de tu recorrido mientras cumples tus metas en la Universidad. Una marca a la que puedas recurrir después de un mal día en semana 5 mientras te tomas algo o pides de comer. </p>
-                    <hr />
+        
                 </div>
+                <hr />
 
             </div>
         </div>
