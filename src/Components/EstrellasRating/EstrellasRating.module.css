@@ -1,0 +1,28 @@
+/* src/StarRating.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.starrating {
+    text-align: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Text {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: Montserrat,sans-serif;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 18px;
+}
