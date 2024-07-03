@@ -1,20 +1,10 @@
-import { useContext, useState, useEffect } from 'react';
-import styles from './ProductoDetalles.module.css';
+import { useState } from 'react';
+import styles from './AgregarProductoDetalles.module.css';
 import { Link } from 'react-router-dom';
-import dataProducts from '../../appData';
-import { useParams } from 'react-router-dom';
+import DropzoneComponent from '../../Components/DropzoneComponent/DropzoneConponent';
 
 function ProductoDetalles() {
-    const params = useParams();
-    const [detalle, setDetalle] = useState([]);
 
-    useEffect(() => {
-        dataProducts.forEach(producto => {
-            if (producto.ID === parseInt(params.ID)) {
-                setDetalle(producto);
-            }
-        });
-    }, [params.ID, dataProducts]);
 
     const [quantity, setQuantity] = useState(0);
 
@@ -41,26 +31,26 @@ function ProductoDetalles() {
                 <div className={styles.back_layer}>
                     <div className={styles.inside_background}>
                         <div className={styles.image_container}>
-                            <img src={detalle.img} alt={detalle.nombre} />
+                        <DropzoneComponent /> {}
                         </div>
                     </div>
                     <div className={styles.details_container}>
                         <h2>Descripción</h2>
-                        <p>{detalle.descripción}</p>
+                        <input className={styles.small_text} placeholder="Indique la descripción"/>
                     </div>
                 </div>
                 <div className={styles.back_layer}>
                     <div className={styles.product_info}>
                         <h3>Nombre del Producto</h3>
-                        <input className={styles.small_text} type="text" value={detalle.nombre} readOnly />
+                        <input className={styles.small_text} type="text" placeholder="Indique el nombre..."/>
                         <div className={styles.menu_price_container}>
                             <div className={styles.space_price}>
                                 <h4>Precio</h4>
-                                <input className={styles.small_textp} type="text" value={`${detalle.precio}$`} readOnly />
+                                <input className={styles.small_textp} type="text" placeholder="$..."/>
                             </div>
                             <div className={styles.space_class}>
                                 <h4>Tipo de Menú</h4>
-                                <input className={styles.small_textp} type="text" value={detalle.categoría} readOnly />
+                                <input className={styles.small_textp} type="text" placeholder="Desayuno..."/>
                             </div>
                         </div>
                         <h2>Ingredientes</h2>

@@ -10,6 +10,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
 import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
+import AgregarProductoDetalles from './Pages/AgregarProductoDetalles/AgregarProductoDetalles';
 
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
@@ -40,6 +41,7 @@ function AppRoutes() {
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
         <Route path='/ProductoDetalles/:ID' element={<ProductoDetalles />} />
+        <Route path='/AgregarProductoDetalles' element={<AgregarProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
