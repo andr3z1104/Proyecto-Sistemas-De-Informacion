@@ -14,6 +14,8 @@ import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
 
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
+import Pago from './Pages/Pago/Pago';
+
 
 import dataProducts from './appData';
 import { useState } from 'react';
@@ -62,6 +64,7 @@ function AppRoutes() {
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
+        <Route path='/Pago' element={<Pago />} />
         <Route path='/Feedback' element={<Feedback />} />
       </Routes>
       <Footer />
