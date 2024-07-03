@@ -1,22 +1,8 @@
-import { useState } from 'react';
 import styles from './AgregarProductoDetalles.module.css';
 import { Link } from 'react-router-dom';
 import DropzoneComponent from '../../Components/DropzoneComponent/DropzoneConponent';
 
 function ProductoDetalles() {
-
-
-    const [quantity, setQuantity] = useState(0);
-
-    const incrementQuantity = () => {
-        setQuantity(quantity + 1);
-    };
-
-    const decrementQuantity = () => {
-        if (quantity > 0) {
-            setQuantity(quantity - 1);
-        }
-    };
 
     //const navigate = useNavigate();
 
@@ -31,7 +17,7 @@ function ProductoDetalles() {
                 <div className={styles.back_layer}>
                     <div className={styles.inside_background}>
                         <div className={styles.image_container}>
-                        <DropzoneComponent /> {}
+                        <DropzoneComponent className={styles.zone} /> {}
                         </div>
                     </div>
                     <div className={styles.details_container}>
@@ -56,15 +42,9 @@ function ProductoDetalles() {
                         <h2>Ingredientes</h2>
                         <ul>
                             <li>Huevo</li>
-                            <li>Trigo (<strong>gluten</strong>)</li>
-                            <li>Queso (<strong>lácteos</strong>)</li>
-                            <li>Mantequilla (<strong>lácteos</strong>)</li>
-                            <li>Azúcar</li>
                         </ul>
-                        <div className={styles.quantity_control}>
-                            <button className={styles.button1} onClick={decrementQuantity}>-</button>
-                            <span>{quantity}</span>
-                            <button className={styles.button2} onClick={incrementQuantity}>+</button>
+                        <div className={styles.submit}>
+                            <button className={styles.confirm}>Confirmar</button>
                         </div>
                     </div>
                 </div>

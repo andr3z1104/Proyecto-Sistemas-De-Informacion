@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import styles from './DropzoneConponent.module.css';
+
 
 function DropzoneComponent() {
   const onDrop = useCallback((acceptedFiles) => {
@@ -11,7 +13,7 @@ function DropzoneComponent() {
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      <div>Arrastra y suelta tus imágenes aquí.</div>
+      <div className={styles.text}>Añadir imagen</div>
     </div>
   );
 }

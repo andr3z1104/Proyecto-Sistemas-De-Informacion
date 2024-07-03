@@ -59,15 +59,10 @@ html {
     margin-top: 10px;
 }
 
-.image_container img {
+.zone img {
     width: 350px;
     height: 350px;
     border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.image_container img:hover {
-    transform: scale(1.15)
 }
 
 .details_container {
@@ -140,49 +135,28 @@ html {
     margin-bottom: 5px;
 }
 
-.quantity_control {
+.submit {
     align-self: center;
-    background-color: #FB8500;
     justify-content: center;
     display: flex;
     align-items: center;
     margin-top: 20px;
-    border-radius: 15px;
 }
 
-.quantity_control button {
+.confirm {
     background-color: #FB8500;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
+    border-radius: 15px;
+    font-weight: 700;
 }
 
-.button1:hover {
+.confirm:hover {
     background-color: #fb5800;
-}
-
-.button2:hover {
-    background-color: #fb5800;
-}
-
-.quantity_control span {
-    background-color: #FB8500;
-    color: white;
-    padding: 10px 50px;
-    font-size: 30px;
-}
-
-.button1 {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.button2 {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 
 .back_button {
