@@ -3,9 +3,11 @@ import image1 from '../../assets/Panes.jpg';
 import { useNavigate } from 'react-router-dom';
 import whatsapp from '../../assets/WhatsappLogo.png'
 import instagram from '../../assets/InstagramLogo.png'
+
 import SwitchSelector from "react-switch-selector";
 import { useState } from 'react';
 import dataProducts from '../../appData';
+
 
 function Carrito() {
 
