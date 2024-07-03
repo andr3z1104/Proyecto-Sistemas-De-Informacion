@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-attachment: local;
     margin-top: 35px;
+    background-position: center;
 }
 
 .nav{
@@ -23,7 +24,7 @@
     margin: 8px;
     width: 19rem;
     background:rgb(255, 255, 255, 0.2);
-    padding: 10px 20px;
+    padding: 8px 20px;
     font-size: 22px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
@@ -35,13 +36,8 @@
 }
 
 @media (min-width: 768px) {
-  
-  
   .nav{
     align-items: flex-start;
   }
 
-  .navItem {
-    font-size: 30px;
-  }
 }
