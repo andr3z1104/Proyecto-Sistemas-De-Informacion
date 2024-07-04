@@ -2,23 +2,53 @@ import styles from './Carrito.module.css';
 import image1 from '../../assets/fondoCarrito.png';
 import logoCarrito from '../../assets/logoPedido.png'
 
-import { createContext, useContext, useState } from 'react';
+
 
 import SwitchSelector from "react-switch-selector";
 
 
-import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
 
-import dataProducts from '../../appData';
+import { DataContext } from '../../Context/DataProvider';
+
 import ProductoPedido from '../../Components/ProductoPedido/ProductoPedido'
 
 
 
-function Carrito(props) {
+function Carrito() {
+
+    const value = useContext(DataContext);
+
+    const [carrito, setCarrito] = value.carrito;
+
+    const [total, setTotal] = value.total;
+
+    const productos = value.productos
+
+    const [selectedOption, setSelectedOption] = useState(null);
 
 
-    const{ currentCarrito } = props
+    useEffect(() => {
 
+        let subtotal = 0;
+        carrito.forEach((item) => {
+          const producto = productos.find((p) => p.ID === item.ID);
+          subtotal += producto.precio;
+        });
+        let shippingCost = 0;
+        if (selectedOption === 'Delivery') {
+          shippingCost = 8;
+        }
+        setTotal(subtotal + shippingCost);
+      }, [carrito, productos, selectedOption]);
+    
+    
+      const onChange = (newValue) => {
+        setSelectedOption(newValue.value);
+      };
+    
+
+    console.log(carrito)
 
     const onClick = (e) => {
         e.preventDefault();
@@ -41,14 +71,13 @@ function Carrito(props) {
         }
     ];
     
-    const onChange = (newValue) => {
-        console.log(newValue);
-    };
+    //const onChange = (newValue) => {
+    //    console.log(newValue);
+    //};
     
     const initialSelectedIndex = options.findIndex(({value}) => value === "bar");
     
-    const navigate = useNavigate();
-
+    
     return (
         <div className='Carrito'>
             <div className={styles.topContainer}>
@@ -64,16 +93,16 @@ function Carrito(props) {
                         initialSelectedIndex={1}
                         fontSize={17}
                         name="botonseleccion"
-                        onChange={function noRefCheck(){}}
+                        onChange={onChange}
                         optionBorderRadius={{}}
                         options={[
                         {
                             label: 'Delivery',
-                            value: true
+                            value: 'Delivery'
                         },
                         {
                             label: 'Pick-up',
-                            value: 20
+                            value: 'Pick-up'
                         }
                         ]}
                     selectedBackgroundColor="#ff8a00"
@@ -86,9 +115,11 @@ function Carrito(props) {
             <div className={styles.contactContainer}>
                 <div className={styles.spacer}>
                     <div className={styles.contact}>
-                        {currentCarrito && currentCarrito.map((producto, index) => (
-                        <ProductoPedido key={index} props={producto}></ProductoPedido>
-                        ))}
+                    {carrito.length >= 0 ? ( carrito.map((ID) => (
+                    <ProductoPedido key={ID} id={ID} />
+                    ))) : (
+                    <p>No items in cart</p>
+                    )}
                     </div>
                 </div>
             </div>
@@ -109,8 +140,8 @@ function Carrito(props) {
 
                         <div className={styles.resumenPedido}>
                             <h2>Resumen de tu pedido</h2>
-                            <p className={styles.unrDesc}>Precio Productos ----------------------- $15</p>
-                            <p className={styles.unrDesc}>Precio Envío ----------------------------- $8</p>
+                            <p className={styles.unrDesc}>Precio Productos ----------------------- ${total - (selectedOption === 'Delivery' ? 8 : 0)}</p>
+                            <p className={styles.unrDesc}>Precio Envío ----------------------------- {selectedOption === 'Delivery' ? '$8' : 'Gratis'}</p>
                         </div>
 
                     </div>
@@ -118,7 +149,7 @@ function Carrito(props) {
                     <div className={styles.subtotalContenedor}>
                             <h3> Subtotal </h3>
                             <div className={styles.subtotalPrecio}>
-                                <p> $15 </p>
+                                <p> ${total - (selectedOption === 'Delivery' ? 8 : 0)} </p>
                             </div>
                     </div>
 
