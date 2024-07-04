@@ -73,7 +73,7 @@ function ProductoDetalles() {
                             ) : (
                                 <>
                                     <button className={styles.button1} onClick={decrementQuantity}>-</button>
-                                    <span>{quantity}</span>
+                                    <span className={styles.quantity}>{quantity}</span>
                                     <button className={styles.button2} onClick={incrementQuantity}>+</button>
                                 </>
                             )}
