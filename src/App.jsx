@@ -7,6 +7,7 @@ import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 import Feedback from './Pages/Feedback/Feedback';
 
+
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
 import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
 import PopupInicioSesion from "./Components/Popup/PopupInicioSesion";
@@ -21,6 +22,7 @@ import Carrito from './Pages/Carrito/Carrito';
 
 import dataProducts from './appData';
 import { useState } from 'react';
+import HeaderIS from './Components/HeaderIS/HeaderIS';
 
 
 function App() {
@@ -48,7 +50,7 @@ function AppRoutes() {
       }
   };
 
-  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin'];
+  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin,'];
   const shouldHideLoginButton = hideLoginButtonRoutes.includes(useLocation().pathname);
 
   return (
@@ -67,6 +69,7 @@ function AppRoutes() {
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
+        <Route path='/HeaderIS' element={<HeaderIS />} />
         <Route path= "/PopupInicioSesion" element={<PopupInicioSesion />} />
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
