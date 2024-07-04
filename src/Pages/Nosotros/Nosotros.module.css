@@ -305,32 +305,33 @@ hr {
         text-align: center;
         display: flex;
         flex-direction: column;
+        width: auto;
     }
 
     .firstBackground {
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: auto;
+        width: 220%;
     }
 
     .bakeryphoto {
-        width: 400%;
+        width: 100%;
         height: auto;
     }
 
     .textOn {
         position: absolute;
-        top: 95%;
-        left: 65%;
-        width: 250%;
+        top: 50%;
+        left: 75%;
+        width: 90%;
 
         color: #FFF;
         padding-right: 10px;
         text-align: center;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         font-family: Montserrat;
-        font-size: 365%;
+        font-size: 110%;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -340,17 +341,16 @@ hr {
         display: flex;
         flex-direction: row;
         background: #1C1E1F;
-        width: 400%;
+        width: 220%;
         justify-content: center;
     }
 
     .minititle {
-        padding-top: 10%;
         color: #A38F6C;
-        margin-top: 1%;
+        margin-top: 1.5%;
         text-align: center;
         font-family: Montserrat;
-        font-size: 500%;
+        font-size: 150%;
         font-style: normal;
         font-weight: 700;
         line-height: 1.75rem;
@@ -369,35 +369,36 @@ hr {
 
     .textBox {
         display: flex;
-        width: 55.1875rem;
+        width: 100%;
         justify-content: center;
 
         color: #FFF;
         text-align: justify;
         font-family: Montserrat;
-        font-size: 2.375rem;
+        font-size: 100%;
         font-style: normal;
         font-weight: 300;
-        line-height: 3.125rem;
-        padding-left: 10%;
+        line-height: 150%;
+        padding: 0% 5% 5% 5% ;
     }
 
     .handsphoto {
-        width: 50%;
+        width: 40%;
+        height: 70%;
         align-self: center;
         border-radius: 0.25rem;
         border: 1px solid #FFF;
         justify-self: center;
-        margin: 5% 5% 5% 0%;
+        margin: 6% 5% 5% 5%;
     }
 
     .thirdBackground {
         display: flex;
         flex-direction: row;
         background-color: #AD986E;
-        width: 400%;
+        width: 220%;
         height: auto;
-        padding-top: 10%;
+        padding-top: 5%;
         justify-items: stretch;
     }
 
@@ -411,15 +412,14 @@ hr {
 
     .headerStyle {
         color: #FFF;
-        padding-top: 1.15%;
         margin-top: 1%;
 
         text-align: center;
         font-family: Montserrat;
-        font-size: 500%;
+        font-size: 150%;
         font-style: normal;
         font-weight: 700;
-        line-height: 2.75rem;
+        line-height: 1.75rem;
         margin-bottom: 2.5%;
 
     }
@@ -428,23 +428,27 @@ hr {
         color: #FFF;
         text-align: justify;
         font-family: Montserrat;
-        font-size: 2.375rem;
+        font-size: 100%;
         font-style: normal;
         font-weight: 300;
-        line-height: 3.125rem;
 
         padding-bottom: 5%;
         padding-left: 5%;
         padding-right: 5%;
         margin: .55%;
+    
+        line-height: 150%;
+        padding: 0% 5% 5% 5% ;
+    
     }
 
     hr {
         position: absolute;
-        left: 205%;
+        left: 114%;
         width: .5%;
-        height: 55%;
-        border: 10px solid rgb(255, 255, 255);
+        margin-top: 0.75%;
+        height: 25%;
+        border: 5px solid rgb(255, 255, 255);
     }
 
 }
