@@ -114,9 +114,7 @@ function Pago() {
         </div>
 
             
-            <div className={styles.sSpace}>
-               <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
-            </div>
+            
             
             
         </div>
