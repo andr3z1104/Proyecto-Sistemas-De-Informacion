@@ -2,13 +2,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom'; 
-import { useState, createContext } from 'react';
+import { useContext } from 'react';
 
+import { DataContext } from '../../Context/DataProvider';
 
 import styles from './CaruselMenu.module.css';
 import global from "../../Global.module.css"
 
-import dataProducts from '../../appData'
+//import dataProducts from '../../appData'
 
 
 //Flechas para ver los demas productos
@@ -37,37 +38,16 @@ function SamplePrevArrow(props) {
 
 
 
-function caruselMenu(props) {
+function caruselMenu({titulo}) {
 
-    const { titulo } = props;
-    const [currentCarrito, setCarrito] = useState([]);
+    const value = useContext(DataContext);
 
-    const onAdd = (ID) => {
-        const atributosProductos= dataProducts.filter((d) => d.ID === ID).map((d) => ( 
-        [
-            {
-                ID : d.ID,
-                nombre: d.nombre,
-                categoria: d.categoria,
-                descripción: d.descripcion,
-                precio: d.precio,
-                cantidad: d.cantidad,
-                img: d.img,
-            }
-        ]
-        ))
+    const productos = value.productos
+    const [carrito, setCarrito] = value.carrito;
 
-        setCarrito(currentCarrito + atributosProductos)
-        
-        enviarCarrito(currentCarrito)
+    const addCarrito = value.addCarrito
 
-    };
 
-    const enviarCarrito = (currentCarrito) =>{
-        <Link to={{pathname: `/Carrito`, state: {data: currentCarrito}}} ></Link>
-    }
-
-    console.log(currentCarrito)
     var settings = {
         adaptiveHeight: true,
         dots: false,
@@ -110,10 +90,10 @@ function caruselMenu(props) {
     return (
         
         <div className={styles.contenedorCarrusel}>
-            <p className={styles.tituloCarrusel}>{props.titulo}</p>
+            <p className={styles.tituloCarrusel}>{titulo}</p>
             <div className={styles.tarjetaCarrusel}>
                 <Slider {...settings}>
-                {dataProducts.filter((d) => d.categoria === titulo).map((d) => (
+                {productos.filter((d) => d.categoria === titulo).map((d) => (
                         <div className={styles.contenedor}>
                             <Link to={`/ProductoDetalles/${d.ID}`} className={styles.contenedorImagen}>
                                 <img className={styles.imagen} src={d.img} alt={d.nombre} />
@@ -122,7 +102,7 @@ function caruselMenu(props) {
                                 <p className={styles.descripcionNombre}>{d.nombre} </p>
                                 <p className={styles.descripcionPrecio}>{d.precio} $</p>
                                 <Link to={`/ProductoDetalles/${d.ID}`} className={`${styles.descripcionBoton} ${global.boton}`}>Ver Detalles </Link>
-                                <button id={d.ID} className={`${styles.descripcionBoton} ${global.boton}`} onClick={() => onAdd(d.ID)} >Añadir Carrito</button>
+                                <button id={d.ID} className={`${styles.descripcionBoton} ${global.boton}`} onClick={() => addCarrito(d.ID)} >Añadir Carrito</button>
                             </div>
                             
                         </div>

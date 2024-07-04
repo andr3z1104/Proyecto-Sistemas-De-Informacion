@@ -1,21 +1,21 @@
 import styles from './Menu.module.css'
 import image1 from '../../assets/fondoMenu.jpg';
-import global from '../../Global.module.css'
 import logo from '../../assets/logo-toggle.png'
-import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
-import Carrito from '../../Components/CarritoMenu/Carrito'
 
-import { useState, createContext } from 'react';
+
+import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
+
+
+import { useState } from 'react';
 import { goOffline } from 'firebase/database';
 
 import { Link } from 'react-router-dom';
 
-export const currentCarrito = createContext()
+
+
 
 
 function Menu(){
-
-    const [carrito, setCarrito] = useState([])
 
 
     const [selectedValue, setSelectedValue] = useState('Option 1');
@@ -47,14 +47,16 @@ function Menu(){
 
         
         <div className={styles.contenedor}>
-            <Link  to={`/Carrito`} className={styles.imagenCarrito}>
+            <Link  to={`/Carrito`}  className={styles.imagenCarrito}>
                 <img src={logo} alt='Carrito'></img>
             </Link>
         </div>
 
-        <CaruselMenu titulo = "Panes" />
-        <CaruselMenu titulo = "Frappe" />
-        <CaruselMenu titulo = "Cafe" />
+       
+            <CaruselMenu titulo = "Panes" />
+            <CaruselMenu titulo = "Frappe" />
+            <CaruselMenu titulo = "Cafe" />
+
     </>
     );
 }

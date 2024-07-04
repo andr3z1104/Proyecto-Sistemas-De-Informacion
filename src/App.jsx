@@ -15,17 +15,18 @@ import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
 
-import dataProducts from './appData';
-import { createContext } from 'react';
+import { DataProvider } from './Context/DataProvider';
 
 
 function App() {
 
 
   return (
+    <DataProvider>
     <Router>
       <AppRoutes />
     </Router>
+    </DataProvider>
   );
 }
 
