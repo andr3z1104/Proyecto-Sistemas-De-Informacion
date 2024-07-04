@@ -7,6 +7,10 @@ import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 import Feedback from './Pages/Feedback/Feedback';
 
+import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
+import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
+import PopupInicioSesion from "./Components/Popup/PopupInicioSesion";
+import PopupRegistro from "./Components/Popup/PopupRegistro";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
@@ -63,6 +67,11 @@ function AppRoutes() {
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
+        <Route path= "/PopupInicioSesion" element={<PopupInicioSesion />} />
+        <Route path= "/PopupRegistro" element={<PopupRegistro />} />
+        <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
+        <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
+
       </Routes>
       <Footer />
     </>
