@@ -97,7 +97,7 @@ function Pago() {
                     </div>
 
                     <div className={styles.subtotalContenedor}>
-                            <h3> Subtotal </h3>
+                            <h3> Total </h3>
                             <div className={styles.subtotalPrecio}>
                                 <p> $15 </p>
                             </div>
