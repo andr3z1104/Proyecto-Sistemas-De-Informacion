@@ -5,3 +5,10 @@
     font-size: 40px;
     font-weight: 700;
 }
+
+.dropzone {
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+  }
