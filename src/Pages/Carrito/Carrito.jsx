@@ -1,26 +1,66 @@
 import styles from './Carrito.module.css';
-import image1 from '../../assets/Panes.jpg';
-import { useNavigate } from 'react-router-dom';
-import whatsapp from '../../assets/WhatsappLogo.png'
-import instagram from '../../assets/InstagramLogo.png'
+import image1 from '../../assets/fondoCarrito.png';
+import logoCarrito from '../../assets/logoPedido.png'
+
+
+
 import SwitchSelector from "react-switch-selector";
-import Productosdata from '../../Components/ProductCarousel/ProductCarousel';
+
+
+import { useContext, useEffect, useState } from 'react';
+
+import { DataContext } from '../../Context/DataProvider';
+
+import ProductoPedido from '../../Components/ProductoPedido/ProductoPedido'
+
+
 
 function Carrito() {
 
-    const {Productos} = Productosdata
+    const value = useContext(DataContext);
+
+    const [carrito, setCarrito] = value.carrito;
+
+    const [total, setTotal] = value.total;
+
+    const productos = value.productos
+
+    const [selectedOption, setSelectedOption] = useState(null);
 
 
+    useEffect(() => {
+
+        let subtotal = 0;
+        carrito.forEach((item) => {
+          const producto = productos.find((p) => p.ID === item.ID);
+          subtotal += producto.precio;
+        });
+        let shippingCost = 0;
+        if (selectedOption === 'Delivery') {
+          shippingCost = 8;
+        }
+        setTotal(subtotal + shippingCost);
+      }, [carrito, productos, selectedOption]);
     
+    
+      const onChange = (newValue) => {
+        setSelectedOption(newValue.value);
+      };
+    
+
+    console.log(carrito)
+
     const onClick = (e) => {
         e.preventDefault();
         alert("PÁGINA EN CONSTRUCCIÓN...");
     };
+
+
     const options = [
         {
             label: <span>Foo</span>,
             value: {
-                 foo: true
+            foo: true
             },
             selectedBackgroundColor: "#ff8a00",
         },
@@ -29,16 +69,15 @@ function Carrito() {
             value: "bar",
             selectedBackgroundColor: "#fbc531"
         }
-     ];
-     
-     const onChange = (newValue) => {
-         console.log(newValue);
-     };
-     
-     const initialSelectedIndex = options.findIndex(({value}) => value === "bar");
-     
-    const navigate = useNavigate();
-
+    ];
+    
+    //const onChange = (newValue) => {
+    //    console.log(newValue);
+    //};
+    
+    const initialSelectedIndex = options.findIndex(({value}) => value === "bar");
+    
+    
     return (
         <div className='Carrito'>
             <div className={styles.topContainer}>
@@ -47,73 +86,40 @@ function Carrito() {
                 <div className={styles.containerOverlay}></div>
                 <div className={styles.containerCaption}>
                     <h3 className={styles.Text}>Tu pedido</h3>
-                    <div
-  style={{
-    height: 70,
-    width: 700
-  }}
->
-  <SwitchSelector
-    backgroundColor="#a6a6a6"
-    border={{}}
-    initialSelectedIndex={1}
-    fontSize={17}
-    name="botonseleccion"
-    onChange={function noRefCheck(){}}
-    optionBorderRadius={{}}
-    options={[
-      {
-        label: 'Delivery',
-        value: true
-      },
-      {
-        label: 'Pick-up',
-        value: 20
-      }
-    ]}
-    selectedBackgroundColor="#ff8a00"
-    wrapperBorderRadius={{}}
-  />
-</div>
-
-
-
-
-
-
-
-
-
+                    <div style={{ height: 70, width: 700}}>
+                    <SwitchSelector
+                        backgroundColor="#a6a6a6"
+                        border={{}}
+                        initialSelectedIndex={1}
+                        fontSize={17}
+                        name="botonseleccion"
+                        onChange={onChange}
+                        optionBorderRadius={{}}
+                        options={[
+                        {
+                            label: 'Delivery',
+                            value: 'Delivery'
+                        },
+                        {
+                            label: 'Pick-up',
+                            value: 'Pick-up'
+                        }
+                        ]}
+                    selectedBackgroundColor="#ff8a00"
+                    wrapperBorderRadius={{}}
+                    />
+                    </div>
                 </div>
             </div>
 
             <div className={styles.contactContainer}>
                 <div className={styles.spacer}>
                     <div className={styles.contact}>
-                        <h2>CONTÁCTANOS</h2>
-                        <div className={styles.group}>
-                            <img src={whatsapp} alt="Logo" className={styles.image} />
-                            <p className={styles.desc}> 424-2086718</p>
-                        </div>
-                        <div className={styles.group}>
-                            <img src={instagram} alt="Logo" className={styles.image} />
-                            <a href='https://www.instagram.com/graniervzla?igsh=MXZ3Nm04N2VoZ3Z3Ng==' className={styles.desc}> @granier_unimet</a>
-                        </div>
-                    </div>
-                    <hr className={styles.divider} />
-                    <div className={styles.visit}>
-                        <h2>VISÍTANOS</h2>
-                        <p className={styles.unrDesc}>Sede Unimet. Encuéntranos en la Universidad Metropolitana de Caracas. Justo al lado del Edificio Corimon.</p>
-                        <p className={styles.unrDesc}>De Lunes a Viernes. Desde las 7:00am hasta las 7:00pm</p>
-                    </div>
-                    <hr className={styles.divider} />
-                    <div className={styles.feedback}>
-                        <h2>DUDAS U OPINIONES</h2>
-                        <p className={styles.unrDesc}>Nos importa saber cómo podemos mejorar tu experiencia Granier. Recuerda que somos el sabor que te acompaña en cada estudio.</p>
-                        <div>
-                            
-                        </div>
-                        
+                    {carrito.length >= 0 ? ( carrito.map((ID) => (
+                    <ProductoPedido key={ID} id={ID} />
+                    ))) : (
+                    <p>No items in cart</p>
+                    )}
                     </div>
                 </div>
             </div>
@@ -125,29 +131,41 @@ function Carrito() {
 
 
 
-            <div className={styles.contactContainer}>
+        <div className={styles.totalPagar}>
                 <div className={styles.spacer}>
-                    
-            
+
+                <div className={styles.allignSide}>
+
                     <div className={styles.feedback}>
-                        <h2>Resumen de tu pedido</h2>
-                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <h2 >Subtotal</h2>
+
+                        <div className={styles.resumenPedido}>
+                            <h2>Resumen de tu pedido</h2>
+                            <p className={styles.unrDesc}>Precio Productos ----------------------- ${total - (selectedOption === 'Delivery' ? 8 : 0)}</p>
+                            <p className={styles.unrDesc}>Precio Envío ----------------------------- {selectedOption === 'Delivery' ? '$8' : 'Gratis'}</p>
                         </div>
-                        <p className={styles.unrDesc}>Precio Productos --------- </p>
-                        <p className={styles.unrDesc}>Precio Envío -------------- </p>
-                        <div>
-                            
-                            
-                        </div>
+
                     </div>
+
+                    <div className={styles.subtotalContenedor}>
+                            <h3> Subtotal </h3>
+                            <div className={styles.subtotalPrecio}>
+                                <p> ${total - (selectedOption === 'Delivery' ? 8 : 0)} </p>
+                            </div>
+                    </div>
+
+                    <div className={styles.logoCarrito}>
+                            
+                                <img src={logoCarrito} alt='Carrito'></img>
+                            
+                    </div>
+
                 </div>
-                
             </div>
+        </div>
 
             
             <div className={styles.sSpace}>
-               <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
+                <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
             </div>
             
             

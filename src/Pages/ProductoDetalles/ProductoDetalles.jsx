@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './ProductoDetalles.module.css';
-import imagen from './../../assets/croissant.png';
+import imagen from '../../assets/Americano.png';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 

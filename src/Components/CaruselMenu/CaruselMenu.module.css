@@ -80,7 +80,7 @@
     font-size: 15px;
     width: 80%;
     padding: 3px 0;
-
+    margin-bottom: 1vh;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
 }
