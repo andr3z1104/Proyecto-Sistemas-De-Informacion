@@ -1,17 +1,23 @@
 import styles from './Menu.module.css'
 import image1 from '../../assets/fondoMenu.jpg';
 import global from '../../Global.module.css'
-
+import logo from '../../assets/logo-toggle.png'
 import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
 import Carrito from '../../Components/CarritoMenu/Carrito'
 
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { goOffline } from 'firebase/database';
 
+import { Link } from 'react-router-dom';
 
-function Menu(props){
+export const currentCarrito = createContext()
 
-    const {products, onAdd} = props;
+
+function Menu(){
+
+    const [carrito, setCarrito] = useState([])
+
+
     const [selectedValue, setSelectedValue] = useState('Option 1');
 
     const handleChange = (event) => {
@@ -39,10 +45,16 @@ function Menu(props){
             </select>
         </div>
 
-        <Carrito />
-        <CaruselMenu titulo = "Panes" onAdd={onAdd}/>
-        <CaruselMenu titulo = "Frappe" onAdd={onAdd}/>
-        <CaruselMenu titulo = "Cafe" onAdd={onAdd}/>
+        
+        <div className={styles.contenedor}>
+            <Link  to={`/Carrito`} className={styles.imagenCarrito}>
+                <img src={logo} alt='Carrito'></img>
+            </Link>
+        </div>
+
+        <CaruselMenu titulo = "Panes" />
+        <CaruselMenu titulo = "Frappe" />
+        <CaruselMenu titulo = "Cafe" />
     </>
     );
 }

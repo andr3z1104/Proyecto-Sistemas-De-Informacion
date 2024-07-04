@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom'; 
+import { useState, createContext } from 'react';
 
 
 import styles from './CaruselMenu.module.css';
@@ -34,11 +35,39 @@ function SamplePrevArrow(props) {
     );
 }
 
+
+
 function caruselMenu(props) {
 
-    const { titulo, onAdd} = props;
+    const { titulo } = props;
+    const [currentCarrito, setCarrito] = useState([]);
 
+    const onAdd = (ID) => {
+        const atributosProductos= dataProducts.filter((d) => d.ID === ID).map((d) => ( 
+        [
+            {
+                ID : d.ID,
+                nombre: d.nombre,
+                categoria: d.categoria,
+                descripción: d.descripcion,
+                precio: d.precio,
+                cantidad: d.cantidad,
+                img: d.img,
+            }
+        ]
+        ))
 
+        setCarrito(currentCarrito + atributosProductos)
+        
+        enviarCarrito(currentCarrito)
+
+    };
+
+    const enviarCarrito = (currentCarrito) =>{
+        <Link to={{pathname: `/Carrito`, state: {data: currentCarrito}}} ></Link>
+    }
+
+    console.log(currentCarrito)
     var settings = {
         adaptiveHeight: true,
         dots: false,
@@ -93,7 +122,7 @@ function caruselMenu(props) {
                                 <p className={styles.descripcionNombre}>{d.nombre} </p>
                                 <p className={styles.descripcionPrecio}>{d.precio} $</p>
                                 <Link to={`/ProductoDetalles/${d.ID}`} className={`${styles.descripcionBoton} ${global.boton}`}>Ver Detalles </Link>
-                                <button className={`${styles.descripcionBoton} ${global.boton}`} onClick={onAdd} >Añadir Carrito</button>
+                                <button id={d.ID} className={`${styles.descripcionBoton} ${global.boton}`} onClick={() => onAdd(d.ID)} >Añadir Carrito</button>
                             </div>
                             
                         </div>
@@ -103,6 +132,7 @@ function caruselMenu(props) {
         </div>
     );
 }
+
 
 
 export default caruselMenu;
