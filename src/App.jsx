@@ -7,6 +7,7 @@ import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 import Feedback from './Pages/Feedback/Feedback';
 
+
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import IniciarAdmin from './Pages/InicioAdmin/InicioAdmin';
@@ -17,6 +18,7 @@ import Carrito from './Pages/Carrito/Carrito';
 
 import dataProducts from './appData';
 import { useState } from 'react';
+import HeaderIS from './Components/HeaderIS/HeaderIS';
 
 
 function App() {
@@ -44,7 +46,7 @@ function AppRoutes() {
       }
   };
 
-  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin'];
+  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin,'];
   const shouldHideLoginButton = hideLoginButtonRoutes.includes(useLocation().pathname);
 
   return (
@@ -63,6 +65,7 @@ function AppRoutes() {
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
+        <Route path='/HeaderIS' element={<HeaderIS />} />
       </Routes>
       <Footer />
     </>
