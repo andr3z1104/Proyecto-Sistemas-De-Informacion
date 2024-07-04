@@ -2,24 +2,30 @@ import styles from './Carrito.module.css';
 import image1 from '../../assets/fondoCarrito.png';
 import logoCarrito from '../../assets/logoPedido.png'
 
-import whatsapp from '../../assets/WhatsappLogo.png'
-import instagram from '../../assets/InstagramLogo.png'
+import { createContext, useContext, useState } from 'react';
 
 import SwitchSelector from "react-switch-selector";
 
-import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 import dataProducts from '../../appData';
 import ProductoPedido from '../../Components/ProductoPedido/ProductoPedido'
 
-function Carrito() {
 
-    
+
+function Carrito(props) {
+
+
+    const{ currentCarrito } = props
+
+
     const onClick = (e) => {
         e.preventDefault();
         alert("PÁGINA EN CONSTRUCCIÓN...");
     };
+
+
     const options = [
         {
             label: <span>Foo</span>,
@@ -34,13 +40,13 @@ function Carrito() {
             selectedBackgroundColor: "#fbc531"
         }
     ];
-     
+    
     const onChange = (newValue) => {
         console.log(newValue);
     };
-     
+    
     const initialSelectedIndex = options.findIndex(({value}) => value === "bar");
-     
+    
     const navigate = useNavigate();
 
     return (
@@ -51,52 +57,38 @@ function Carrito() {
                 <div className={styles.containerOverlay}></div>
                 <div className={styles.containerCaption}>
                     <h3 className={styles.Text}>Tu pedido</h3>
-                    <div
-  style={{
-    height: 70,
-    width: 700
-  }}
->
-  <SwitchSelector
-    backgroundColor="#a6a6a6"
-    border={{}}
-    initialSelectedIndex={1}
-    fontSize={17}
-    name="botonseleccion"
-    onChange={function noRefCheck(){}}
-    optionBorderRadius={{}}
-    options={[
-      {
-        label: 'Delivery',
-        value: true
-      },
-      {
-        label: 'Pick-up',
-        value: 20
-      }
-    ]}
-    selectedBackgroundColor="#ff8a00"
-    wrapperBorderRadius={{}}
-  />
-</div>
-
-
-
-
-
-
-
-
-
+                    <div style={{ height: 70, width: 700}}>
+                    <SwitchSelector
+                        backgroundColor="#a6a6a6"
+                        border={{}}
+                        initialSelectedIndex={1}
+                        fontSize={17}
+                        name="botonseleccion"
+                        onChange={function noRefCheck(){}}
+                        optionBorderRadius={{}}
+                        options={[
+                        {
+                            label: 'Delivery',
+                            value: true
+                        },
+                        {
+                            label: 'Pick-up',
+                            value: 20
+                        }
+                        ]}
+                    selectedBackgroundColor="#ff8a00"
+                    wrapperBorderRadius={{}}
+                    />
+                    </div>
                 </div>
             </div>
 
             <div className={styles.contactContainer}>
                 <div className={styles.spacer}>
                     <div className={styles.contact}>
-                        <ProductoPedido></ProductoPedido>
-                        <ProductoPedido></ProductoPedido>
-                        <ProductoPedido></ProductoPedido>
+                        {currentCarrito && currentCarrito.map((producto, index) => (
+                        <ProductoPedido key={index} props={producto}></ProductoPedido>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -142,7 +134,7 @@ function Carrito() {
 
             
             <div className={styles.sSpace}>
-               <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
+                <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
             </div>
             
             
