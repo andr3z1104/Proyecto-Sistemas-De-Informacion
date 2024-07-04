@@ -475,8 +475,8 @@ hr {
 
     .textOn {
         position: absolute;
-        top: 135%;
         left: 75%;
+        top: 130%;
         width: 270%;
 
         color: #FFF;
