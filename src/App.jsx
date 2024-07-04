@@ -20,7 +20,7 @@ import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
 
-import dataProducts from './appData';
+import { DataProvider } from './Context/DataProvider';
 import { useState } from 'react';
 import HeaderIS from './Components/HeaderIS/HeaderIS';
 
@@ -28,29 +28,19 @@ import HeaderIS from './Components/HeaderIS/HeaderIS';
 function App() {
 
 
-
   return (
+    <DataProvider>
     <Router>
       <AppRoutes />
     </Router>
+    </DataProvider>
   );
 }
 
 function AppRoutes() {
 
-  const {products} = dataProducts;
-  const [cartItems, setCartItems] = useState([]);
-  const onAdd = (producto) => {
-      const exist = cartItems.find(x => x.ID === producto.ID);
-      if (exist) {
-          setCartItems(cartItems.map(x => x.ID === producto.ID ? {...exist, cantidad: exist.cantidad +1 } : x
-          ));
-      } else {
-          setCartItems([...cartItems, {...producto, cantidad: 1 }]);
-      }
-  };
+  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin'];
 
-  const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin,'];
   const shouldHideLoginButton = hideLoginButtonRoutes.includes(useLocation().pathname);
 
   return (
@@ -61,7 +51,7 @@ function AppRoutes() {
         <Route path='/InicioDeSesion' element={<InicioDeSesion />} />
         <Route path='/Registrarse' element={<Registrarse />} />
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
-        <Route path='/Menu' element={<Menu onAdd={onAdd} />} />
+        <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
 
         <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
