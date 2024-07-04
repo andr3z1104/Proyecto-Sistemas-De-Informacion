@@ -6,6 +6,7 @@ import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 import Feedback from './Pages/Feedback/Feedback';
+import MiPerfilAdmin from "./Pages/MiPerfilAdmin/MiPerfilAdmin";
 
 
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
@@ -53,6 +54,9 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
+        <Route path='/MiPerfilAdmin' element={<MiPerfilAdmin />} />
+
+        
 
         <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
