@@ -35,12 +35,6 @@ function App() {
 
 
   return (
-
-    <Router>
-      <AppRoutes />
-    </Router>
-
- 
     <DataProvider>
         <PayPalScriptProvider options={initialOptions}>
           <Router>
