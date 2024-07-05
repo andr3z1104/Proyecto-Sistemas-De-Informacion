@@ -2,12 +2,13 @@ import styles from './Registrarse.module.css'
 import googleLogo from '../../assets/google-svgrepo-com.svg'
 import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
+import PopupInfo from '../../Components/Popup/PopupRegistro'; 
 
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from 'react';
 
 import appFirebase from '../../credenciales';
+import { UserContext } from '../../Controllers/UserContext';
 
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { getDocs, query, where} from "firebase/firestore";
@@ -16,6 +17,7 @@ const db = getFirestore(appFirebase);
 const auth = getAuth(appFirebase); // Autenticación de la app
 
 function Registrarse() {
+    const { setUser } = useContext(UserContext);
 
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -24,7 +26,8 @@ function Registrarse() {
     const [phone, setPhone] = useState('');
     const [verifypassword, setVerifyPassword] = useState('');
 
-    const navigate = useNavigate();
+    const [showPopUp, setShowPopUp] = useState(false);
+
 
 
     const handleInputChange = (e) => {
@@ -43,7 +46,8 @@ function Registrarse() {
         
         const emailParts = email.split('@');
             const domain = emailParts[1];
-            if (domain !== 'correo.unimet.edu.ve' || domain !== 'unimet.edu.ve') {
+            console.log(domain);
+            if (domain !== 'correo.unimet.edu.ve' && domain !== 'unimet.edu.ve') {
                 alert('Correo inválido. Dominio incorrecto.')
         }
         else{
@@ -55,13 +59,13 @@ function Registrarse() {
         const emailExist = await getDocs(Email);
         const phoneExist = await getDocs(Phone);
 
-        // Verificar si el usuario ya existe o no
         if (!emailExist.empty || !phoneExist.empty) {
             alert('El usuario ya está registrado. Verifique sus datos o inicie sesión');
 
         } else {
             try {
                 const newUser = await createUserWithEmailAndPassword(auth,email,password);
+                setUser({ email, password });
                 await addDoc(collection(db, "users"), {
                 uid: newUser.user.uid,
                 name: name,
@@ -70,8 +74,7 @@ function Registrarse() {
                 email: email,
                 password: password,
                 });
-                navigate("/");
-                alert('¡Registro exitoso! Bienvenido/a')
+                setShowPopUp(true);
 
             } catch (error) {
                 alert('ERROR. Asegúrese de que ingresó los datos correctamente');
@@ -88,7 +91,6 @@ function Registrarse() {
     };
 
     return (
-        <>
             <div className={styles.body}>
                 <div className={styles.container}>
                     <div className={`${styles['form-container']} ${styles['sign-up']}`}>
@@ -125,12 +127,8 @@ function Registrarse() {
                         </div>
                     </div>
                 </div>
+                {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
             </div>
-
-       
-
-
-        </>
     );
 }
 

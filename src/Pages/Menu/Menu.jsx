@@ -6,23 +6,45 @@ import logo from '../../assets/logo-toggle.png'
 import CaruselMenu from '../../Components/CaruselMenu/CaruselMenu';
 
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { goOffline } from 'firebase/database';
 
 import { Link } from 'react-router-dom';
 
-
-
+import { DataContext } from '../../Context/DataProvider';
 
 
 function Menu(){
 
+    const value = useContext(DataContext);
+
+    const productos = value.productos
+
+    const [searchTerm, setSearchTerm] = useState('');
 
     const [selectedValue, setSelectedValue] = useState('Option 1');
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
+
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+      };
+
+      const filteredProducts = () => {
+        return productos.filter((product) => {
+          return product.nombre.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+      };
+
+      const showCarousel = (titulo) => {
+        if (searchTerm === '') {
+          return true;
+        } else {
+          return filteredProducts().some((product) => product.categoria === titulo);
+        }
+      };
 
     return(
     <>
@@ -36,7 +58,7 @@ function Menu(){
 
         <div className={styles.topSearchBar}>
             <div className={styles.searchBar}>
-                <input placeholder='Buscar...'></input>
+                <input placeholder='Buscar...' value={searchTerm} onChange={handleSearch}></input>
             </div>
             <select className={styles.optionBar} value={selectedValue} onChange={handleChange}>
                 <option value="Option 1">Panes</option>
@@ -52,10 +74,14 @@ function Menu(){
             </Link>
         </div>
 
+        {filteredProducts().map((product) => (
+        <div key={product.name}>{product.name}</div>
+      ))}
+
        
-            <CaruselMenu titulo = "Panes" />
-            <CaruselMenu titulo = "Frappe" />
-            <CaruselMenu titulo = "Cafe" />
+            {showCarousel('Panes') && <CaruselMenu titulo="Panes" />}
+      {showCarousel('Frappe') && <CaruselMenu titulo="Frappe" />}
+      {showCarousel('Cafe') && <CaruselMenu titulo="Cafe" />}
 
     </>
     );

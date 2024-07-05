@@ -1,7 +1,15 @@
 import styles from "./PopupInfo.module.css"
 import global from "../../Global.module.css"
+import { useNavigate } from "react-router-dom";
 
-function PopupInfo() {
+function PopupInfo({onClose}) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        onClose();
+        navigate('/');
+    };
+    
 return (
     
     <div className={styles.fondoNegro}>
@@ -15,7 +23,7 @@ return (
                     <h1 className={styles.popupInfo_titulo}>Registro Exitoso</h1>
                     <div className={styles.popupInfo_bienvenido}>
                         <p className={styles.bienvenido}>Bienvenido/a</p>
-                        <button className={`${styles.botonContinuar} ${global.boton}`}>Continuar</button>
+                        <button className={`${styles.botonContinuar} ${global.boton}`} onClick={handleClick}>Continuar</button>
                     </div>
 
 
