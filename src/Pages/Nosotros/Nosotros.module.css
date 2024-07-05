@@ -297,5 +297,311 @@ hr {
         margin: 10px auto;
         border: 10px solid rgb(31, 28, 28);
     }
+}
+
+/* Medium screens */
+@media only screen and (max-width: 426px) and (min-width: 377px) {
+    .Nosotros {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .firstBackground {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 220%;
+    }
+
+    .bakeryphoto {
+        width: 100%;
+        height: auto;
+    }
+
+    .textOn {
+        position: absolute;
+        top: 50%;
+        left: 75%;
+        width: 90%;
+
+        color: #FFF;
+        padding-right: 10px;
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Montserrat;
+        font-size: 110%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .secondBackground {
+        display: flex;
+        flex-direction: row;
+        background: #1C1E1F;
+        width: 220%;
+        justify-content: center;
+    }
+
+    .minititle {
+        color: #A38F6C;
+        margin-top: 1.5%;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 150%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.75rem;
+    }
+
+    .minititle .sp {
+        color: #FFF;
+    }
+
+    .minibox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .textBox {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: 100%;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+        padding: 0% 5% 5% 5% ;
+    }
+
+    .handsphoto {
+        width: 40%;
+        height: 70%;
+        align-self: center;
+        border-radius: 0.25rem;
+        border: 1px solid #FFF;
+        justify-self: center;
+        margin: 6% 5% 5% 5%;
+    }
+
+    .thirdBackground {
+        display: flex;
+        flex-direction: row;
+        background-color: #AD986E;
+        width: 220%;
+        height: auto;
+        padding-top: 5%;
+        justify-items: stretch;
+    }
+
+    .misionContainer {
+        justify-content: stretch;
+    }
+
+    .visionContainer {
+        justify-content: stretch;
+    }
+
+    .headerStyle {
+        color: #FFF;
+        margin-top: 1%;
+
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 150%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.75rem;
+        margin-bottom: 2.5%;
+
+    }
+
+    .textfield {
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: 100%;
+        font-style: normal;
+        font-weight: 300;
+
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: .55%;
+    
+        line-height: 150%;
+        padding: 0% 5% 5% 5% ;
+    
+    }
+
+    hr {
+        position: absolute;
+        left: 114%;
+        width: .5%;
+        margin-top: 0.75%;
+        height: 25%;
+        border: 5px solid rgb(255, 255, 255);
+    }
+
+}
+
+/* Large screens */
+@media only screen and (max-width: 769px) and (min-width: 427px) {
+    .Nosotros {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .firstBackground {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: auto;
+    }
+
+    .bakeryphoto {
+        width: 400%;
+        height: auto;
+    }
+
+    .textOn {
+        position: absolute;
+        left: 75%;
+        top: 130%;
+        width: 270%;
+
+        color: #FFF;
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Montserrat;
+        font-size: 765%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .secondBackground {
+        display: flex;
+        flex-direction: row;
+        background: #1C1E1F;
+        width: 400%;
+        justify-items: stretch;
+    }
+
+    .minititle {
+        padding-top: 3%;
+        color: #A38F6C;
+        margin-top: 1%;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 600%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.75rem;
+        padding-right: 3%;
+    }
+
+    .minititle .sp {
+        color: #FFF;
+    }
+
+    .minibox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 5%;
+        padding-left: 1%;
+        text-align: center;
+        margin-left: .5%;
+    }
+
+    .textBox {
+        display: flex;
+        margin-left: 3%;
+        width: 90%;
+        justify-content: center;
+
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: 300%;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
+
+    .handsphoto {
+        width: 45%;
+        height: 30%;
+        align-self: center;
+        border-radius: 0.25rem;
+        border: 1px solid #FFF;
+        justify-self: center;
+        margin: 5% 4% 5% 0%;
+    }
+
+    .thirdBackground {
+        display: flex;
+        flex-direction: row;
+        background-color: #AD986E;
+        width: 400%;
+        height: auto;
+        padding-top: 10%;
+        justify-items: stretch;
+    }
+
+    .misionContainer {
+        justify-content: stretch;
+    }
+
+    .visionContainer {
+        justify-content: stretch;
+    }
+
+    .headerStyle {
+        color: #FFF;
+        padding-top: 1.15%;
+        margin-top: 1%;
+
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 600%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.75rem;
+        margin-bottom: 2.5%;
+    }
+
+    .textfield {
+        color: #FFF;
+        text-align: justify;
+        font-family: Montserrat;
+        font-size: 300%;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: .55%;
+    }
+
+    hr {
+        position: absolute;
+        left: 205%;
+        width: .5%;
+        height: 65%;
+        border: 10px solid rgb(255, 255, 255);
+    }
 
 }
