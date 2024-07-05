@@ -2,15 +2,17 @@ import styles from './Registrarse.module.css'
 import googleLogo from '../../assets/google-svgrepo-com.svg'
 import facebookLogo from '../../assets/facebook-svgrepo-com.svg'
 import loggoToggle from '../../assets/logo-toggle.png'
+import PopupInfo from '../../Components/Popup/PopupRegistro'; 
 
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from 'react';
 
 import appFirebase from '../../credenciales';
 
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { getDocs, query, where} from "firebase/firestore";
+import { UserContext } from '../../Controllers/UserContext';
+import PopupCondiciones from '../../Components/Popup/PopupCondiciones';
 
 const db = getFirestore(appFirebase);
 const auth = getAuth(appFirebase); // Autenticación de la app
@@ -24,7 +26,9 @@ function Registrarse() {
     const [phone, setPhone] = useState('');
     const [verifypassword, setVerifyPassword] = useState('');
 
-    const navigate = useNavigate();
+    const [showPopUp, setShowPopUp] = useState(false);
+    const [showPopUp1, setShowPopUp1] = useState(false);
+
 
 
     const handleInputChange = (e) => {
@@ -43,7 +47,8 @@ function Registrarse() {
         
         const emailParts = email.split('@');
             const domain = emailParts[1];
-            if (domain !== 'correo.unimet.edu.ve' || domain !== 'unimet.edu.ve') {
+            console.log(domain);
+            if (domain != 'correo.unimet.edu.ve' && domain != 'unimet.edu.ve') {
                 alert('Correo inválido. Dominio incorrecto.')
         }
         else{
@@ -55,7 +60,6 @@ function Registrarse() {
         const emailExist = await getDocs(Email);
         const phoneExist = await getDocs(Phone);
 
-        // Verificar si el usuario ya existe o no
         if (!emailExist.empty || !phoneExist.empty) {
             alert('El usuario ya está registrado. Verifique sus datos o inicie sesión');
 
@@ -70,8 +74,7 @@ function Registrarse() {
                 email: email,
                 password: password,
                 });
-                navigate("/");
-                alert('¡Registro exitoso! Bienvenido/a')
+                setShowPopUp(true);
 
             } catch (error) {
                 alert('ERROR. Asegúrese de que ingresó los datos correctamente');
@@ -82,13 +85,12 @@ function Registrarse() {
         window.location.href = '/InicioDeSesion'
     }
 
-    const onClick = (e) => {
+    const onClick1 = (e) => {
         e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
+        setShowPopUp1(true);
     };
 
     return (
-        <>
             <div className={styles.body}>
                 <div className={styles.container}>
                     <div className={`${styles['form-container']} ${styles['sign-up']}`}>
@@ -109,7 +111,7 @@ function Registrarse() {
                             <input name = 'phone' value={phone} placeholder='Telefono' onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Verificar Contraseña' name= 'vcontraseña' value = {verifypassword} onChange={handleInputChange} required></input>
-                            <span className={styles.condiciones}>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+                            <span className={styles.condiciones}>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick1}>Condiciones de uso</a> de Granier</span>
                             
                             <button onClick={handleRegisterButton}>Registrarse</button>
                         
@@ -125,12 +127,9 @@ function Registrarse() {
                         </div>
                     </div>
                 </div>
+                {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
+                {showPopUp1 && <PopupCondiciones onClose={() => setShowPopUp1(false)} />}
             </div>
-
-       
-
-
-        </>
     );
 }
 

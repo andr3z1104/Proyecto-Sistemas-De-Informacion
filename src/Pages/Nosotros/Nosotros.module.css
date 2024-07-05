@@ -1,0 +1,220 @@
+h1, h2, p {
+    font-family: var(--fuentePrincipal);
+}
+
+.topContainer img {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+@media (min-width: 768px) {
+    .topContainer img {
+        height: 350px;
+        object-position: start;
+    }
+}
+
+.topContainer{
+    position: relative;
+}
+
+.containerOverlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.Text{
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-family: Montserrat,sans-serif;
+    font-weight: 650;
+    font-style: italic;
+}
+
+@media (min-width: 768px) {
+    .Text {
+        font-size: 2.3rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .Text {
+        font-size: 3rem;
+    }
+}
+
+.containerCaption {
+    position: absolute; /* Hace que tome la posicion del div padre*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra con el position absolute*/
+    color: white;
+    text-align: center;
+    z-index: 2; /*z index: Funciona como capas*/
+    padding: 10px;
+    width: 100%;
+}
+
+
+.contenedorHistoria {
+    background-color: #000;
+}
+
+.historiaContenido {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    
+}
+
+@media (min-width: 768px) {
+    .historiaContenido {
+        flex-direction: row;
+        width: 90%;
+        column-gap: 1.5rem;
+    }
+}
+
+@media (min-width: 999px) {
+    .historiaContenido {
+        width: 75%;
+        column-gap: 2.5rem;
+    }
+    
+}
+
+.historia {
+    color: white;
+}
+
+.historiaTitulo__dorado {
+    color: #AD986E;
+}
+
+.historiaTitulo, 
+.historiaTitulo__dorado {
+    font-weight: 650;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.historiaParrafo {
+    text-align: justify;
+}
+
+.contenedorImagen {
+    margin-top: 10px;
+    width: 200px; /* ancho del contenedor */
+    height: 300px; /* alto del contenedor */
+}
+
+@media (min-width: 768px) {
+    .contenedorImagen {
+        width: 100rem;
+    }
+}
+
+.contenedorImagen img{
+    object-fit: cover;
+    width: 100%; /* ancho de la imagen */
+    height: 100%; /* alto de la imagen */
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+
+.contenedorMV {
+    background-color: #AD986E;
+}
+
+.MVContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .MVContenido {
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
+        column-gap: 2rem;
+    }
+
+    
+}
+
+@media (min-width: 1140px) {
+    .MVContenido {
+        width: 60%;
+    }
+}
+
+.divider {
+    margin: 1.5rem 0;
+    background-color: white;
+    width: 100%;
+    height: 1px;
+}
+
+@media (min-width: 768px) {
+    .divider {
+        width: 2px;
+        height: 15rem;
+        margin: unset;
+    }
+}
+
+.tituloMV,
+.parrafoMV {
+    color: white;
+}
+
+.parrafoMV {
+    text-align: justify;
+
+}
+
+
+ 
+/*<div className={styles.bottomContainer}>
+<div className={styles.contenedorHistoria}>
+    <div className={styles.historiaContenido}>
+        <div className={styles.historia}>
+            <h1 className={styles.historiaTitulo}>Nuestra <span className={styles.historiaTitulo__dorado}>Historia</span></h1>
+            <p className={styles.historiaParrafo}>Los orígenes de Granier se establecen en la panadería de barrio, de ahí el arraigo de la marca al comercio de proximidad y al oficio de panadero. En 1988 se abrió el Horno la Estrella, horno predecesor de Granier. Un negocio que fue creciendo y a través del cuál se fueron abriendo nuevas panaderías, hasta convertirnos en expertos y contar con un modelo de negocio propio.
+            </p>
+        </div>
+        <div className={styles.contenedorImagen}></div>
+    </div>
+</div>
+            
+                <div className={styles.contenedorMV}>
+                 titulo   <div className={styles.MVContenido}>
+                        <div className={styles.mision}>
+                            <h2 className={styles.tituloMV}>Misión</h2>
+                            <p className={styles.parrafoMV}>Buscamos hacer que tu paladar se delite con nuestros sabores, no solo mientras desayunas o tomas un snack sino también mientras te damos energía para seguir con el estudio. Granier busca estar más cerca de ti.</p>
+                        </div>
+                        <div className={styles.divider}></div>
+                        <div className={styles.vision}>
+                            <h2 className={styles.tituloMV}>Visión</h2>
+                            <p className={styles.parrafoMV}>Queremos ser parte de tu recorrido mientras cumples tus metas en la Universidad. Una marca a la que puedas recurrir después de un mal día en semana 5 mientras te tomas algo o pides de comer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> */
