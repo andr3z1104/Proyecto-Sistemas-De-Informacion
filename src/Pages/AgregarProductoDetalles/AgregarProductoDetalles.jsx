@@ -60,7 +60,6 @@ function AgregarProductoDetalles() {
 
 // dataProducts CONTIENE LA LISTA DE PRODUCTOS A ACTUALIZAR
 
-
     dataProducts.push(nuevoProducto);
     console.log(dataProducts); // Aquí puedes manejar el envío del nuevo producto o navegación
 
@@ -155,7 +154,7 @@ function AgregarProductoDetalles() {
         </div>
       </div>
       <button onClick={handleSubmit} className={styles.submit}>Agregar Producto</button>
-      <Link to="/productos" className={styles.link}>
+      <Link to="/Menu" className={styles.link}>
         <button className={styles.delete}>Cancelar</button>
       </Link>
     </div>
