@@ -88,11 +88,14 @@
 
 .boton {
     background-color: var(--colorPrincipal);
-    width: 100%;
     padding: 3px 15px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
   }
+
+.boton Link {
+    width: 100%;
+}
 
 .boton:hover{
     background-color: var(--colorPrincipal__hover);
@@ -182,5 +185,6 @@
 .contenedorBoton {
     display: flex; 
     justify-content: space-between;
+    
     margin-top: 15px;
 }
