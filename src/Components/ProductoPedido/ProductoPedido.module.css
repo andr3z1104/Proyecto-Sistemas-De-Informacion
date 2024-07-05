@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.contenedorPedido{
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 15vw;
+    width: 70vw;
+
+    background-color: #ffffff;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    padding: 5vw;
+}
+
+.spacer {
+    margin: 3rem;
+}
+
+.allignSide{
+    display: inline-flex;
+    gap: 2vw;
+}
+
+.contenedorImagen{
+    align-items: left;
+    height: 12vw;
+}
+
+.imagen{
+   height: inherit;
+    background-color: #DDAF85;
+    border-radius: 5vh;
+}
+
+.imagen img{
+    width: 15vw;
+    border-radius: 5vh;
+    padding: 1vw;
+    height: inherit;
+}
+
+.informacionPedido{
+    display: inline-block;
+    padding: 3vh;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    width: 25vw;
+    height: 10vw;
+}
+
+.informacionPedido h2{
+    color: #000000;
+    font-size: 2.5vw;
+    text-align: left;
+    object-fit: fill;
+}
+
+.informacionPedido p{
+    color: #FB8500;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+
+.botonAgregar{
+    display: inline-flex;
+    margin-top: 2.3vw;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 5vw;
+    width: 10vw;
+    gap: 2vw;
+    background-color: #ffffff;
+    border-style: solid;
+    border-radius: 3vh;
+}
+
+.papelera button{
+    height: 5vw;
+    width: 8vw;
+    border-radius: 3vh;
+    background-color: #ffffff;
+}
+
+.cantidadProducto{    
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidadProducto p{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+
+.agregar button{
+    height: 5vw;
+    width: 8vw;
+    border-radius: 3vh;
+    background-color: #ffffff;
+}
+
+
+
+
+.divider {
+    border: none;
+    border-top: 2px solid #000;
+    margin: 3rem auto;
+    align-self: center;
+    width: 80%; 
+}
+
+.dividerPedido{
+    border: none;
+    border-top: 2px solid #000;
+    align-self: center;
+    width: 10vw; 
+}

@@ -1,15 +1,24 @@
 import styles from './Header.module.css';
 import logo from '../../assets/LogoHeader.png';
-import { Link } from 'react-router-dom';
+import pfp from '../../assets/FotoPerfil.png';
+import { Link, useNavigate } from 'react-router-dom';
 import global from "../../Global.module.css";
+import { useUser } from '../../Controllers/UserContext';
 
 function Header({ showLoginButton }) {
-  const onClick = (e) => {
-    e.preventDefault();
-    alert("PÁGINA EN CONSTRUCCIÓN...");
-  };
 
+  const user = useUser();
+  const navigate = useNavigate();
   
+  const handleClick =  async (e) => {
+    e.preventDefault();
+    if (user?.email == 'admin@granierunimet.com'){
+      navigate('/AdminPerfil');
+    }else{
+      navigate('/MiPerfil');
+    }
+  }
+
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logoContainer}>
@@ -26,13 +35,15 @@ function Header({ showLoginButton }) {
               code to acceder Gestionar perfil: <a href="/MiPerfil" className={styles.navItem}>Menú</a>
             */
           }
-          <a href="/Menu" className={styles.navItem} onClick={onClick}>Menú</a>
+
+          <a href="/Menu" className={styles.navItem}>Menú</a>
           <a href="/Nosotros" className={styles.navItem}>Nosotros</a>
         </div>
         <div className={styles.parte2}>
-          {showLoginButton && (
+          {showLoginButton && user === null && (
             <Link to="/InicioDeSesion" href="#acceder" className={`${styles.button} ${global.boton}`}>Acceder</Link>
           )}
+          {user !== null && <img className={styles.cursorPointer}src={pfp} alt="" onClick={handleClick}/>}
         </div>
       </nav>
     </header>

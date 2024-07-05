@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './ProductoDetalles.module.css';
+import imagen from '../../assets/Americano.png';
 import { Link } from 'react-router-dom';
 import dataProducts from '../../appData';
 import { useParams } from 'react-router-dom';

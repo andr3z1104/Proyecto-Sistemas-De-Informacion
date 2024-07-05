@@ -77,11 +77,10 @@
 }
 
 .divider {
-    border: none;
-    border-top: 2px solid #000;
-    margin: 3rem auto;
-    align-self: center;
-    width: 80%; /* Ensure the divider is responsive*/ 
+    margin: 1.5rem 0;
+    background-color: #424242;
+    width: 100%;
+    height: 1px;
 }
 
 .image {
@@ -126,12 +125,13 @@ h2 {
 }
 
 div .group {
-    display: grid;
-    grid-template-columns: .3fr .7fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     column-gap: 3px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     div .group {
         display: flex;
         align-items: center;

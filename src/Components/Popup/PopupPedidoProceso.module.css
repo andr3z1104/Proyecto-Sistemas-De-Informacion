@@ -1,0 +1,80 @@
+p, h1 {
+    font-family: var(--fuentePrincipal);
+}
+
+.fondoNegro {
+    padding: 10rem 1rem;
+    /* Ami aquí es */
+}
+
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--colorPrincipal);
+    border-radius: 20px;
+    padding: 1rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .popup {
+        margin: 0 auto;
+        width: 70%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .popup {
+        width: 60%;
+    }
+}
+
+.contenedorImagen {
+    margin: auto;
+    background-color: var(--gris);
+    padding: .6rem;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.popupImagen {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center;
+    background-image: url(../../assets/usuarioimg.png);
+}
+
+.popupInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+.popupInfo h1 {
+    margin: 0;
+}
+
+.popupInfo p {
+    margin: 0 0 10px;
+}
+
+.botonContinuar {
+    background-color: var(--colorPrincipal);
+    padding: 3px 15px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+
+  .botonContinuar:hover{
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1)
+  }
+

@@ -2,7 +2,8 @@
 
 .Panescss {
   width: 100%;
-  height: 20vh;
+  height: 30vh;
+
   filter: grayscale(100%); 
   object-fit: fill;
 
@@ -10,9 +11,11 @@
 
 .navButton {
     border: none;
-    display: inline-block;
+    display: flex;
     text-align: center;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
     color: white;
     background-color: #FB8500;
     padding: 10px 24px;
@@ -25,10 +28,10 @@
     margin-top: 30px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
-
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
+
+
 
 .navButton:hover { 
     background-color: #fb5800;
@@ -101,7 +104,7 @@
     max-height: 5rem;
 }
 
-.contactContainer {
+.contactContainer  {
     font-family: Montserrat, sans-serif;
     display: flex;
     flex-direction: column;
@@ -109,10 +112,25 @@
     justify-content: center;
     
     
-    -webkit-box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    -webkit-box-shadow: 0px 5px 15px 0px rgb(77, 76, 74);
     -moz-box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
     box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
-    background-color: #D9D9D9;
+    background-color: #D6D6D6;
+    border-radius: 1rem;
+    margin: 1.5rem;
+}
+
+.totalPagar{
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    -webkit-box-shadow: 0px 5px 15px 0px rgb(77, 76, 74);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    background-color: #666;
     border-radius: 1rem;
     margin: 1.5rem;
 }
@@ -160,6 +178,7 @@ div .group {
 .visit, .feedback {
     margin: 0 10px;
     text-align: center;
+    display: flex;
 }
 
 @media (min-width: 768px){
@@ -169,15 +188,68 @@ div .group {
 }
 
 .unrDesc {
-    color: #666;
+    color: #ffffff;
     margin: 5px 0;
     font-size: 1.5rem;
 }
 
+.resumenPedido{
+    display: inline-block;
+    justify-content: left;
+    align-items: left;
+}
+
+.resumenPedido h2{
+    color: #ffffff;
+}
+
+.subtotalContenedor{
+    display: inline-block;
+    padding: 3vh;
+    align-items: center;
+    background-color: #818181;
+    border-radius: 3vh;
+    width: 25vh;
+}
+
+.subtotalContenedor h3{
+    color: #ffffff;
+    font-size: 2vw;
+    text-align: center;
+    object-fit: fill;
+}
+
+.subtotalPrecio{
+    background-color: #D9D9D9;
+    text-align: center;
+}
+
+.subtotalPrecio p{
+    color: #FB8500;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+
+.allignSide{
+    display: inline-flex;
+    gap: 10vw;
+}
+
+.logoCarrito{
+    align-items: left;
+}
+
+.logoCarrito img{
+    height: 25vh;
+}
+
+
 
 /* Número de telefono */
 .desc {
-    color: #666;
+    color: #ffffff;
     margin: 5px 0;
     font-size: 1.5rem;
     text-decoration: none;
@@ -201,4 +273,8 @@ div .group {
     }
 }
 
-
+.paypal{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}

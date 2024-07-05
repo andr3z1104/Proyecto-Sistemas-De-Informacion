@@ -12,10 +12,6 @@ import { useNavigate } from 'react-router-dom';
 function Landing(){
     const navigate = useNavigate();
 
-    const onClick = (e) => {
-        e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
-      };
     return(
         <div className='landingPage'>
             <div className={styles.topContainer}>
@@ -24,7 +20,7 @@ function Landing(){
                 <div className={styles.containerCaption}>
                     <h3 className={styles.Text}>El sabor que te acompaña</h3>
                     <h3 className={styles.Text}>en cada estudio</h3>
-                    <button className={styles.navButton} onClick={onClick}>CONÓCENOS</button>
+                    <button className={styles.navButton} onClick={() => navigate('/Nosotros')}>CONÓCENOS</button>
                 </div>
             </div>
 

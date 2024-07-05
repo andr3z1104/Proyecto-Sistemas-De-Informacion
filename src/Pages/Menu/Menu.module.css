@@ -116,3 +116,30 @@
     margin-left: 5vh;
     padding: 2vh;
 }
+
+
+.contenedor{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.imagenCarrito{
+    background-color: #AD986E;
+    opacity: 0.8;
+    border-radius: 20vh;
+}
+
+
+.imagenCarrito img{
+    height: 20vh;
+    max-width: 20vh;
+    object-fit: contain;
+}

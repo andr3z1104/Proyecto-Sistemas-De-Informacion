@@ -1,233 +1,186 @@
-.welcomeTitle {
-    color: #000;
-    text-align: left;
-    font-family: Montserrat;
-    font-size: 3.125rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.75rem;
-    margin-bottom: 20px;
-    margin-left: 3%;
+.contenedorPerfil {
+    font-family: Montserrat, sans-serif;
+
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    box-shadow: 0px 5px 15px 0px rgba(77,74,77,1);
+    background-color: var(--grisOscuro);
+    border-radius: 1rem;
+    margin: 1.5rem auto;
+    width: 90%;;
+
+    padding: 1rem 2rem;
 }
 
-.MiPerfil {
+@media (min-width: 768px) {
+    .contenedorPerfil {
+        margin: 1.5rem auto 3rem auto;
+    }
+}
+
+.infoContacto {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    padding: 20px;
-    background-color: #D9D9D9;
-    border-radius: 1.875rem;
-    margin-left: 3%;
-    margin-right: 3%;
-}
-
-.bigContainer {
-    display: flex;
-    flex-direction: row;
-
     align-items: center;
-    padding: 20px;
-    margin-left: 3%;
-    margin-right: 3%;
-
+    justify-content: center;
 }
 
-.secondBigContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: #D9D9D9;
-    /*align-items: ;*/
-    padding: 0px 20px 20px 20px;
-    margin-left: 3%;
-    margin-right: 3%;
-}
-
-.contactROW {
+.seccionDatos {
     display: flex;
     flex-direction: column;
 }
 
-.contactROW h2 {
-    align-self: flex-start;
-    padding: 20px 20px 0px 0px;
-    font-size: 2.125rem;
-    font-family: Montserrat;
+@media (min-width: 768px) {
+    .seccionDatos {
+        flex-direction: row;
+        column-gap: 1rem;
+    }
 }
 
-.contactROW h3 {
-    background-color: rgba(43, 43, 43, 0.73);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin-right: 1%;
-    width: 45%;
-    padding-left: 10px;
-
-    color: #ddd;
-    font-family: Montserrat;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.75rem;
-}
-
-.PreferencesROW {
+.seccionDatos_imagenUsuario {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.PreferencesROW h2 {
-    align-self: flex-start;
-    padding: 0px 20px 0px 4.5%;
-    font-size: 2.125rem;
-    font-family: Montserrat;
+@media (min-width: 768px) {
+    .seccionDatos_imagenUsuario {
+        width: 50%;
+        justify-content: center;
+    }
+}
+
+.contenedorImagen {
+    margin-top: 10px;
+    width: 80%; /* ancho del contenedor */
+    height: auto; /* alto del contenedor */
 }
 
 
-
-.imageC {
-    margin-right: 9%;
-    text-align: center;
-    padding-left: 7%;
+.contenedorImagen img{
+    object-fit: contain;
+    width: 100%; /* ancho de la imagen */
+    height: 100%; /* alto de la imagen */
+    border-radius: 15px;
 }
 
-.userimg {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-}
-
-.imageC h3 {
-    margin-bottom: 10px;
-}
-
-.contenedorDatos {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
-}
-
-.firstROW {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    width: 100%;
-
-}
-
-.firstROW h3 {
-    background-color: rgba(43, 43, 43, 0.73);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
-    width: 45%;
-
-
-    color: #ddd;
-    font-family: Montserrat;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.75rem;
-}
-
-.secondROW {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    width: 122.5%;
-
-}
-
-.secondROW h3 {
-    background-color: rgba(43, 43, 43, 0.73);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
-    width: 80%;
-
-    color: #ddd;
-    font-family: Montserrat;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.75rem;
-}
-
-.thirdROW {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.thirdROW h3 {
-    background-color: rgba(43, 43, 43, 0.73);
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
-
-    color: #ddd;
-    font-family: Montserrat;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.75rem;
-}
-
-.thirdROW button {
-    background: #F27507;
-    color: #fff;
-    padding: 2%;
+.divider {
     border: none;
-    border-radius: 1.25rem;
-    cursor: pointer;
-    width: 15%;
-    height: 3%;
+    border-top: 2px solid #000;
+    align-self: center;
+    margin: 1rem;
+    width: 100%; 
 }
 
-.thirdROW button:hover {
-    background-color: #3e8e41;
+.divider__colorBlanco {
+    border-top: 2px solid #fff;
+    width: 45%;
 }
 
-.fourtROW {
+.funcionesAdmin {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;    
+    row-gap: .5rem;
 }
 
-.fourtROW h3 {
-    background-color: #f7f7f7;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
+.boton {
+    background-color: var(--colorPrincipal);
+    
+    padding: 3px 15px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+
+.boton:hover{
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1);
 }
 
-.buttonContainer {
-    display: flex;
-    justify-content: space-between;
+.boton__colorNegro {
+    background-color: black;
+    padding: 3px 0;
+    width: 90%;
+}
+
+@media (min-width: 800px) {
+    .boton__colorNegro {
+        font-size: 1.5rem;
+
+    }
+}
+
+.boton__colorNegro:hover{
+    background-color: var(--negroClaro);
+    transform: scale(1.1);
+}
+
+.seccionDatos_datosUsuario {
     margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
 }
 
-.buttonContainer button {
-    background: #F27507;
-    color: #fff;
-    padding: 1%;
-    border: none;
-    border-radius: 1.25rem;
-    cursor: pointer;
-    width: 15%;
-    height: 3%;
+@media (min-width: 768px) {
+    .seccionDatos_datosUsuario{
+        width: 100%;
+    }
 }
 
-.buttonContainer button:hover {
-    background-color: #3e8e41;
+.contenedorTitulo, .seccionProducto_titulo {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.titulo {
+    margin: 10px 10px 0px 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .contenedorProducto {
+        align-items: start;
+    }
+
+}
+
+
+.dividerInfoContacto {
+    margin: 0;
+    width: 87%;
+}
+
+.camposInfo {
+    width: 90%;
+}
+
+.label {
+    background-color: var(--gris);
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.input {
+    margin: unset;
+    margin-left: 12px;
+    
+    
+}
+
+.contenedorBoton {
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 15px;
 }
