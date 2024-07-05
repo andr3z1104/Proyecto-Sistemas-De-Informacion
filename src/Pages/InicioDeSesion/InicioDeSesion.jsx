@@ -8,13 +8,11 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvide
 import { useState, useContext } from 'react';
 
 import PopupInfo from '../../Components/Popup/PopupInicioSesion'; 
-import { UserContext } from '../../Controllers/UserContext';
 
 const auth = getAuth(appFirebase);
 
 function InicioDeSesion() {
 
-    const { setUser } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPopUp, setShowPopUp] = useState(false);
@@ -64,7 +62,6 @@ function InicioDeSesion() {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            setUser({ email, password });
             setShowPopUp(true);
         } catch (error) {
             alert(error.message);
