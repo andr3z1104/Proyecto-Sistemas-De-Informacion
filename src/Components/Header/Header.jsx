@@ -1,9 +1,13 @@
 import styles from './Header.module.css';
 import logo from '../../assets/LogoHeader.png';
+import pfp from '../../assets/FotoPerfil.png';
 import { Link } from 'react-router-dom';
 import global from "../../Global.module.css";
+import { useUser } from '../../Controllers/UserContext';
 
 function Header({ showLoginButton }) {
+
+  const user = useUser();
   
   return (
     <header className={styles.header}>
@@ -26,9 +30,10 @@ function Header({ showLoginButton }) {
           <a href="/Nosotros" className={styles.navItem}>Nosotros</a>
         </div>
         <div className={styles.parte2}>
-          {showLoginButton && (
+          {showLoginButton && user === null && (
             <Link to="/InicioDeSesion" href="#acceder" className={`${styles.button} ${global.boton}`}>Acceder</Link>
           )}
+          {user !== null && <img src={pfp} alt="" />}
         </div>
       </nav>
     </header>

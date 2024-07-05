@@ -27,6 +27,7 @@ function PopupInfo({ onClose}) {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 }

@@ -23,11 +23,7 @@ import Carrito from './Pages/Carrito/Carrito';
 
 
 import dataProducts from './appData';
-import { useState, useEffect, useContext } from 'react';
 import { DataProvider } from './Context/DataProvider';
-import HeaderIS from './Components/HeaderIS/HeaderIS';
-
-import AppProvider from './Controllers/UserProvider';
 import { UserContext } from './Controllers/UserContext';
 
 function App() {
@@ -35,11 +31,9 @@ function App() {
 
   return (
     <DataProvider>
-      < AppProvider>
         <Router>
           <AppRoutes />
         </Router>
-      </AppProvider>
     </DataProvider>
   );
 }
@@ -69,7 +63,6 @@ function AppRoutes() {
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
-        <Route path='/HeaderIS' element={<HeaderIS />} />
 
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />

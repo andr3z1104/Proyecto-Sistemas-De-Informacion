@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 const db = getFirestore(appFirebase);
 const auth = getAuth(appFirebase); // Autenticación de la app
 
+import PopupInfo from '../../Components/Popup/PopupInicioSesion'; 
+
 function IniciarAdmin() {
 
     // "admin@granierunimet.com"
@@ -23,6 +25,8 @@ function IniciarAdmin() {
     const [password, setPassword] = useState('');
     const [id, setId] = useState('');
     const navigate = useNavigate();
+
+    const [showPopUp, setShowPopUp] = useState(false);
 
     const handleClick = () => {
         window.location.href = '/InicioDeSesion';
@@ -50,8 +54,7 @@ function IniciarAdmin() {
 
         } else {
             await signInWithEmailAndPassword(auth,email,password);
-            navigate('/');
-            alert("Bienvenido, ADMIN");
+            setShowPopUp(true);
     }}
 
     return (
@@ -86,6 +89,7 @@ function IniciarAdmin() {
                     </div>
                 </div>
             </div>
+            {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
         </>
     );
 }
