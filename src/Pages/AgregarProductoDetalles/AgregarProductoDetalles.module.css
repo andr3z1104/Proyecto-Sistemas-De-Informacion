@@ -59,15 +59,10 @@ html {
     margin-top: 10px;
 }
 
-.image_container img {
+.zone img {
     width: 350px;
     height: 350px;
     border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.image_container img:hover {
-    transform: scale(1.15);
 }
 
 .details_container {
@@ -75,16 +70,24 @@ html {
     max-width: 400px;
 }
 
-.details_container p {
+.details_container input {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 23px;
+    font-weight: 400;
+    border: none;
+    box-shadow: 0 0 4px 2px #929292;
     font-size: 20px;
     font-weight: 400;
     text-align: left;
+    background-color: #D9D9D9;
+    border-radius: 15px;
 }
 
 .small_text {
+    font-size: 20px;
     background-color: #D9D9D9;
     border-radius: 15px;
-    width: 100%;
 }
 
 .small_textp {
@@ -133,97 +136,82 @@ html {
     margin-bottom: 5px;
 }
 
-.quantity {
-    font-weight: 600;
-}
-
-.quantity_control {
+.submit {
     align-self: center;
     justify-content: center;
     display: flex;
     align-items: center;
     margin-top: 20px;
-    border-radius: 15px;
 }
 
-.quantity_control:not(.no_bg) {
-    background-color: #FB8500;
-}
-
-.quantity_control button {
+.confirm {
     background-color: #FB8500;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.confirm:hover {
+    background-color: #fb5800;
+}
+
+.delete{
+    margin: 10px;
+    background-color: #FB8500;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+.delete:hover {
+    background-color: #fb5800;
+}
+
+.submit{
+    margin: 30px 0 20px 0;
+    background-color: #FB8500;
+    color: white;
+    border: none;
+    padding: 15px;
     cursor: pointer;
     font-size: 30px;
     transition: background-color 0.3s ease;
-}
-
-.button1:hover {
-    background-color: #fb5800;
-}
-
-.button2:hover {
-    background-color: #fb5800;
-}
-
-.quantity_control span {
-    background-color: #FB8500;
-    color: white;
-    padding: 10px 50px;
-    font-size: 30px;
-}
-
-.button1 {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.button2 {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.add_button {
-    font-weight: 650;
-    margin: 5px;
-    padding: 10px;
-    background-color: #FB8500;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
     border-radius: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: 700;
 }
 
-.add_button:hover {
+.submit:hover {
     background-color: #fb5800;
-    transform: scale(1.1);
 }
 
 .back_button {
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 650;
-    cursor: pointer;
+    font-weight: 700;
+    margin: 20px;
     padding: 10px;
     background-color: #FB8500;
     color: white;
+    border: none;
+    cursor: pointer;
     font-size: 24px;
     border-radius: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.spacer_bButton {
-    margin: 30px;
+    align-self: flex-end;
+    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .back_button:hover {
     background-color: #fb5800;
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 .menu_price_container {
@@ -242,49 +230,53 @@ html {
     margin-right: 10px;
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+.small_text {
+    width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
     .two_parts {
         flex-direction: column;
         align-items: center;
     }
 
     .back_layer {
-        width: 90%;
+        width: 80%;
         margin-top: 20px;
-        padding: 12px;
+        padding: 15px;
     }
 
     .inside_background {
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
         margin: 10px 0;
     }
 
     .image_container img {
-        width: 290px;
-        height: 290px;
+        width: 280px;
+        height: 280px;
     }
 
     .details_container {
-        width: 100%;
-        padding: 12px;
+        width: 90%;
+        padding: 15px;
         text-align: center;
     }
 
     .details_container h2 {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .details_container p {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     .product_info h3 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .menu_price_container h4 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .menu_price_container {
@@ -294,7 +286,7 @@ html {
 
     .space_price, .space_class {
         width: 100%;
-        margin: 6px 0;
+        margin: 8px 0;
     }
 
     .space_price input, .space_class input {
@@ -303,17 +295,17 @@ html {
     }
 
     .product_info ul li {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .product_info input {
-        font-size: 21px;
-        padding: 6px;
+        font-size: 20px;
+        padding: 8px;
         width: 100%;
     }
 
     .quantity_control span {
-        padding: 12px 34px;
+        padding: 10px 20px;
     }
 
     .back_button {
