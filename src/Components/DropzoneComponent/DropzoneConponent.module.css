@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.text{
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.dropzone {
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
