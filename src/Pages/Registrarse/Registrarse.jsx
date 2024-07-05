@@ -102,6 +102,7 @@ function Registrarse() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       await createUserDocument(user);
+      setShowPopUp(true);
     } catch (error) {
       console.error("Error al registrarse con Google:", error);
     }
@@ -113,6 +114,7 @@ function Registrarse() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       await createUserDocument(user);
+      setShowPopUp(true);
     } catch (error) {
       console.error("Error al registrarse con Facebook:", error);
     }
