@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.infoPedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.infoPedido .headerContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6d3d3;
+    border-radius: 10px;
+    width: 75vw;
+}
+
+.infoPedido .headerContainer h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.dataInformationBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dataInformationBlock img {
+    width: 20vw;
+    margin-bottom: 2vw;
+    margin-left: 1vw;
+}
+
+.dataInformation {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+.specialROW {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.specialROW .specialValuesInfo1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.55vw;
+    width: 25.5vw;
+    font-weight: 500;
+    color: white;
+    background: #2b2b2b5e;
+    border-radius: 2vh;
+    padding: 1.5%;
+    align-items: center;
+}
+
+.specialROW .specialValuesInfo2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.55vw;
+    width: 25.5vw;
+    font-weight: 500;
+    color: white;
+    background: #2b2b2b5e;
+    border-radius: 2vh;
+    padding: 1.5%;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+.dataInformation .valuesInfo1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.55vw;
+    width: 23.5vw;
+    font-weight: 500;
+    color: white;
+    background: #2b2b2b5e;
+    border-radius: 2vh;
+    padding: 1.5%;
+}
+
+.dataInformation .valuesInfo2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.55vw;
+    width: 23.5vw;
+    font-weight: 500;
+    color: white;
+    background: #2b2b2b5e;
+    border-radius: 2vh;
+    padding: 1.5%;
+}
+
+
+
+
+
+
+
+
+
+.bottomContainer {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e6d3d3;
+    border-radius: 10px;
+    width: 75vw;
+}
+
+.bottomContainer .leftContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+}
+
+.bottomContainer .leftContainer h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+.bottomContainer .totalToPay {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #aca3a3;
+    width: 15vw;
+    height: 10vw;
+    text-align: center;
+    border-radius: 2vw;
+}
+
+.totalToPay .finallyDiv p {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2vw;
+}
+
+.totalToPay .finallyDiv .colorAmount {
+    text-align: center;
+    background-color: red;
+    width: 10vh;
+}
+
+
+.bottomContainer .addCar img {
+    width: 13.5vw;
+    padding: 1vw;
+}
