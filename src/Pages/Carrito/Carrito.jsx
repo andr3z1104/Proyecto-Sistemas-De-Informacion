@@ -46,11 +46,6 @@ function Carrito() {
 
     console.log(carrito)
 
-    const onClick = (e) => {
-        e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
-    };
-
 
     const options = [
         {
@@ -164,7 +159,7 @@ function Carrito() {
                 <div className={styles.paypal}>
                 <PayPalButtons />
                 </div>
-                <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
+                <button className={styles.navButton} >----------Pagar----------</button>
             </div>
             
             
