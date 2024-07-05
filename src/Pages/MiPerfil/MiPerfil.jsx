@@ -7,6 +7,16 @@ import { useState, useEffect } from "react";
 import PopupInfo from "../../Components/Popup/PopupCerrarSesion";
 import { useUser } from "../../Controllers/UserContext";
 import { Link, useNavigate } from "react-router-dom";
+import { getAuth, deleteUser } from "firebase/auth";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+import { db } from "../../credenciales";
 
 
 function MiPerfil() {
@@ -27,6 +37,35 @@ function MiPerfil() {
     e.preventDefault();
 
     logOut();
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!user) return;
+
+    try {
+      // Eliminar el usuario de la colección "users" en Firestore
+      const usersRef = collection(db, "users");
+      const q = query(usersRef, where("email", "==", user.email));
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach(async (docSnapshot) => {
+        await deleteDoc(doc(db, "users", docSnapshot.id));
+      });
+
+      // Eliminar el usuario autenticado de Firebase Authentication
+      const auth = getAuth();
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        await deleteUser(currentUser);
+      }
+
+      // Cerrar sesión y redirigir a la página de registro
+      logOut();
+      navigate("/Registrarse");
+    } catch (error) {
+      console.error("Error al eliminar la cuenta:", error);
+      alert("Hubo un error al eliminar la cuenta. Inténtelo de nuevo.");
+    }
   };
 
   if (!user) {
@@ -89,7 +128,10 @@ function MiPerfil() {
         >
           Cerrar Sesion
         </button>
-        <button className={`${global.boton} ${styles.boton}`}>
+        <button
+          className={`${global.boton} ${styles.boton}`}
+          onClick={handleDeleteAccount}
+        >
           Eliminar Cuenta
         </button>
       </div>
