@@ -10,7 +10,7 @@ import Feedback from './Pages/Feedback/Feedback';
 
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
 import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
-import PopupInicioSesion from "./Components/Popup/PopupInicioSesion";
+
 import PopupRegistro from "./Components/Popup/PopupRegistro";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -21,18 +21,32 @@ import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
 
 import dataProducts from './appData';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import HeaderIS from './Components/HeaderIS/HeaderIS';
 
+import AppProvider from './Controllers/UserProvider';
+import UserContext from './Controllers/UserContext';
 
 function App() {
+
+  const { logout } = useContext(UserContext);
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', logout);
+    return () => {
+      window.removeEventListener('beforeunload', logout);
+    };
+  }, [logout]);
+
 
 
 
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    < AppProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AppProvider>
   );
 }
 
@@ -70,7 +84,7 @@ function AppRoutes() {
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
         <Route path='/HeaderIS' element={<HeaderIS />} />
-        <Route path= "/PopupInicioSesion" element={<PopupInicioSesion />} />
+
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
         <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
