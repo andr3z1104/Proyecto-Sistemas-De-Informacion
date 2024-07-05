@@ -52,6 +52,13 @@ function Registrarse() {
   const handleRegisterButton = async (e) => {
     e.preventDefault();
 
+    // Verificar que las contraseñas coincidan
+    if (password !== verifypassword) {
+      alert("Las contraseñas no coinciden.");
+      return;
+    }
+
+    // Verificar dominio de correo
     const emailParts = email.split("@");
     const domain = emailParts[1];
     if (domain !== "correo.unimet.edu.ve" && domain !== "unimet.edu.ve") {
@@ -59,36 +66,44 @@ function Registrarse() {
       return;
     }
 
-    const usersRef = collection(db, "users");
-    const emailQuery = query(usersRef, where("email", "==", email));
-    const phoneQuery = query(usersRef, where("phone", "==", phone));
+    try {
+      const usersRef = collection(db, "users");
+      const emailQuery = query(usersRef, where("email", "==", email));
+      const phoneQuery = query(usersRef, where("phone", "==", phone));
 
-    const emailExist = await getDocs(emailQuery);
-    const phoneExist = await getDocs(phoneQuery);
+      const emailExist = await getDocs(emailQuery);
+      const phoneExist = await getDocs(phoneQuery);
 
-    if (!emailExist.empty || !phoneExist.empty) {
-      alert(
-        "El usuario ya está registrado. Verifique sus datos o inicie sesión"
-      );
-    } else {
-      try {
-        const newUser = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
+      if (!emailExist.empty) {
+        alert(
+          "El correo ya está registrado. Verifique sus datos o inicie sesión."
         );
-        await addDoc(collection(db, "users"), {
-          uid: newUser.user.uid,
-          name: name,
-          lastName: lastName,
-          phone: phone,
-          email: email,
-          password: password,
-        });
-        setShowPopUp(true);
-      } catch (error) {
-        alert("ERROR. Asegúrese de que ingresó los datos correctamente");
+        return;
       }
+
+      if (!phoneExist.empty) {
+        alert(
+          "El teléfono ya está registrado. Verifique sus datos o inicie sesión."
+        );
+        return;
+      }
+
+      const newUser = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await addDoc(collection(db, "users"), {
+        uid: newUser.user.uid,
+        name: name,
+        lastName: lastName,
+        phone: phone,
+        email: email,
+      });
+      setShowPopUp(true);
+    } catch (error) {
+      alert("ERROR. Asegúrese de que ingresó los datos correctamente");
+      console.error("Error during registration:", error);
     }
   };
 
