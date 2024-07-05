@@ -17,16 +17,29 @@ import Carrito from './Pages/Carrito/Carrito';
 
 import { DataProvider } from './Context/DataProvider';
 
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
+
 
 function App() {
 
+  const initialOptions = {
+    clientId: "ASO1PRPDoPXzWHa7aE7polcVZzpeDriZ2Ry6OLzbDvDnaRdiwqP6mk-F8ZAzgZx5wjKWuf8E0vfkDIWu",
+    currency: "USD",
+    intent: "capture",
+  };
+
 
   return (
+ 
     <DataProvider>
+    <PayPalScriptProvider options={initialOptions}>
     <Router>
       <AppRoutes />
     </Router>
+    </PayPalScriptProvider>
     </DataProvider>
+  
   );
 }
 
