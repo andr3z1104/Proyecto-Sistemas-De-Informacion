@@ -8,6 +8,7 @@ import PopupInfo from "../../Components/Popup/PopupCerrarSesion";
 import { useUser } from "../../Controllers/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function MiPerfil() {
   const { user } = useUser();
   const [showPopUp, setShowPopUp] = useState(false);
@@ -15,13 +16,17 @@ function MiPerfil() {
 
   useEffect(() => {
     if (!user) {
+      
+    
+      setShowPopUp(true);
       navigate("/Registrarse");
     }
   }, [user, navigate]);
 
   const handleClick = async (e) => {
+    e.preventDefault();
+
     logOut();
-    setShowPopUp(true);
   };
 
   if (!user) {
@@ -42,13 +47,8 @@ function MiPerfil() {
               className={`${styles.divider__colorBlanco} ${styles.divider}`}
             ></div>
             <div className={styles.funcionesAdmin}>
-              <Link to="/EditarPerfil">
-                <button
-                  className={`${global.boton} ${styles.boton__colorNegro}`}
-                >
-                  Editar Perfil
-                </button>
-              </Link>
+                <button onClick={() => navigate('/EditarPerfil')} className={`${global.boton} ${styles.boton__colorNegro}`}
+                >Editar Perfil</button>
             </div>
           </div>
           <div className={styles.seccionDatos_datosUsuario}>
