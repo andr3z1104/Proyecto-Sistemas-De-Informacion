@@ -8,16 +8,16 @@ import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthPro
 import { useState, useContext } from 'react';
 
 import appFirebase from '../../credenciales';
-import { UserContext } from '../../Controllers/UserContext';
 
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { getDocs, query, where} from "firebase/firestore";
+import { UserContext } from '../../Controllers/UserContext';
+import PopupCondiciones from '../../Components/Popup/PopupCondiciones';
 
 const db = getFirestore(appFirebase);
 const auth = getAuth(appFirebase); // Autenticación de la app
 
 function Registrarse() {
-    const { setUser } = useContext(UserContext);
 
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -27,6 +27,7 @@ function Registrarse() {
     const [verifypassword, setVerifyPassword] = useState('');
 
     const [showPopUp, setShowPopUp] = useState(false);
+    const [showPopUp1, setShowPopUp1] = useState(false);
 
 
 
@@ -47,7 +48,7 @@ function Registrarse() {
         const emailParts = email.split('@');
             const domain = emailParts[1];
             console.log(domain);
-            if (domain !== 'correo.unimet.edu.ve' && domain !== 'unimet.edu.ve') {
+            if (domain != 'correo.unimet.edu.ve' && domain != 'unimet.edu.ve') {
                 alert('Correo inválido. Dominio incorrecto.')
         }
         else{
@@ -65,7 +66,6 @@ function Registrarse() {
         } else {
             try {
                 const newUser = await createUserWithEmailAndPassword(auth,email,password);
-                setUser({ email, password });
                 await addDoc(collection(db, "users"), {
                 uid: newUser.user.uid,
                 name: name,
@@ -85,9 +85,9 @@ function Registrarse() {
         window.location.href = '/InicioDeSesion'
     }
 
-    const onClick = (e) => {
+    const onClick1 = (e) => {
         e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
+        setShowPopUp1(true);
     };
 
     return (
@@ -111,7 +111,7 @@ function Registrarse() {
                             <input name = 'phone' value={phone} placeholder='Telefono' onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Contraseña' name= 'contraseña' value = {password} onChange={handleInputChange} required></input>
                             <input type= 'password' placeholder='Verificar Contraseña' name= 'vcontraseña' value = {verifypassword} onChange={handleInputChange} required></input>
-                            <span className={styles.condiciones}>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+                            <span className={styles.condiciones}>Al Registrarse, aceptas las <a href="/CondicionesDeUso" onClick={onClick1}>Condiciones de uso</a> de Granier</span>
                             
                             <button onClick={handleRegisterButton}>Registrarse</button>
                         
@@ -128,6 +128,7 @@ function Registrarse() {
                     </div>
                 </div>
                 {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
+                {showPopUp1 && <PopupCondiciones onClose={() => setShowPopUp1(false)} />}
             </div>
     );
 }
