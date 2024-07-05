@@ -4,27 +4,18 @@ import logoCarrito from '../../assets/logoPedido.png'
 
 
 
-import SwitchSelector from "react-switch-selector";
-
-
+import SwitchSelector from "react-switch-selector"; 
 import { useContext, useEffect, useState } from 'react';
-
 import { DataContext } from '../../Context/DataProvider';
-
 import ProductoPedido from '../../Components/ProductoPedido/ProductoPedido'
-
 import { PayPalButtons } from '@paypal/react-paypal-js';
 
 function Carrito() {
 
     const value = useContext(DataContext);
-
     const [carrito, setCarrito] = value.carrito;
-
     const [total, setTotal] = value.total;
-
     const productos = value.productos
-
     const [selectedOption, setSelectedOption] = useState('');
 
 
@@ -33,24 +24,24 @@ function Carrito() {
 
         let subtotal = 0;
         carrito.forEach((item) => {
-          const producto = productos.find((p) => p.ID === item.ID);
-          subtotal += producto.precio;
+            const producto = productos.find((p) => p.ID === item.ID);
+            subtotal += producto.precio;
         });
         let shippingCost = 0;
         if (selectedOption === 'Delivery') {
-          shippingCost = 8;
+            shippingCost = 8;
         }
         setTotal(subtotal + shippingCost);
-      }, [carrito, productos, selectedOption]);
+        }, [carrito, productos, selectedOption]);
     
-      useEffect(() => {
+        useEffect(() => {
         console.log('selectedOption:', selectedOption);
-      }, [selectedOption]);
+        }, [selectedOption]);
     
-      const onChange = (newValue) => {
-        setSelectedOption(newValue.value);
-        console.log(newValue)
-      };
+        const onChange = (newValue) => {
+            setSelectedOption(newValue.value);
+            console.log(newValue)
+        };
     
 
     console.log(carrito)
