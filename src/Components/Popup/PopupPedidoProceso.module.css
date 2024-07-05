@@ -1,3 +1,7 @@
+p, h1 {
+    font-family: var(--fuentePrincipal);
+}
+
 .fondoNegro {
     padding: 10rem 1rem;
     /* Ami aquí es */
@@ -62,9 +66,15 @@
     margin: 0 0 10px;
 }
 
-
 .botonContinuar {
     background-color: var(--colorPrincipal);
     padding: 3px 15px;
-}
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+
+  .botonContinuar:hover{
+    background-color: var(--colorPrincipal__hover);
+    transform: scale(1.1)
+  }
 
