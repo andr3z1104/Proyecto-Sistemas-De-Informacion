@@ -83,7 +83,9 @@ function EditarPerfil() {
             onChange={handleChange}
           />
         </div>
-        <button className={`${global.boton} ${styles.boton}`} type="submit">Guardar Cambios</button>
+        <div className={styles.contenedorBoton}>
+          <button className={`${global.boton} ${styles.boton}`} type="submit">Guardar Cambios</button>
+        </div>
       </form>
     </div>
   );
