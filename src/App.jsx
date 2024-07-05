@@ -11,6 +11,7 @@ import Registrarse from "./Pages/Registrarse/Registrarse";
 import Contacto from "./Pages/Contacto/Contacto";
 import Nosotros from "./Pages/Nosotros/Nosotros";
 import MiPerfil from "./Pages/MiPerfil/MiPerfil";
+import EditarPerfil from "./Pages/EditPerfil/EditarPerfil";
 
 import PopupCondiciones from "./Components/Popup/PopupCondiciones";
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso";
@@ -30,8 +31,8 @@ import Carrito from "./Pages/Carrito/Carrito";
 
 import dataProducts from "./appData";
 import { DataProvider } from "./Context/DataProvider";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import UserProvider from "./Controllers/UserProvider"; // Asegúrate de importar UserProvider correctamente
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { UserProvider } from "./Controllers/UserContext"; // Asegúrate de importar correctamente
 
 function App() {
   const initialOptions = {
@@ -81,6 +82,8 @@ function AppRoutes() {
         />
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/MiPerfil" element={<MiPerfil />} />
+        <Route path="/EditarPerfil" element={<EditarPerfil />} />{" "}
+        {/* Nueva ruta */}
         <Route path="/AdminPerfil" element={<AdminPerfil />} />
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Feedback" element={<Feedback />} />
