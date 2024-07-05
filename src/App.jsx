@@ -6,11 +6,12 @@ import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 import Feedback from './Pages/Feedback/Feedback';
+import MiPerfilAdmin from "./Pages/MiPerfilAdmin/MiPerfilAdmin";
 
 
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
 import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
-import PopupInicioSesion from "./Components/Popup/PopupInicioSesion";
+
 import PopupRegistro from "./Components/Popup/PopupRegistro";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -20,12 +21,15 @@ import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
 
+
+import dataProducts from './appData';
+import { useState, useEffect, useContext } from 'react';
 import { DataProvider } from './Context/DataProvider';
-import { useState } from 'react';
 import HeaderIS from './Components/HeaderIS/HeaderIS';
 
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-
+import AppProvider from './Controllers/UserProvider';
+import { UserContext } from './Controllers/UserContext';
 
 
 function App() {
@@ -40,11 +44,13 @@ function App() {
   return (
  
     <DataProvider>
+    < AppProvider>
     <PayPalScriptProvider options={initialOptions}>
     <Router>
       <AppRoutes />
     </Router>
     </PayPalScriptProvider>
+    </AppProvider>
     </DataProvider>
   
   );
@@ -66,6 +72,9 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
+        <Route path='/MiPerfilAdmin' element={<MiPerfilAdmin />} />
+
+        
 
         <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
@@ -73,7 +82,7 @@ function AppRoutes() {
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
         <Route path='/HeaderIS' element={<HeaderIS />} />
-        <Route path= "/PopupInicioSesion" element={<PopupInicioSesion />} />
+
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
         <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
