@@ -1,61 +1,80 @@
+/* Global Styles */
 .slick-slider {
     margin-bottom: 20px;
 }
 
 .tituloCarrusel {
     text-align: left;
-    font-size: 4em;
+    font-size: 2.5em;
     font-weight: 650;
     margin: 10px;
+    color: var(--colorPrincipal);
 }
-
 
 .contenedor {
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: #FFCA99;
     border-radius: 20px;
-    height: 50vh;
+    padding: 20px;
+    margin: 10px;
+    height: auto;
 }
+
 .contenedorImagen {
     display: flex;
-    height: 30vh;
     justify-content: center;
     padding: 1rem 2rem 0;
 }
 
 .imagen {
-    max-width: 30vh;
+    max-width: 100%;
     height: auto;
     border-radius: 20px;
-    object-position: center;
-    object-fit:cover;
+    object-fit: cover;
 }
 
-
-@media (max-width: 800px){
-    .contenedor{
-        height: 55vh;
-        overflow: scroll;
+/* Adjustments for different screen sizes */
+@media (max-width: 800px) {
+    .contenedor {
+        padding: 10px;
     }
 
-    .imagen{
-        max-width: 18vh;
+    .imagen {
+        max-width: 80%;
         height: auto;
     }
 
+    .descripcionBoton {
+        font-size: 12px;
+        padding: 5px 0;
+    }
 }
 
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 5px;
+    }
+
+    .imagen {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .descripcionBoton {
+        font-size: 10px;
+        padding: 3px 0;
+    }
+}
 
 /* Contenido del producto */
 .descripcion {
-    margin: auto;
-    height: auto;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .descripcionNombre,
@@ -68,12 +87,12 @@
 }
 
 .descripcionNombre {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .descripcionPrecio {
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* Boton */
@@ -81,15 +100,14 @@
     background-color: var(--colorPrincipal);
     font-size: 15px;
     width: 80%;
-    padding: 3px 0;
+    padding: 5px 0;
     margin-bottom: 1vh;
-    transition: background-color 0.3s ease;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .descripcionBoton:hover {
     background-color: var(--colorPrincipal__hover);
-    transform: scale(1.1)
+    transform: scale(1.05);
 }
 
 /* Estilo para las flechas de navegación */
@@ -98,38 +116,38 @@
     align-items: center;
     justify-content: center;
     background-color: var(--colorPrincipal);
-    height: 100px;
-    width: 45px;
-    border-radius: 15px;
+    height: 50px;
+    width: 25px;
+    border-radius: 10px;
     z-index: 1;
 } 
-.arrow:hover{
+
+.arrow:hover {
     background-color: var(--colorPrincipal__hover);
 }
 
 .arrow::before {
-    font-size: 25px;
+    font-size: 20px;
     color: white;
 }
-
 
 @media (max-width: 1024px) { 
     .arrow {
         height: 40px;
-        width: 25px;
+        width: 20px;
     }
+
     .arrow::before {
         font-size: 18px;
     }
 }
 
-@media (max-width: 768px) { 
-
-    
+@media (max-width: 768px) {
     .arrow {
         height: 30px;
-        width: 20px;
+        width: 15px;
     }
+
     .arrow::before {
         font-size: 16px;
     }

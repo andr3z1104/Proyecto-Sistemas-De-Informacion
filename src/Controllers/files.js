@@ -1,24 +1,48 @@
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import {storage} from "../credenciales";
+import {nanoid} from "nanoid";
+import { addDoc, collection, getDocs, } from "firebase/firestore";
+import { db } from "../credenciales";
 
-const dataProducts = [
-    {
-        ID: 1,
-        nombre: 'Cafe Americano',
-        categoria: 'Cafe',
-        descripcion: 'Un cafe tostado para empezar el dia',
-        precio: 1,
-        cantidad: 10,
-        img: '/src/assets/Americano.png',
-        ingredientes :[ 
-            {
-                n: 'Agua',
-                contraIndica: null
-            },
-            {
-                nombreIngred: 'Grano Arabico',
-                contraIndica: null
-            }
-        ]
-    },
+export async function getImageUrl(productName){
+    const imageRef = ref(storage, `images/${productName}.png`)
+    const url = await getDownloadURL (ref (storage , imageRef));
+    return url;
+}
+
+export async function uploadImagen(data){
+    const carpeta = ref(storage, `imagenes/${nanoid()}`);
+    const result = await uploadBytes(carpeta, data);
+    return result.metadata.fullPath
+}
+
+export async function deletePhoto(path){
+    const imageRef = ref(storage, path);
+    deleteObject(imageRef);
+}
+
+export const getProducts = async () => {
+    const productsCollection = collection( db, "products");
+    const productsSnapshot = await getDocs(productsCollection);
+    const productArray = productsSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        cantidad: doc.cantidad,
+        categoria: doc.categoria,
+        descripcion: doc.descripcion,
+        ingredientes: doc.ingredientes
+    }));
+    return productArray;
+};
+
+export const addProduct = async (product) => {
+    const productsCollection = collection(db, "products");
+    const docRef = await addDoc(productsCollection, product);
+    return docRef.id;
+};
+
+export async function addProducts(){
+
+    const dataProducts = [
     {
         ID: 2,
         nombre: 'Pan Integral',
@@ -26,7 +50,6 @@ const dataProducts = [
         descripcion: 'Un pancito para empezar el dia',
         precio: 2,
         cantidad: 20,
-        img: '/src/assets/pan.png',
         ingredientes : [
             {
                 nombreIngred: 'Harina',
@@ -53,7 +76,6 @@ const dataProducts = [
         descripcion: 'Un frappe bien frio para terminar el dia',
         precio: 3,
         cantidad: 10,
-        img: '/src/assets/FrappeChocolate.png',
         ingredientes :[ 
             {
                 nombreIngred: 'Leche',
@@ -80,7 +102,6 @@ const dataProducts = [
         descripcion: 'Un cafe bien caliente para empezar el dia',
         precio: 3,
         cantidad: 10,
-        img: '/src/assets/Mocca.png',
         ingredientes :[ 
             {
                 nombreIngred: 'Agua',
@@ -107,7 +128,6 @@ const dataProducts = [
         descripcion: 'Un cafe bien caliente para empezar el dia',
         precio: 3,
         cantidad: 10,
-        img: '/src/assets/Capuccino.png',
         ingredientes :[ 
             {
                 nombreIngred: 'Agua',
@@ -130,7 +150,6 @@ const dataProducts = [
         descripcion: 'Un frappe bien frio para empezar el dia',
         precio: 3,
         cantidad: 10,
-        img: '/src/assets/FrappeCookiesnCream.png',
         ingredientes :[ 
             {
                 nombreIngred: 'Leche',
@@ -153,7 +172,17 @@ const dataProducts = [
                 contraIndica: '(Lacteo)'
             }
         ]
-    },
-]
+        },
+    ]
 
-export default dataProducts
+    const productsCollection = collection( db, "products");
+    for (const product of dataProducts) {
+        try {
+            const docRef = await addDoc(productsCollection,product);
+            console.log('Producto agregado con ID:', docRef.id);
+        } catch (error) {
+            console.error('Error al agregar producto:', error);
+        }
+    }
+
+}

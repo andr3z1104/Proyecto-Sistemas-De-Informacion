@@ -7,14 +7,26 @@ import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import { logOut } from '../../Controllers/logout';
 import { useState } from 'react';
 import PopupInfo from '../../Components/Popup/PopupCerrarSesion';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../Controllers/UserContext';
 
 function MiPerfil() {
-    
-    let nombre = "Angelo";
-    let apellido = "Guerrero";
-    let correo = "g.angelo@correo.unimet.edu.ve";
-    let fechaNacimiento = "23/10/2002";
-    let telefono = "04126881813";
+
+    const navigate = useNavigate();
+    const user = useUser();
+    const handleEdit =  async (e) => {
+        e.preventDefault();
+        if (user?.email == 'admin@granierunimet.com'){
+            navigate('/AdminPerfil');
+        }else{
+            navigate('/EditarMiPerfil');
+        }
+        }
+
+    const nombre = "Angelo";
+    const apellido = "Guerrero";
+    const correo = "g.angelo@correo.unimet.edu.ve";
+    const telefono = "04126881813";
 
     const [showPopUp, setShowPopUp] = useState(false);
 
@@ -34,7 +46,7 @@ function MiPerfil() {
                         </div>
                         <div className={`${styles.divider__colorBlanco} ${styles.divider}`}></div>
                         <div className={styles.funcionesAdmin}>
-                            <button className={`${global.boton} ${styles.boton__colorNegro}`} >Editar Perfil</button>
+                            <button className={`${global.boton} ${styles.boton__colorNegro}`} onClick={handleEdit}>Editar Perfil</button>
                         </div>
                     </div>
                     <div className={styles.seccionDatos_datosUsuario}>
@@ -56,9 +68,6 @@ function MiPerfil() {
                             <div className={styles.label}>
                                 <p className={styles.input}>{telefono}</p>
                             </div>
-                            <div className={styles.label}>
-                                <p className={styles.input}>{fechaNacimiento}</p>
-                            </div>
                         </div>
                     </div>
 
@@ -68,7 +77,6 @@ function MiPerfil() {
 
             <div className={styles.contenedorBoton}>
                 <button className={`${global.boton} ${styles.boton}`} onClick={handleClick} >Cerrar Sesion</button>
-                <button className={`${global.boton} ${styles.boton}`}>Eliminar Cuenta</button>
             </div>
             {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
         </div>

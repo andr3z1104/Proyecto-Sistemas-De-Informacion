@@ -68,17 +68,6 @@ function ProductoDetalles() {
                                 </li>
                             ))}
                         </ul>
-                        <div className={`${styles.quantity_control} ${quantity === 0 ? styles.no_bg : ''}`}>
-                            {quantity === 0 ? (
-                                <button className={styles.add_button} onClick={incrementQuantity}>Agregar</button>
-                            ) : (
-                                <>
-                                    <button className={styles.button1} onClick={decrementQuantity}>-</button>
-                                    <span className={styles.quantity}>{quantity}</span>
-                                    <button className={styles.button2} onClick={incrementQuantity}>+</button>
-                                </>
-                            )}
-                        </div>
                     </div>
                 </div>
             </div>

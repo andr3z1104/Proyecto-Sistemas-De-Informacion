@@ -22,15 +22,18 @@ import AgregarProductoDetalles from './Pages/AgregarProductoDetalles/AgregarProd
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
 
+import EditarPerfil from './Pages/EditarPerfil/MiPerfilEditar'
+// import EditarAdminPerfil from './Pages/EditarPerfil/AdminPerfilEditar'
+
 
 import dataProducts from './appData';
 import { DataProvider } from './Context/DataProvider';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { UserContext } from './Controllers/UserContext';
+import { useEffect } from 'react';
 
 
 function App() {
-
   const initialOptions = {
     clientId: "ASO1PRPDoPXzWHa7aE7polcVZzpeDriZ2Ry6OLzbDvDnaRdiwqP6mk-F8ZAzgZx5wjKWuf8E0vfkDIWu",
     currency: "USD",
@@ -73,10 +76,9 @@ function AppRoutes() {
         <Route path='/AdminPerfil' element={<AdminPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
-        <Route path= "/PopupRegistro" element={<PopupRegistro />} />
-        <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
-        <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
-        <Route path= "/PopupCondiciones" element={<PopupCondiciones />} />
+
+        <Route path='/EditarMiPerfil' element={<EditarPerfil />} />
+        {/* <Route path='/EditarAdminMiPerfil' element={<EditarAdminPerfil />} /> */}
 
 
       </Routes>

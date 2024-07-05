@@ -12,9 +12,11 @@ import { goOffline } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
 import { DataContext } from '../../Context/DataProvider';
+import { useUser } from '../../Controllers/UserContext';
 
 
 function Menu(){
+    const user = useUser ();
 
     const value = useContext(DataContext);
 
@@ -68,17 +70,16 @@ function Menu(){
         </div>
 
         
-        <div className={styles.contenedor}>
+        {user != null && user?.email !=  "admin@granierunimet.com" && <div className={styles.contenedor}>
             <Link  to={`/Carrito`}  className={styles.imagenCarrito}>
                 <img src={logo} alt='Carrito'></img>
             </Link>
-        </div>
+        </div>}
 
         {filteredProducts().map((product) => (
         <div key={product.name}>{product.name}</div>
       ))}
 
-       
             {showCarousel('Panes') && <CaruselMenu titulo="Panes" />}
       {showCarousel('Frappe') && <CaruselMenu titulo="Frappe" />}
       {showCarousel('Cafe') && <CaruselMenu titulo="Cafe" />}

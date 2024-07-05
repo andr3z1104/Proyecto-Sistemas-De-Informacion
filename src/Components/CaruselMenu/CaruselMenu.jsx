@@ -8,11 +8,9 @@ import { DataContext } from '../../Context/DataProvider';
 
 import styles from './CaruselMenu.module.css';
 import global from "../../Global.module.css"
+import { useUser } from '../../Controllers/UserContext';
 
-//import dataProducts from '../../appData'
-
-
-//Flechas para ver los demas productos
+// Flechas para ver los demás productos
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -23,7 +21,6 @@ function SampleNextArrow(props) {
         />
     );
 }
-
 
 function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
@@ -36,20 +33,16 @@ function SamplePrevArrow(props) {
     );
 }
 
-
-
-function caruselMenu({titulo}) {
-
+function CaruselMenu({ titulo }) {
+    const user = useUser();
     const value = useContext(DataContext);
-
-    const productos = value.productos
-    const [carrito, setCarrito] = value.carrito;
-
-    const addCarrito = value.addCarrito
-
+    const productos = value.productos;
+    const addCarrito = (id) => {
+        value.addCarrito(id);
+        alert("Producto añadido al carrito");
+    };
 
     var settings = {
-        adaptiveHeight: true,
         dots: false,
         infinite: true,
         speed: 500,
@@ -60,52 +53,48 @@ function caruselMenu({titulo}) {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
         responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            infinite: false,
-            dots: false
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            initialSlide: 1
-
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-            }
-        }
         ]
     };
 
     return (
-        
         <div className={styles.contenedorCarrusel}>
             <p className={styles.tituloCarrusel}>{titulo}</p>
             <div className={styles.tarjetaCarrusel}>
                 <Slider {...settings}>
-                {productos.filter((d) => d.categoria === titulo).map((d) => (
-                        <div className={styles.contenedor}>
+                    {productos.filter((d) => d.categoria === titulo).map((d) => (
+                        <div className={styles.contenedor} key={d.ID}>
                             <Link to={`/ProductoDetalles/${d.ID}`} className={styles.contenedorImagen}>
                                 <img className={styles.imagen} src={d.img} alt={d.nombre} />
                             </Link>
                             <div className={styles.descripcion}>
-                                <p className={styles.descripcionNombre}>{d.nombre} </p>
+                                <p className={styles.descripcionNombre}>{d.nombre}</p>
                                 <p className={styles.descripcionPrecio}>{d.precio} $</p>
-                                <Link to={`/ProductoDetalles/${d.ID}`} className={`${styles.descripcionBoton} ${global.boton}`}>Ver Detalles </Link>
-                                <button id={d.ID} className={`${styles.descripcionBoton} ${global.boton}`} onClick={() => addCarrito(d.ID)} >Añadir Carrito</button>
+                                <Link to={`/ProductoDetalles/${d.ID}`} className={`${styles.descripcionBoton} ${global.boton}`}>Ver Detalles</Link>
+                                { user !== null && <button id={d.ID} className={`${styles.descripcionBoton} ${global.boton}`} onClick={() => addCarrito(d.ID)}>Añadir Carrito</button>}
                             </div>
-                            
                         </div>
                     ))}
                 </Slider>
@@ -114,6 +103,4 @@ function caruselMenu({titulo}) {
     );
 }
 
-
-
-export default caruselMenu;
+export default CaruselMenu;
