@@ -247,9 +247,6 @@ div .group {
 
 
 
-
-
-
 /* Número de telefono */
 .desc {
     color: #ffffff;
@@ -276,4 +273,8 @@ div .group {
     }
 }
 
-
+.paypal{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
