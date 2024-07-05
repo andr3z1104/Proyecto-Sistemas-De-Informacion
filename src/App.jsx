@@ -25,23 +25,12 @@ import Carrito from './Pages/Carrito/Carrito';
 import dataProducts from './appData';
 import { useState, useEffect, useContext } from 'react';
 import { DataProvider } from './Context/DataProvider';
-import { useState } from 'react';
 import HeaderIS from './Components/HeaderIS/HeaderIS';
 
 import AppProvider from './Controllers/UserProvider';
-import UserContext from './Controllers/UserContext';
+import { UserContext } from './Controllers/UserContext';
 
 function App() {
-
-  const { logout } = useContext(UserContext);
-
-  useEffect(() => {
-    window.addEventListener('beforeunload', logout);
-    return () => {
-      window.removeEventListener('beforeunload', logout);
-    };
-  }, [logout]);
-
 
 
   return (
