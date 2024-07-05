@@ -6,7 +6,7 @@ import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
 
-
+import PopupCondiciones from "./Components/Popup/PopupCondiciones"
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
 import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
 import PopupRegistro from "./Components/Popup/PopupRegistro";
@@ -75,6 +75,8 @@ function AppRoutes() {
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
         <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
+        <Route path= "/PopupCondiciones" element={<PopupCondiciones />} />
+
 
       </Routes>
       <Footer />

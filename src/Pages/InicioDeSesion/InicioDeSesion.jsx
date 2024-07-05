@@ -7,6 +7,8 @@ import appFirebase from '../../credenciales';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 import { useState, useContext } from 'react';
 
+
+import PopupCondiciones from '../../Components/Popup/PopupCondiciones';
 import PopupInfo from '../../Components/Popup/PopupInicioSesion'; 
 
 const auth = getAuth(appFirebase);
@@ -16,6 +18,7 @@ function InicioDeSesion() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPopUp, setShowPopUp] = useState(false);
+    const [showPopUp1, setShowPopUp1] = useState(false);
 
     const handleClick = () => {
         window.location.href = '/IniciarAdmin';
@@ -47,9 +50,13 @@ function InicioDeSesion() {
         window.location.href = '/Registrarse';
     }
 
-    const onClick = (e) => {
+    const onClick = async (e) => {
         e.preventDefault();
-        alert("PÁGINA EN CONSTRUCCIÓN...");
+        setShowPopUp(true);
+    };
+    const onClick1 = async (e) => {
+        e.preventDefault();
+        setShowPopUp1(true);
     };
 
     const handleInputChange = (e) => {
@@ -85,7 +92,7 @@ function InicioDeSesion() {
                         <div className={styles.input}>
                             <input type='email' placeholder='Correo' name='email' value={email} onChange={handleInputChange} required />
                             <input type='password' placeholder='Contraseña' name='contraseña' value={password} onChange={handleInputChange} required />
-                            <span>Al iniciar sesión, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
+                            <span>Al iniciar sesión, aceptas las <a href="/CondicionesDeUso" onClick={onClick1}>Condiciones de uso</a> de Granier</span>
                         </div>
                         <button onClick={handleLoginButton}>Iniciar Sesión</button>
                         
@@ -102,7 +109,9 @@ function InicioDeSesion() {
                     </div>
                 </div>
             </div>
+
             {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
+            {showPopUp1 && <PopupCondiciones onClose={() => setShowPopUp1(false)} />}
         </div>
     );
 }

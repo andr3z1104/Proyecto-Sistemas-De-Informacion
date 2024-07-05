@@ -42,8 +42,8 @@ p, h1 {
 }
 
 .popupImagen {
-    width: 6rem;
-    height: 6rem;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: local;
