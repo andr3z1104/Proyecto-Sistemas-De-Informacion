@@ -273,4 +273,8 @@ div .group {
     }
 }
 
-
+.paypal{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}

@@ -170,7 +170,9 @@ function Carrito() {
 
             
             <div className={styles.sSpace}>
+                <div className={styles.paypal}>
                 <PayPalButtons />
+                </div>
                 <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
             </div>
             
