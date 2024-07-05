@@ -2,29 +2,33 @@ import styles from "./MiPerfil.module.css";
 import userimg from "../../assets/usuarioimg.png";
 import global from "../../Global.module.css";
 
-import ImageCarousel from "../../Components/ImageCarousel/ImageCarousel";
-import ProductCarousel from "../../Components/ProductCarousel/ProductCarousel";
 import { logOut } from "../../Controllers/logout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PopupInfo from "../../Components/Popup/PopupCerrarSesion";
-import { useUser } from "../../Controllers/UserContext"; // Ajusta la ruta según tu estructura de archivos
+import { useUser } from "../../Controllers/UserContext";
+import { Link, useNavigate } from "react-router-dom";
 
 function MiPerfil() {
-  const user = useUser();
-
-  // Asegúrate de que el usuario esté cargado antes de acceder a sus propiedades
-  if (!user) {
-    return <p>Loading...</p>;
-  }
-
-  const { displayName, email, phoneNumber, birthdate } = user; // Suponiendo que estos campos existen en el objeto usuario
-
+  const { user } = useUser();
   const [showPopUp, setShowPopUp] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/Registrarse");
+    }
+  }, [user, navigate]);
 
   const handleClick = async (e) => {
     logOut();
     setShowPopUp(true);
   };
+
+  if (!user) {
+    return <p>Loading...</p>;
+  }
+
+  console.log("User data in MiPerfil:", user); // Añadir log para verificar los datos del usuario
 
   return (
     <div className={styles.contenedorPerfil}>
@@ -38,9 +42,13 @@ function MiPerfil() {
               className={`${styles.divider__colorBlanco} ${styles.divider}`}
             ></div>
             <div className={styles.funcionesAdmin}>
-              <button className={`${global.boton} ${styles.boton__colorNegro}`}>
-                Editar Perfil
-              </button>
+              <Link to="/EditarPerfil">
+                <button
+                  className={`${global.boton} ${styles.boton__colorNegro}`}
+                >
+                  Editar Perfil
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles.seccionDatos_datosUsuario}>
@@ -54,21 +62,20 @@ function MiPerfil() {
             <div className={styles.camposInfo}>
               <div className={styles.label}>
                 <p className={styles.input}>
-                  {" "}
-                  {displayName || "Nombre no disponible"}{" "}
+                  {user.displayName || "Nombre no disponible"}
                 </p>
               </div>
               <div className={styles.label}>
-                <p className={styles.input}>{email}</p>
+                <p className={styles.input}>{user.email}</p>
               </div>
               <div className={styles.label}>
                 <p className={styles.input}>
-                  {phoneNumber || "Teléfono no disponible"}
+                  {user.phone || user.phoneNumber || "Teléfono no disponible"}
                 </p>
               </div>
               <div className={styles.label}>
                 <p className={styles.input}>
-                  {birthdate || "Fecha de nacimiento no disponible"}
+                  {user.birthdate || "Fecha de nacimiento no disponible"}
                 </p>
               </div>
             </div>
