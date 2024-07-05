@@ -17,6 +17,7 @@ import ProductoDetalles from './Pages/ProductoDetalles/ProductoDetalles';
 import Feedback from './Pages/Feedback/Feedback';
 
 import AdminPerfil from './Pages/MiPerfilAdmin/MiPerfilAdmin'
+import AgregarProductoDetalles from './Pages/AgregarProductoDetalles/AgregarProductoDetalles';
 
 import Menu from './Pages/Menu/Menu'
 import Carrito from './Pages/Carrito/Carrito';
@@ -38,7 +39,6 @@ function App() {
 
 
   return (
-
     <DataProvider>
         <PayPalScriptProvider options={initialOptions}>
           <Router>
@@ -66,7 +66,8 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
-        <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
+        <Route path='/ProductoDetalles/:ID' element={<ProductoDetalles />} />
+        <Route path='/AgregarProductoDetalles' element={<AgregarProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/AdminPerfil' element={<AdminPerfil />} />
