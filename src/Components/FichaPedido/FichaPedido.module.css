@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.fichaPedido {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #e99999d5;
+    background: #F5F5F5;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    width: 55vw;
+    height: 20vw;
+    padding: 1vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1vw;
+}
+
+.fichaPedido .imagePedido {
+    width: 25vw;
+    height: 15vw;
+    margin: 1vw;
+    border-radius: 10px;
+    align-self: center;
+    object-fit: cover;
+}
+
+.fichaPedido .dataContainer {
+    display: flex;
+    flex-direction: column;
+    margin: .75vw;
+    width: 100%;
+}
+
+.fichaPedido .dataContainer h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+}
+
+.fichaPedido .horizontalLine {
+    position: relative;
+    bottom: 7%;
+}
+
+.fichaPedido .dataContainer .dataInformation {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.25vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin: .25vw 0;
+}
+
+.finalBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vw;
+}
+
+.finalBoxes .leftBox h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3vw;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: .30vw;
+}
+
+.littleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11vw;
+    height: 3vw;
+    padding: 1vw;
+    border: 1px solid #e99999d5;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .fichaPedido {
+        flex-direction: column;
+        width: 90vw;
+        height: auto;
+        padding: 2vw;
+    }
+
+    .fichaPedido .imagePedido {
+        width: 80%;
+        height: auto;
+        margin: 2vw auto;
+    }
+
+    .fichaPedido .dataContainer {
+        margin: 2vw 0;
+    }
+
+    .fichaPedido .dataContainer h2 {
+        font-size: 4vw;
+    }
+
+    .fichaPedido .dataContainer .dataInformation {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    .finalBoxes {
+        flex-direction: column;
+    }
+
+    .finalBoxes .leftBox h3 {
+        font-size: 3vw;
+    }
+
+    .littleBox {
+        width: 90%;
+        height: auto;
+        padding: 2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .fichaPedido {
+        padding: 3vw;
+    }
+
+    .fichaPedido .imagePedido {
+        width: 100%;
+        margin: 3vw 0;
+    }
+
+    .fichaPedido .dataContainer h2 {
+        font-size: 5vw;
+    }
+
+    .fichaPedido .dataContainer .dataInformation {
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    .finalBoxes .leftBox h3 {
+        font-size: 4vw;
+    }
+
+    .littleBox {
+        width: 100%;
+        padding: 3vw;
+    }
+}
