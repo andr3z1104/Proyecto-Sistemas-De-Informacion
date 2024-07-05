@@ -88,6 +88,7 @@ function InicioDeSesion() {
                             <span>Al iniciar sesión, aceptas las <a href="/CondicionesDeUso" onClick={onClick}>Condiciones de uso</a> de Granier</span>
                         </div>
                         <button onClick={handleLoginButton}>Iniciar Sesión</button>
+                        
                         <a onClick={handleClick}>¿Eres administrador? <span className={styles.underline}>Click aquí</span></a>
                     </form>
                 </div>

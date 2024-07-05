@@ -4,15 +4,24 @@ import global from "../../Global.module.css"
 
 import ImageCarousel from '../../Components/ImageCarousel/ImageCarousel';
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
+import { logOut } from '../../Controllers/logout';
+import { useState } from 'react';
+import PopupInfo from '../../Components/Popup/PopupCerrarSesion';
 
 function MiPerfil() {
-    let usuario = "Angelo";
+    
     let nombre = "Angelo";
     let apellido = "Guerrero";
     let correo = "g.angelo@correo.unimet.edu.ve";
     let fechaNacimiento = "23/10/2002";
     let telefono = "04126881813";
 
+    const [showPopUp, setShowPopUp] = useState(false);
+
+    const handleClick = async (e) => {
+        logOut();
+        setShowPopUp(true);
+    }
 
     return (
         
@@ -58,10 +67,10 @@ function MiPerfil() {
             
 
             <div className={styles.contenedorBoton}>
-                <button className={`${global.boton} ${styles.boton}`}>Cerrar Sesion</button>
+                <button className={`${global.boton} ${styles.boton}`} onClick={handleClick} >Cerrar Sesion</button>
                 <button className={`${global.boton} ${styles.boton}`}>Eliminar Cuenta</button>
             </div>
-
+            {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
         </div>
 
 

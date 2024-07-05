@@ -55,7 +55,7 @@ function caruselMenu({titulo}) {
         speed: 500,
         lazyLoad: true,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         initialSlide: 0,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
@@ -64,8 +64,8 @@ function caruselMenu({titulo}) {
             breakpoint: 1024,
             settings: {
             slidesToShow: 4,
-            slidesToScroll: 4,
-            infinite: true,
+            slidesToScroll: 1,
+            infinite: false,
             dots: false
             }
         },
@@ -73,8 +73,9 @@ function caruselMenu({titulo}) {
             breakpoint: 600,
             settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
+            slidesToScroll: 1,
+            initialSlide: 1
+
             }
         },
         {

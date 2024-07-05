@@ -3,8 +3,19 @@ import global from "../../Global.module.css"
 import imagenUsuario from "../../assets/usuarioimg.png"
 import imagenCualquiera from "../../assets/Mocca.png";
 import { MdStayCurrentLandscape } from "react-icons/md";
+import { logOut } from "../../Controllers/logout";
+
+import PopupInfo from '../../Components/Popup/PopupCerrarSesion'; 
+import { useState } from "react";
 
 function MiPerfilAdmin() {
+
+    const [showPopUp, setShowPopUp] = useState(false);
+
+    const handleClick = async (e) => {
+        logOut();
+        setShowPopUp(true);
+    }
 
     return (
         <div className={styles.contenedorPerfil}>
@@ -73,17 +84,15 @@ function MiPerfilAdmin() {
                 <div className={styles.divider}></div>
                 <section className={styles.seccionComentario}>
                         
-   
                 </section>
             </div>
             
 
             <div className={styles.contenedorBoton}>
-                <button className={`${global.boton} ${styles.boton}`}>Cerrar Sesion</button>
+                <button className={`${global.boton} ${styles.boton}`} onClick={handleClick}>Cerrar Sesion</button>
             </div>
-
+        {showPopUp && <PopupInfo onClose={() => setShowPopUp(false)} />}
         </div>
-        
     )
 }
 
