@@ -1,17 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Landing from './Pages/Landing/Landing';
 import InicioDeSesion from './Pages/InicioDeSesion/InicioDeSesion';
 import Registrarse from './Pages/Registrarse/Registrarse';
 import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import MiPerfil from './Pages/MiPerfil/MiPerfil';
-import Feedback from './Pages/Feedback/Feedback';
-import MiPerfilAdmin from "./Pages/MiPerfilAdmin/MiPerfilAdmin";
 
 
 import PopupPedidoProceso from "./Components/Popup/PopupPedidoProceso"
 import PopupCerrarSesion from "./Components/Popup/PopupCerrarSesion";
-
 import PopupRegistro from "./Components/Popup/PopupRegistro";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -24,7 +21,6 @@ import Carrito from './Pages/Carrito/Carrito';
 
 import dataProducts from './appData';
 import { DataProvider } from './Context/DataProvider';
-
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { UserContext } from './Controllers/UserContext';
 
@@ -39,6 +35,11 @@ function App() {
 
 
   return (
+
+    <Router>
+      <AppRoutes />
+    </Router>
+
  
     <DataProvider>
         <PayPalScriptProvider options={initialOptions}>
@@ -48,13 +49,13 @@ function App() {
         </PayPalScriptProvider>
     </DataProvider>
   
+
   );
 }
 
 function AppRoutes() {
 
   const hideLoginButtonRoutes = ['/Registrarse','/InicioDeSesion','/IniciarAdmin'];
-
   const shouldHideLoginButton = hideLoginButtonRoutes.includes(useLocation().pathname);
 
   return (
@@ -67,16 +68,11 @@ function AppRoutes() {
         <Route path='/IniciarAdmin' element={<IniciarAdmin />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/Contacto' element={<Contacto />} />
-        <Route path='/MiPerfilAdmin' element={<MiPerfilAdmin />} />
-
-        
-
         <Route path='/ProductoDetalles/:id' element={<ProductoDetalles />} />
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/MiPerfil' element={<MiPerfil />} />
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Feedback' element={<Feedback />} />
-
         <Route path= "/PopupRegistro" element={<PopupRegistro />} />
         <Route path= "/PopupCerrarSesion" element={<PopupCerrarSesion />} />
         <Route path= "/PopupPedidoProceso" element={<PopupPedidoProceso />} />
