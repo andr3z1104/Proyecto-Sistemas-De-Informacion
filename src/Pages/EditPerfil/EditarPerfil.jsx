@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useUser } from "../../Controllers/UserContext";
 import { updateProfile } from "../../Controllers/user"; // Asegúrate de importar correctamente la función updateProfile
 import { useNavigate } from "react-router-dom";
+import global from "../../Global.module.css"
 
 function EditarPerfil() {
   const { user, updateUser } = useUser();
@@ -39,42 +40,50 @@ function EditarPerfil() {
       <h2>Editar Perfil</h2>
       <form onSubmit={handleSubmit} className={styles.formulario}>
         <div className={styles.campo}>
-          <label>Nombre:</label>
+          <label className={styles.lable}>Nombre:</label>
           <input
             type="text"
             name="displayName"
+            className={styles.input}
+
             value={formData.displayName}
             onChange={handleChange}
           />
         </div>
         <div className={styles.campo}>
-          <label>Email:</label>
+          <label className={styles.lable}
+          >Email:</label>
           <input
             type="email"
             name="email"
+            className={styles.input}
+
             value={formData.email}
             onChange={handleChange}
           />
         </div>
         <div className={styles.campo}>
-          <label>Teléfono:</label>
+          <label className={styles.lable}>Teléfono:</label>
           <input
             type="text"
             name="phone"
+            className={styles.input}
+
             value={formData.phone}
             onChange={handleChange}
           />
         </div>
         <div className={styles.campo}>
-          <label>Fecha de Nacimiento:</label>
+          <label className={styles.lable}>Fecha de Nacimiento:</label>
           <input
             type="date"
             name="birthdate"
+            className={styles.input}
             value={formData.birthdate}
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Guardar Cambios</button>
+        <button className={`${global.boton} ${styles.boton}`} type="submit">Guardar Cambios</button>
       </form>
     </div>
   );

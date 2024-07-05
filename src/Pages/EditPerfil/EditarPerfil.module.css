@@ -15,7 +15,14 @@
 @media (min-width: 768px) {
   .contenedorPerfil {
     margin: 1.5rem auto 3rem auto;
+    width: 60%;
   }
+}
+
+@media (min-width: 1140px) {
+    .contendorPerfil {
+      width: 50%;
+    }
 }
 
 .infoContacto {
@@ -158,24 +165,27 @@
   width: 87%;
 }
 
-.camposInfo {
-  width: 90%;
+.campo {
+  background-color: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.label {
-  background-color: var(--gris);
-  margin: 10px 0;
-  border-radius: 10px;
-  padding: 10px;
+.lable {
+  font-size: 1rem;
+  font-weight: 650;
+  margin-right: 20px;
 }
 
 .input {
-  margin: unset;
-  margin-left: 12px;
-}
+  background-color: #b3b1b1;
+  border-radius: 10px;
+  width: 80%;
+  padding: 10px;
 
-.contenedorBoton {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  border: 1px
 }
