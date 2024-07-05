@@ -6,10 +6,8 @@ import cors from 'cors';
 const app = express();
 const port = 3000;
 
-// Configurar middleware de CORS
 app.use(cors());
 
-// Configurar almacenamiento de Multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.join(process.cwd(), 'src', 'assets'));
