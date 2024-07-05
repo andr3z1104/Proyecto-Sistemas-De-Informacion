@@ -13,7 +13,7 @@ import { DataContext } from '../../Context/DataProvider';
 
 import ProductoPedido from '../../Components/ProductoPedido/ProductoPedido'
 
-
+import { PayPalButtons } from '@paypal/react-paypal-js';
 
 function Carrito() {
 
@@ -25,10 +25,11 @@ function Carrito() {
 
     const productos = value.productos
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState('');
 
 
     useEffect(() => {
+        console.log('selectedOption:', selectedOption);
 
         let subtotal = 0;
         carrito.forEach((item) => {
@@ -42,9 +43,13 @@ function Carrito() {
         setTotal(subtotal + shippingCost);
       }, [carrito, productos, selectedOption]);
     
+      useEffect(() => {
+        console.log('selectedOption:', selectedOption);
+      }, [selectedOption]);
     
       const onChange = (newValue) => {
         setSelectedOption(newValue.value);
+        console.log(newValue)
       };
     
 
@@ -165,6 +170,7 @@ function Carrito() {
 
             
             <div className={styles.sSpace}>
+                <PayPalButtons />
                 <button className={styles.navButton} onClick={onClick}>----------Pagar----------</button>
             </div>
             
