@@ -48,6 +48,7 @@ function CaruselMenu({ titulo }) {
 
     if (user) {
       if (product && product.ID && product.precio) {
+        alert("Producto añadido")
         await createOrUpdateCart(user, product);
       } else {
         console.error("Product data is incomplete:", product);

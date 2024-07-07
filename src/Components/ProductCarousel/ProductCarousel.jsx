@@ -40,11 +40,11 @@ function SamplePrevArrow(props) {
 function ProductCarousel() {
     const navigate = useNavigate();
     const productos = [
-        { id: 1, name: 'CAFE AMERICANO', price: '$3.5', image: image1},
-        { id: 2, name: 'CAFE CAPUCCINO', price: '$3.5', image: image2 },
-        { id: 3, name: 'CAFE CARAMEL LATTE', price: '$5.99', image: image3 },
-        { id: 4, name: 'CAFE MOCCA', price: '$3.5', image: image4 },
-        { id: 5, name: 'CAFE EXPRESSO', price: '$4.99', image: image5 },
+        { id: 1, name: 'CAFE AMERICANO', price: '$1.50', image: image1},
+        { id: 2, name: 'CAFE CAPUCCINO', price: '$1.50', image: image2 },
+        { id: 3, name: 'CAFE CARAMEL LATTE', price: '$3.50', image: image3 },
+        { id: 4, name: 'CAFE MOCCA', price: '$4.00', image: image4 },
+        { id: 5, name: 'CAFE EXPRESSO', price: '$1.00', image: image5 },
         { id: 6, name: 'FRAPPE CHOCOLATE', price: '$4.00', image: image6 },
     ];
 

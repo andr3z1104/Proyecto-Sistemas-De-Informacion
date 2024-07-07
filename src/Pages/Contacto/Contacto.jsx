@@ -3,9 +3,11 @@ import image1 from '../../assets/ImagenPrincipal.png';
 import { useNavigate } from 'react-router-dom';
 import whatsapp from '../../assets/WhatsappLogo.png'
 import instagram from '../../assets/InstagramLogo.png'
+import { useUser } from '../../Controllers/UserContext';
 
 function Contacto() {
     const navigate = useNavigate();
+    const { user } = useUser();
 
     return (
         <div className='Contacto'>
@@ -41,9 +43,9 @@ function Contacto() {
                     <div className={styles.feedback}>
                         <h2>DUDAS U OPINIONES</h2>
                         <p className={styles.unrDesc}>Nos importa saber cómo podemos mejorar tu experiencia Granier. Recuerda que somos el sabor que te acompaña en cada estudio.</p>
-                        <div className={styles.sSpace}>
+                        { user != null && user?.email != "admin@granierunimet.com" && <div className={styles.sSpace}>
                             <button className={styles.navButton} onClick={() => navigate('/Feedback')}>COMENTARIOS</button>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>

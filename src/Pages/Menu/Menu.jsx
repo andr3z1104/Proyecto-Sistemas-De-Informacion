@@ -63,6 +63,7 @@ function Menu(){
                 <input placeholder='Buscar...' value={searchTerm} onChange={handleSearch}></input>
             </div>
             <select className={styles.optionBar} value={selectedValue} onChange={handleChange}>
+                <option value="Option 0">Ninguno</option>
                 <option value="Option 1">Panes</option>
                 <option value="Option 2">Frappe</option>
                 <option value="Option 3">Cafe</option>

@@ -5,7 +5,7 @@ const dataProducts = [
         nombre: 'Cafe Americano',
         categoria: 'Cafe',
         descripción: 'Un cafe tostado para empezar el dia',
-        precio: 1,
+        precio: 1.50,
         cantidad: 10,
         img: '/src/assets/Americano.png',
         ingredientes :[ 
@@ -51,7 +51,7 @@ const dataProducts = [
         nombre: 'Frappe Chocolate',
         categoria: 'Frappe',
         descripcion: 'Un frappe bien frio para terminar el dia',
-        precio: 3,
+        precio: 4.00,
         cantidad: 10,
         img: '/src/assets/FrappeChocolate.png',
         ingredientes :[ 
@@ -78,7 +78,7 @@ const dataProducts = [
         nombre: 'Mocca',
         categoria: 'Cafe',
         descripcion: 'Un cafe bien caliente para empezar el dia',
-        precio: 3,
+        precio: 4.00,
         cantidad: 10,
         img: '/src/assets/Mocca.png',
         ingredientes :[ 
@@ -128,7 +128,7 @@ const dataProducts = [
         nombre: 'Frappe Cookies & Cream',
         categoria: 'Frappe',
         descripcion: 'Un frappe bien frio para empezar el dia',
-        precio: 3,
+        precio: 4.00,
         cantidad: 10,
         img: '/src/assets/FrappeCookiesnCream.png',
         ingredientes :[ 
