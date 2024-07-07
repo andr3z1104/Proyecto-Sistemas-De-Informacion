@@ -36,6 +36,7 @@ function SamplePrevArrow(props) {
 }
 
 function CaruselMenu({ titulo }) {
+
   const value = useContext(DataContext);
   const productos = value.productos;
   const { user } = useUser();
@@ -119,12 +120,12 @@ function CaruselMenu({ titulo }) {
                   >
                     Ver Detalles
                   </Link>
-                  <button
+                  {user != null && user?.email != "admin@granierunimet.com" && <button
                     className={`${styles.descripcionBoton} ${global.boton}`}
                     onClick={() => handleAddToCart(d)}
                   >
                     Añadir Carrito
-                  </button>
+                  </button>}
                 </div>
               </div>
             ))}

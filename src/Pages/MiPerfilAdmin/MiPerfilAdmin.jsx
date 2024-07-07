@@ -7,8 +7,10 @@ import { logOut } from "../../Controllers/logout";
 
 import PopupInfo from '../../Components/Popup/PopupCerrarSesion'; 
 import { useState } from "react";
+import { useUser } from "../../Controllers/UserContext";
 
 function MiPerfilAdmin() {
+    const { user } = useUser();
 
     const [showPopUp, setShowPopUp] = useState(false);
 
@@ -39,16 +41,16 @@ function MiPerfilAdmin() {
                         <div className={`${styles.dividerInfoContacto} ${styles.divider}`}></div>
                         <div className={styles.camposInfo}>
                             <div className={styles.label}>
-                                <p className={styles.input}>Nombre</p>
+                                <p className={styles.input}>Administrador Granier</p>
                             </div>
                             <div className={styles.label}>
-                                <p className={styles.input}>Apellido</p>
+                                <p className={styles.input}>ID - 8a32zb87h</p>
                             </div>
                             <div className={styles.label}>
-                                <p className={styles.input}>Correo</p>
+                                <p className={styles.input}>{user?.email}</p>
                             </div>
                             <div className={styles.label}>
-                                <p className={styles.input}>Telefono</p>
+                                <p className={styles.input}>04141742911</p>
                             </div>
                         </div>
                     </div>

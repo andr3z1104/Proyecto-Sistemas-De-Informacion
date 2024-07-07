@@ -13,8 +13,6 @@ import image3 from '../../assets/CaramelLatte.png';
 import image4 from '../../assets/Mocca.png';
 import image5 from '../../assets/Macchiato.png';
 import image6 from '../../assets/FrappeChocolate.png';
-import image7 from '../../assets/DesayunoAmericano.png';
-import image8 from '../../assets/OmeleteDeVegetales.png';
 
 // Flechas para ver los demas productos
 function SampleNextArrow(props) {
@@ -48,8 +46,6 @@ function ProductCarousel() {
         { id: 4, name: 'CAFE MOCCA', price: '$3.5', image: image4 },
         { id: 5, name: 'CAFE EXPRESSO', price: '$4.99', image: image5 },
         { id: 6, name: 'FRAPPE CHOCOLATE', price: '$4.00', image: image6 },
-        { id: 7, name: 'DESAYUNO AMERICANO', price: '$8.00', image: image7 },
-        { id: 8, name: 'OMELET DE VEGETALES', price: '$7.00', image: image8 },
     ];
 
     var settings = {

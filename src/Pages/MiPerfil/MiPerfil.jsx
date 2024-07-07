@@ -26,8 +26,6 @@ function MiPerfil() {
 
   useEffect(() => {
     if (!user) {
-      
-    
       setShowPopUp(true);
       navigate("/Registrarse");
     }
