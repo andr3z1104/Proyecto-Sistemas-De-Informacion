@@ -96,6 +96,7 @@ function AppRoutes() {
         <Route path="/PopupCondiciones" element={<PopupCondiciones />} />
         <Route path = "/FichaPedido" element={<FichaPedido />}></Route>
         <Route path = "/FichaComentario" element={<FichaComentario />}></Route>
+        <Route path = "/PedidoProceso" element={<PopupPedidoProceso />}></Route>
       </Routes>
       <Footer />
     </>

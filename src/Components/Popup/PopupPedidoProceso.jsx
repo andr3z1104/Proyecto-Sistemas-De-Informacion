@@ -1,7 +1,12 @@
 import styles from "./PopupPedidoProceso.module.css"
 import global from "../../Global.module.css"
 
-function PopupInfo() {
+function PopupInfo({onClose}) {
+
+    const handleClick = () => {
+        onClose();
+    };
+
 return (
     
     <div className={styles.fondoNegro}>
@@ -12,10 +17,10 @@ return (
                     </div>
                 </div>
                 <div className={styles.popupInfo}>
-                    <h1 className={styles.popupInfo_titulo}>Ya te echamos de menos</h1>
+                    <h1 className={styles.popupInfo_titulo}>Pedido Registrado</h1>
                     <div className={styles.popupInfo_bienvenido}>
-                        <p className={styles.bienvenido}>¡Vuelve Pronto!</p>
-                        <button className={`${styles.botonContinuar} ${global.boton}`}>Continuar</button>
+                        <p className={styles.bienvenido}>¡Gracias por tu compra!</p>
+                        <button className={`${styles.botonContinuar} ${global.boton}`} onClick={handleClick}>Continuar</button>
                     </div>
 
 

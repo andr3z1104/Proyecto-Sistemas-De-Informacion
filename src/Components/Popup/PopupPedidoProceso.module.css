@@ -3,10 +3,17 @@ p, h1 {
 }
 
 .fondoNegro {
-    padding: 10rem 1rem;
-    /* Ami aquí es */
+    position: fixed; /* Asegura que el pop-up se muestre sobre el contenido */
+    top: 0; /* Posiciona el pop-up en la parte superior de la ventana */
+    left: 0; /* Posiciona el pop-up en la parte izquierda de la ventana */
+    width: 100%; /* Ocupa el ancho completo de la ventana */
+    height: 100%; /* Ocupa la altura completa de la ventana */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro translúcido */
+    display: flex; /* Centra el contenido del pop-up */
+    justify-content: center; /* Centra el contenido del pop-up */
+    align-items: center; /* Centra el contenido del pop-up */
+    z-index: 1000; /* Asegura que el pop-up se muestre sobre otros elementos */
 }
-
 
 .popup {
     display: flex;
@@ -16,6 +23,7 @@ p, h1 {
     border: 10px solid var(--colorPrincipal);
     border-radius: 20px;
     padding: 1rem;
+    background-color: white; /* Asegura que el contenido del pop-up sea visible */
     width: 95%;
     margin: 0 auto;
 }
@@ -42,8 +50,8 @@ p, h1 {
 }
 
 .popupImagen {
-    width: 100%;
-    height: 100%;
+    width: 6rem;
+    height: 6rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: local;
@@ -52,18 +60,16 @@ p, h1 {
 }
 
 .popupInfo {
+    line-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    }
-
-.popupInfo h1 {
-    margin: 0;
 }
 
-.popupInfo p {
-    margin: 0 0 10px;
+.popupInfo_bienvenido {
+    display: flex;
+    column-gap: 1rem;
 }
 
 .botonContinuar {
@@ -71,10 +77,9 @@ p, h1 {
     padding: 3px 15px;
     transition: background-color 0.3s ease;
     transition: transform 0.3s ease;
-  }
+}
 
-  .botonContinuar:hover{
+.botonContinuar:hover {
     background-color: var(--colorPrincipal__hover);
-    transform: scale(1.1)
-  }
-
+    transform: scale(1.1);
+}
