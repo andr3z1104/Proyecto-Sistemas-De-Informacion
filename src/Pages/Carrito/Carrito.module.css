@@ -278,3 +278,8 @@ div .group {
     margin: auto;
     align-items: center;
 }
+.paypal p{
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 650;
+}

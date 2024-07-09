@@ -135,9 +135,10 @@ function Carrito() {
 
       <div className={styles.sSpace}>
         <div className={styles.paypal}>
-          <PayPalButtons />
+          <p>-- Método de Pago -- </p>
+          {cart.products.length > 0 &&  <PayPalButtons />}
         </div>
-        <button className={styles.navButton}>----------Pagar----------</button>
+        
       </div>
     </div>
   );
