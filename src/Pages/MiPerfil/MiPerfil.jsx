@@ -124,7 +124,7 @@ function MiPerfil() {
           className={`${global.boton} ${styles.boton}`}
           onClick={handleClick}
         >
-          Cerrar Sesion
+          Cerrar Sesión
         </button>
         <button
           className={`${global.boton} ${styles.boton}`}

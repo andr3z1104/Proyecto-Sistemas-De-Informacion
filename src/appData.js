@@ -154,6 +154,87 @@ const dataProducts = [
             }
         ]
     },
+    {
+        ID: 7,
+        nombre: 'Croissant de Jamón y Queso',
+        categoria: 'Panes',
+        descripcion: 'Delicioso croissant relleno con jamón fresco y queso fundido, perfecto para cualquier momento del día.',
+        precio: 3.50, 
+        cantidad: 20, 
+        img: '/src/assets/Croissant Jamón y Queso.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Harina de trigo',
+                contraIndica: '(Gluten)'
+            },
+            {
+                nombreIngred: 'Mantequilla',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Jamón',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Queso',
+                contraIndica: '(Lacteo)'
+            }
+        ]
+    },
+    {
+        ID: 8,
+        nombre: 'Croissant de Doble Queso',
+        categoria: 'Panes',
+        descripcion: 'Crujiente croissant con una generosa porción de doble queso, ideal para los amantes del queso.',
+        precio: 2.75, 
+        cantidad: 15,
+        img: '/src/assets/Croissant Doble Queso.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Harina de trigo',
+                contraIndica: '(Gluten)'
+            },
+            {
+                nombreIngred: 'Mantequilla',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Queso',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Queso adicional',
+                contraIndica: '(Lacteo)'
+            }
+        ]
+    },
+    {
+        ID: 9,
+        nombre: 'Croissant de Jamón y Chorizo',
+        categoria: 'Panes',
+        descripcion: 'Sabroso croissant relleno con jamón y chorizo, combinando sabores tradicionales en cada bocado.',
+        precio: 3.00, 
+        cantidad: 12, 
+        img: '/src/assets/Croissant Jamón y Chorizo.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Harina de trigo',
+                contraIndica: '(Gluten)'
+            },
+            {
+                nombreIngred: 'Mantequilla',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Jamón',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Chorizo',
+                contraIndica: null
+            }
+        ]
+    }
 ]
 
 export default dataProducts

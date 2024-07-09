@@ -3,24 +3,45 @@ import global from "../../Global.module.css";
 import image1 from "../../assets/ImagenPrincipal.png";
 import StarRating from "../../Components/EstrellasRating/EstrellasRating";
 import { useState } from "react";
+import { db } from "../../credenciales";
+import { collection, addDoc } from "firebase/firestore";
+import PopupInfo from "../../Components/Popup/PopupFeedback"; // Asegúrate de que la ruta sea correcta
 
 function Feedback() {
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState(0);
+    const [showPopup, setShowPopup] = useState(false); // Estado para controlar el pop-up
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         if (name === "comentario") setComment(value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Aquí puedes manejar el envío del comentario y el rating
-        console.log("Comentario:", comment);
-        console.log("Rating:", rating);
-        // Resetear campos después del envío si es necesario
-        setComment("");
-        setRating(0);
+        if (rating === 0) {
+            alert("Por favor selecciona una calificación.");
+            return;
+        }
+        const comentario = comment ? comment : "No hay comentario disponible";
+        try {
+            await addDoc(collection(db, "comentarios"), {
+                comentario: comentario,
+                estrellas: rating
+            });
+            console.log("Comentario enviado:", comentario);
+            console.log("Rating enviado:", rating);
+            setComment("");
+            setRating(0);
+            setShowPopup(true); // Mostrar el pop-up
+        } catch (error) {
+            console.error("Error al enviar el comentario:", error);
+            alert("Hubo un error al enviar tu comentario. Por favor, intenta de nuevo.");
+        }
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false); // Cerrar el pop-up
     };
 
     return (
@@ -54,6 +75,8 @@ function Feedback() {
                     <button type="submit" className={`${global.boton} ${styles.navButton}`}> ENVIAR </button>
                 </form>
             </div>
+
+            {showPopup && <PopupInfo onClose={handleClosePopup} />}
         </div>
     );
 }

@@ -29,6 +29,9 @@ import AgregarProductoDetalles from "./Pages/AgregarProductoDetalles/AgregarProd
 import Menu from "./Pages/Menu/Menu";
 import Carrito from "./Pages/Carrito/Carrito";
 
+import FichaPedido from "./Components/FichaPedido/FichaPedido";
+import FichaComentario from "./Components/FichaComentario/FichaComentario";
+
 import dataProducts from "./appData";
 import { DataProvider } from "./Context/DataProvider";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
@@ -91,6 +94,8 @@ function AppRoutes() {
         <Route path="/PopupCerrarSesion" element={<PopupCerrarSesion />} />
         <Route path="/PopupPedidoProceso" element={<PopupPedidoProceso />} />
         <Route path="/PopupCondiciones" element={<PopupCondiciones />} />
+        <Route path = "/FichaPedido" element={<FichaPedido />}></Route>
+        <Route path = "/FichaComentario" element={<FichaComentario />}></Route>
       </Routes>
       <Footer />
     </>

@@ -1,0 +1,46 @@
+.fichaComentario {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Ajusta el tamaño según tus necesidades */
+    margin: 16px auto;
+    
+}
+
+.imageComentario {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.dataContainer {
+    flex: 1;
+}
+
+.usuario {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.rating {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.star {
+    margin-right: 4px;
+    font-size: 24px; 
+}
+
+.comentario {
+    font-size: 20px; 
+    color: #555;
+    margin: 0;
+}
