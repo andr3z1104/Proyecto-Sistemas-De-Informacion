@@ -143,3 +143,20 @@
     max-width: 20vh;
     object-fit: contain;
 }
+
+
+.cartBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FB8500;
+    color: white;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}

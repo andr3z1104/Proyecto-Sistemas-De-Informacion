@@ -13,10 +13,13 @@ import { Link } from 'react-router-dom';
 
 import { DataContext } from '../../Context/DataProvider';
 import { useUser } from '../../Controllers/UserContext';
+import useCart from '../../hooks/useCart';
 
 
 function Menu(){
     const { user } = useUser();
+
+    const { cart } = useCart ();
 
     const value = useContext(DataContext);
 
@@ -74,6 +77,9 @@ function Menu(){
         <div className={styles.contenedor}>
             {user != null && user?.email != "admin@granierunimet.com" && <Link  to={`/Carrito`}  className={styles.imagenCarrito}>
                 <img src={logo} alt='Carrito'></img>
+                {cart && cart.products.length > 0 && (
+                        <div className={styles.cartBadge}>{cart.products.length}</div>
+                    )}
             </Link>}
         </div>
 

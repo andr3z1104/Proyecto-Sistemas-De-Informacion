@@ -234,7 +234,85 @@ const dataProducts = [
                 contraIndica: null
             }
         ]
+    },
+    {
+        ID: 10,
+        nombre: 'Frappe de Vainilla',
+        categoria: 'Frappe',
+        descripcion: 'Deliciosa bebida fría a base de café, leche y vainilla, perfecta para refrescarse en un día caluroso.',
+        precio: 4.50, 
+        cantidad: 20, 
+        img: '/src/assets/Frappe Vainilla.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Café',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Leche',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Vainilla',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Azúcar',
+                contraIndica: null
+            }
+        ]
+    },
+    {
+        ID: 11,
+        nombre: 'Frappe de Café',
+        categoria: 'Frappe',
+        descripcion: 'Bebida fría a base de café y leche, con un sabor intenso y cremoso que te despertará los sentidos.',
+        precio: 4.50, 
+        cantidad: 20, 
+        img: '/src/assets/Frappe Cafe.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Café',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Leche',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Azúcar',
+                contraIndica: null
+            }
+        ]
+    },
+    {
+        ID: 12,
+        nombre: 'Frappe de Caramelo',
+        categoria: 'Frappe',
+        descripcion: 'Bebida fría a base de café, leche y caramelo, con un sabor dulce y cremoso que te encantará.',
+        precio: 4.50, 
+        cantidad: 20, 
+        img: '/src/assets/Frappe Caramelo.png', 
+        ingredientes: [
+            {
+                nombreIngred: 'Café',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Leche',
+                contraIndica: '(Lacteo)'
+            },
+            {
+                nombreIngred: 'Caramelo',
+                contraIndica: null
+            },
+            {
+                nombreIngred: 'Azúcar',
+                contraIndica: null
+            }
+        ]
     }
+
 ]
 
 export default dataProducts
